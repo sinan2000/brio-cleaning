@@ -1,0 +1,19 @@
+- create alternative logo in figma, from main colors; 
+- go over each component, starting from navbar & mobile (with programari button also showing on mobile) and nice animation for mobile, maybe the logo itself rotating or jumping around?
+- hero make a nice linie ce se inconjoara ca un arc in jos sa vada omul ca e mai jos
+- make sure texts, colors are matching;
+- finish homepage
+- form
+- make service pages (/servicii/[service]) with constants.ts for declaring all 3 services
+- texts best for seo, search
+- snsautomation footer
+
+!! MAKE ALL MEDIA SMALLER
+
+after payment:
+- analytics
+- optimizations
+- do meta for home, servicii, service, politica confidentialitate>?? sau teermen ??
+- do json ld also
+- buy domain
+- buy mail and link to gmail
