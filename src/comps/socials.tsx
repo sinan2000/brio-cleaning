@@ -6,19 +6,19 @@ export default function SocialsSection() {
     {
       name: "TikTok",
       icon: Music,
-      href: "#",
+      href: "https://www.tiktok.com/@briocleaningtimisoara",
       color: "hover:text-black",
     },
     {
       name: "Facebook",
       icon: Facebook,
-      href: "#",
+      href: "https://www.facebook.com/BrioCleaningTm",
       color: "hover:text-blue-600",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      href: "#",
+      href: "https://www.instagram.com/briocleaningtm/",
       color: "hover:text-pink-600",
     },
   ];
@@ -27,11 +27,12 @@ export default function SocialsSection() {
     <section className="py-16 bg-brio-blue">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-          Follow Our Clean Journey Online!
+          Urmărește-ne călătoria de curățare online!
         </h2>
         <p className="text-xl text-blue-100 mb-8 text-pretty">
-          Stay updated with our latest work, cleaning tips, and
-          behind-the-scenes content. Join our community of satisfied customers!
+          Rămâi la curent cu cele mai recente lucrări, sfaturi de curățare și
+          conținut din culise. Alătură-te comunității noastre de clienți
+          mulțumiți!
         </p>
 
         <div className="flex justify-center space-x-6 mb-8">
@@ -52,7 +53,7 @@ export default function SocialsSection() {
         </div>
 
         <p className="text-blue-100 text-sm">
-          {"Tag us in your posts with #BrioClean for a chance to be featured!"}
+          {"Etichetează-ne în postările tale cu #BrioClean!"}
         </p>
       </div>
     </section>

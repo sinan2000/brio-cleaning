@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ro">
+    <html lang="ro" className="scroll-smooth">
       <body
         className={`${montserrat.variable} ${openSans.variable} antialiased`}
       >

@@ -10,11 +10,9 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "About Us", href: "#about" },
-    { name: "Appointments", href: "#contact" },
-    { name: "Contact", href: "#contact" },
+    { name: "Acasă", href: "/" },
+    { name: "Servicii", href: "/servicii" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -26,10 +24,12 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo.png"
-                alt="BrioCleaning Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
+                alt="Slim & Beauty by MC logo"
+                width={48}
+                height={18}
+                priority
+                loading="eager"
+                className="w-32 h-auto md:w-40 lg:w-48"
               />
             </Link>
           </div>
@@ -51,9 +51,11 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-brio-blue hover:bg-brio-blue-dark text-white">
-              Book Now
-            </Button>
+            <Link href="/#programari">
+              <Button className="bg-brio-blue hover:bg-brio-blue-dark text-white">
+                Book Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

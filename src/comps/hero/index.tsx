@@ -6,7 +6,6 @@ import AboutUs from "../about";
 
 interface MediaAbout {
   overview: string;
-  conclusion: string;
 }
 
 interface MediaContent {
@@ -33,9 +32,7 @@ const sampleMediaContent: MediaContentCollection = {
     scrollToExpand: "Ca tu să fii liniștit",
     about: {
       overview:
-        "BrioCleaning is Timișoara's premier cleaning service, specializing in upholstery, automotive, and commercial cleaning. We combine years of expertise with cutting-edge techniques to deliver exceptional results that exceed expectations.",
-      conclusion:
-        "The ScrollExpandMedia component provides a unique way to engage users with your content through interactive scrolling. Try switching between video and image modes to see different implementations.",
+        "BrioCleaning este serviciul de curățare de top din Timișoara, specializat în curățarea tapițeriei, auto și comercială. Combinăm ani de experiență cu tehnici de vârf pentru a oferi rezultate excepționale care depășesc așteptările.",
     },
   },
   image: {
@@ -48,8 +45,6 @@ const sampleMediaContent: MediaContentCollection = {
     about: {
       overview:
         "This is a demonstration of the ScrollExpandMedia component with an image. The same smooth expansion effect works beautifully with static images, allowing you to create engaging visual experiences without video content.",
-      conclusion:
-        "The ScrollExpandMedia component works equally well with images and videos. This flexibility allows you to choose the media type that best suits your content while maintaining the same engaging user experience.",
     },
   },
 };
@@ -60,7 +55,7 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
   return (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
-        Who we are?
+        Cine suntem noi?
       </h2>
       <p className="text-lg mb-8 text-black dark:text-white">
         {currentMedia.about.overview}

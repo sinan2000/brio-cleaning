@@ -6,40 +6,40 @@ export default function ServicesSection() {
   const services = [
     {
       icon: Sofa,
-      title: "Upholstery Cleaning",
+      title: "Curățare Tapițerie",
       description:
-        "Professional deep cleaning for sofas, chairs, mattresses, and all fabric furniture. We restore freshness and extend the life of your upholstery.",
+        "Curățare profesională în profunzime pentru canapele, scaune, saltele și toate mobilierul din țesătură. Restaurăm prospețimea și extindem durata de viață a tapițeriei dumneavoastră.",
       features: [
-        "Deep steam cleaning",
-        "Stain removal",
-        "Fabric protection",
-        "Odor elimination",
+        "Curățare profundă cu aburi",
+        "Îndepărtarea petelor",
+        "Protecția țesăturii",
+        "Eliminarea mirosurilor",
       ],
       image: "/tapiterii.jpg",
     },
     {
       icon: Car,
-      title: "Automotive Cleaning",
+      title: "Curățare Auto",
       description:
-        "Complete interior and exterior car detailing services. From leather seats to carpets, we make your vehicle look and feel like new.",
+        "Servicii complete de detailing interior și exterior pentru automobile. De la scaune din piele la covoare, facem ca vehiculul dumneavoastră să arate și să se simtă ca nou.",
       features: [
-        "Interior detailing",
-        "Leather treatment",
-        "Carpet cleaning",
-        "Paint protection",
+        "Detalierea interiorului",
+        "Tratamentul pielii",
+        "Curățarea covoarelor",
+        "Protecția vopselei",
       ],
       image: "auto.jpg",
     },
     {
       icon: Building2,
-      title: "HoReCa Services",
+      title: "Servicii HoReCa",
       description:
-        "Specialized cleaning for hotels, restaurants, and cafes. We understand the unique hygiene standards required in the hospitality industry.",
+        "Curățare specializată pentru hoteluri, restaurante și cafenele. Înțelegem standardele unice de igienă necesare în industria ospitalității.",
       features: [
-        "Commercial grade cleaning",
-        "Health compliance",
-        "Flexible scheduling",
-        "Emergency services",
+        "Curățare de grad comercial",
+        "Conformitate cu normele de sănătate",
+        "Programare flexibilă",
+        "Servicii de urgență",
       ],
       image: "/horeca.jpg",
     },
@@ -50,11 +50,11 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Services
+            Serviciile Noastre
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
-            Comprehensive cleaning solutions tailored to your specific needs.
-            Professional results, every time.
+            Soluții complete de curățare adaptate nevoilor dumneavoastră specifice.
+            Rezultate profesionale, de fiecare dată.
           </p>
         </div>
 
@@ -98,9 +98,9 @@ export default function ServicesSection() {
 
                 <Button
                   variant="outline"
-                  className="w-full group-hover:bg-brio-blue group-hover:text-white transition-colors duration-300 bg-transparent"
+                  className="w-full group-hover:bg-brio-blue transition-colors duration-300 bg-transparent"
                 >
-                  See More
+                  Vezi mai mult
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>

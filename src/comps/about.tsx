@@ -12,29 +12,29 @@ export default function AboutUs() {
       </div>
       <div>
         <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4">
-          Excellence in Every Detail
+          Excelență în curățenie, dedicare pentru tine
         </h3>
         <p className="text-gray-600 mb-6 text-pretty">
-          Our commitment to quality goes beyond surface cleaning. We understand
-          that every fabric, every vehicle, and every commercial space has
-          unique needs. That's why we've developed specialized techniques and
-          use only the finest eco-friendly products to ensure outstanding
-          results while protecting your health and the environment.
+          Angajamentul nostru față de calitate depășește curățarea de suprafață. Înțelegem
+          că fiecare țesătură, fiecare vehicul și fiecare spațiu comercial are
+          nevoi unice. De aceea, am dezvoltat tehnici specializate și
+          folosim doar cele mai bune produse ecologice pentru a asigura rezultate
+          remarcabile, protejând în același timp sănătatea dumneavoastră și mediul.
         </p>
         <div className="space-y-3">
           <div className="flex items-center">
             <CheckCircle className="h-5 w-5 text-brio-blue mr-3" />
             <span className="text-gray-700">
-              Certified cleaning professionals
+              Profesioniști certificați în curățenie
             </span>
           </div>
           <div className="flex items-center">
             <CheckCircle className="h-5 w-5 text-brio-blue mr-3" />
-            <span className="text-gray-700">State-of-the-art equipment</span>
+            <span className="text-gray-700">Echipamente de ultimă generație</span>
           </div>
           <div className="flex items-center">
             <CheckCircle className="h-5 w-5 text-brio-blue mr-3" />
-            <span className="text-gray-700">Fully insured and bonded</span>
+            <span className="text-gray-700">Complet asigurați și garantați</span>
           </div>
         </div>
       </div>
