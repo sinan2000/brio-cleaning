@@ -24,7 +24,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo.png"
-                alt="Slim & Beauty by MC logo"
+                alt="BrioCleaning Logo"
                 width={48}
                 height={18}
                 priority
