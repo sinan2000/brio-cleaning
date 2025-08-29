@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ScrollExpandMedia from "./client";
+import AboutUs from "../about";
 
 interface MediaAbout {
   overview: string;
@@ -32,7 +33,7 @@ const sampleMediaContent: MediaContentCollection = {
     scrollToExpand: "Ca tu să fii liniștit",
     about: {
       overview:
-        "This is a demonstration of the ScrollExpandMedia component with a video. As you scroll, the video expands to fill more of the screen, creating an immersive experience. This component is perfect for showcasing video content in a modern, interactive way.",
+        "BrioCleaning is Timișoara's premier cleaning service, specializing in upholstery, automotive, and commercial cleaning. We combine years of expertise with cutting-edge techniques to deliver exceptional results that exceed expectations.",
       conclusion:
         "The ScrollExpandMedia component provides a unique way to engage users with your content through interactive scrolling. Try switching between video and image modes to see different implementations.",
     },
@@ -59,15 +60,13 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
   return (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
-        About This Component
+        Who we are?
       </h2>
       <p className="text-lg mb-8 text-black dark:text-white">
         {currentMedia.about.overview}
       </p>
 
-      <p className="text-lg mb-8 text-black dark:text-white">
-        {currentMedia.about.conclusion}
-      </p>
+      <AboutUs />
     </div>
   );
 };
