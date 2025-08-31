@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from '@/assets/logo.png'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,12 +23,10 @@ export default function Navbar() {
         <div className="flex-shrink-0">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src={logo}
               alt="BrioCleaning Logo"
-              width={160} // pick a logical width
-              height={40} // height sets the logo’s real height
               priority
-              className="h-10 w-auto" // control height with Tailwind
+              className="h-8 md:h-10 lg:h-12 w-auto" // control height with Tailwind
             />
           </Link>
         </div>

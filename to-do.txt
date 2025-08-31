@@ -1,6 +1,28 @@
-- create alternative logo in figma, from main colors; 
 - go over each component, starting from navbar & mobile (with programari button also showing on mobile) and nice animation for mobile, maybe the logo itself rotating or jumping around?
 - hero make a nice linie ce se inconjoara ca un arc in jos sa vada omul ca e mai jos
+
+autoplay:
+  const loadVideoCb = useCallback(({source}: {source: string}) => {
+    if (videoRef.current) {
+      const video = videoRef.current;
+      video.controls = false; // or true
+      video.muted = true;
+      video.autoplay = true;
+
+      setTimeout(() => {
+        const promise = video?.play();
+        if (promise?.then) {
+          promise.then(() => {}).catch(() => {});
+        }
+      }, 0);
+    }
+  }, [source]);
+
+  useEffect(() => {
+    loadVideoCb();
+  }, [loadVideoCb]);
+
+
 - make sure texts, colors are matching;
 - finish homepage
 - form

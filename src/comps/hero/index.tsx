@@ -25,7 +25,7 @@ interface MediaContentCollection {
 const sampleMediaContent: MediaContentCollection = {
   video: {
     src: "/hero.mp4",
-    poster: "/hero.jpg",
+    poster: "/poster.jpg",
     background: "/hero.jpg",
     title: "Curățare Cu Brio",
     date: "Noi ne ocupăm de pete",
