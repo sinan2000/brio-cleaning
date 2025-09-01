@@ -46,3 +46,4 @@ after payment:
 - buy mail and link to gmail
 
 - prezinti pagespeed si ahref
+- ii faci la final oferta ii spui daca vrea calendar sincronizat ca va costa si whatsapp auto-reply

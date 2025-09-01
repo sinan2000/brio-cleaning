@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from '@/assets/logo.png'
+import logo from "@/assets/logo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ export default function Navbar() {
               src={logo}
               alt="BrioCleaning Logo"
               priority
-              className="h-10 md:h-12 lg:h-14 w-auto" // control height with Tailwind
+              className="h-10 md:h-12 lg:h-14 w-auto"
             />
           </Link>
         </div>

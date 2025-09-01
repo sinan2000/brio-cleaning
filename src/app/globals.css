@@ -43,6 +43,11 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-brio-blue: var(--brio-blue-primary);
+  --color-brio-blue-dark: var(--brio-blue-secondary);
+  --color-brio-white: var(--brio-white);
+  --color-brio-gray: var(--brio-gray);
 }
 
 :root {
@@ -145,23 +150,4 @@
     font-family: var(--font-heading);
   }
 
-  .text-brio-blue {
-    color: var(--brio-blue-primary);
-  }
-
-  .text-brio-blue-dark {
-    color: var(--brio-blue-secondary);
-  }
-
-  .bg-brio-blue {
-    background-color: var(--brio-blue-primary);
-  }
-
-  .bg-brio-blue-dark {
-    background-color: var(--brio-blue-secondary);
-  }
-
-  .bg-brio-gray {
-    background-color: var(--brio-gray);
-  }
 }
