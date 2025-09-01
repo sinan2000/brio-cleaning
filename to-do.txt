@@ -37,6 +37,7 @@ autoplay:
 !! MAKE ALL MEDIA SMALLER
 
 after payment:
+- favicon
 - analytics
 - optimizations
 - do meta for home, servicii, service, politica confidentialitate>?? sau teermen ??

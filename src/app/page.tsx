@@ -1,7 +1,7 @@
-import { VideoExpansion } from "@/comps/hero";
-import Results from "@/comps/results";
-import ServicesSection from "@/comps/services";
-import SocialsSection from "@/comps/socials";
+import { VideoExpansion } from "@/components/homepage/hero";
+import Results from "@/components/homepage/results";
+import ServicesSection from "@/components/homepage/services";
+import SocialsSection from "@/components/homepage/socials";
 
 export default function Page() {
     return (
