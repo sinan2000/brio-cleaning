@@ -3,7 +3,6 @@ import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import InfoBar from "@/components/infobar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -33,8 +32,6 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${openSans.variable} antialiased`}
       >
-        <InfoBar />
-
         <Navbar />
         {children}
         <Footer />

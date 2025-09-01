@@ -7,7 +7,7 @@ export default function InfoBar() {
         href="/#programari"
         className="font-medium underline underline-offset-2 hover:text-brio-blue-dark transition-colors"
       >
-        Programează-te acum →
+        Programează-te acum
       </Link>
     </div>
   );
