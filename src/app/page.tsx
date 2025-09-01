@@ -6,11 +6,15 @@ import SocialsSection from "@/components/homepage/socials";
 export default function Page() {
     return (
         <main>
+            {/*
             <VideoExpansion />
             <ServicesSection />
             <Results />
-            {/* <BookAppointment/> */}
+             <BookAppointment/> 
             <SocialsSection />
+            */}
+            <h1 className="text-4xl">test</h1>
+            <p>test</p>
         </main>
     )
 }

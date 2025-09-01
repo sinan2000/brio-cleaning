@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Montserrat, Open_Sans } from "next/font/google";
+import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
-const montserrat = Montserrat({
+const poppins = Poppins({
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-montserrat",
+  variable: "--font-poppins",
 });
 
 const openSans = Open_Sans({
@@ -30,11 +31,9 @@ export default function RootLayout({
   return (
     <html lang="ro" className="scroll-smooth">
       <body
-        className={`${montserrat.variable} ${openSans.variable} antialiased`}
+        className={`${poppins.variable} ${openSans.variable} antialiased`}
       >
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
