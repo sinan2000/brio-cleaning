@@ -26,7 +26,7 @@ export default function Navbar() {
               src={logo}
               alt="BrioCleaning Logo"
               priority
-              className="h-8 md:h-10 lg:h-12 w-auto" // control height with Tailwind
+              className="h-10 md:h-12 lg:h-14 w-auto" // control height with Tailwind
             />
           </Link>
         </div>

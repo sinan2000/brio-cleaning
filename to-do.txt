@@ -1,4 +1,8 @@
 - go over each component, starting from navbar & mobile (with programari button also showing on mobile) and nice animation for mobile, maybe the logo itself rotating or jumping around?
+
+- dodo hero delete all dead unused code and simply insert a comm with the link of component so its both efficient and easy to change if needed
+- dodo mobile video if screen width is sm size? and little bigger starting dimensions for desktop
+
 - hero make a nice linie ce se inconjoara ca un arc in jos sa vada omul ca e mai jos
 
 autoplay:
@@ -37,5 +41,8 @@ after payment:
 - optimizations
 - do meta for home, servicii, service, politica confidentialitate>?? sau teermen ??
 - do json ld also
+
 - buy domain
 - buy mail and link to gmail
+
+- prezinti pagespeed si ahref
