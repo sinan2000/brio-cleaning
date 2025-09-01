@@ -1,3 +1,7 @@
+- pick on typography and color palette
+- make logo based on the fonts
+- find animation for mobile nav so you can show logo and just after that the text animated
+
 - go over each component, starting from navbar & mobile (with programari button also showing on mobile) and nice animation for mobile, maybe the logo itself rotating or jumping around?
 
 - also mobile phone and/or whatsapp number and link for it?
