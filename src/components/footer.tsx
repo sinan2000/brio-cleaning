@@ -80,48 +80,42 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center md:justify-between">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} BrioCleaning. Toate drepturile
-              rezervate. Servicii de curățare profesionale în Timișoara
-            </p>
+ <div className="border-t border-gray-800 mt-8 pt-6">
+   {/* Mobile: stacks in DOM order (©, links, ANPC)
+       LG: 2 columns → © left (row1 col1), ANPC right (row1 col2), links under © (row2 col1) */}
+   <div className="grid gap-4 lg:grid-cols-[1fr_auto]">
+     {/* © text */}
+     <p className="text-gray-400 text-sm text-center lg:text-left lg:row-start-1 lg:col-start-1">
+       © {new Date().getFullYear()} BrioCleaning. Toate drepturile rezervate. Servicii de curățare profesionale în Timișoara
+     </p>
 
-            <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center">
-              <div className="flex items-center gap-3 text-sm">
-                <Link
-                  href="/termeni-si-conditii"
-                  className="text-gray-300 hover:text-brio-blue transition-colors"
-                >
-                  Termeni și condiții
-                </Link>
-                <span className="hidden sm:inline text-gray-600">•</span>
-                <Link
-                  href="/politica-de-confidentialitate"
-                  className="text-gray-300 hover:text-brio-blue transition-colors"
-                >
-                  Politica de confidențialitate
-                </Link>
-              </div>
-              {/* ANPC logo (optional) ODR link */}
-              <div className="flex items-center gap-3">
-                <a
-                  href="https://anpc.ro/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex"
-                  aria-label="ANPC – Autoritatea Națională pentru Protecția Consumatorilor"
-                >
-                  <Image
-                    src={anpcSal}
-                    alt="ANPC"
-                    className="h-10 w-auto opacity-90 hover:opacity-100 transition"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+     {/* Policy links (under © on large screens) */}
+     <div className="flex items-center justify-center gap-3 text-sm lg:justify-start lg:row-start-2 lg:col-start-1">
+       <Link href="/termeni-si-conditii" className="text-gray-300 underline hover:text-brio-blue transition-colors">
+         Termeni și condiții
+       </Link>
+       <span className="hidden sm:inline text-gray-600">•</span>
+       <Link href="/politica-de-confidentialitate" className="text-gray-300 underline hover:text-brio-blue transition-colors">
+         Politica de confidențialitate
+       </Link>
+     </div>
+
+     {/* ANPC at the end of the first row on large screens */}
+     <a
+       href="https://anpc.ro/"
+       target="_blank"
+       rel="noopener noreferrer"
+       className="inline-flex justify-self-center lg:justify-self-end lg:row-start-1 lg:col-start-2"
+       aria-label="ANPC – Autoritatea Națională pentru Protecția Consumatorilor"
+     >
+       <Image
+         src={anpcSal}
+         alt="ANPC"
+         className="h-10 w-auto opacity-90 hover:opacity-100 transition"
+       />
+     </a>
+   </div>
+ </div>
       </div>
     </footer>
   );
