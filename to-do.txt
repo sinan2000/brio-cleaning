@@ -6,6 +6,7 @@
 - snsautomation footer
 
 - add animations for all homepage components, it would look really great
+- check text sizes at different breakpoints
 
 !! MAKE ALL MEDIA SMALLER
 
