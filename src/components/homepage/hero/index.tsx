@@ -1,9 +1,11 @@
 // https://21st.dev/arunachalam0606/scroll-expansion-hero/default
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import ScrollExpandMedia from "./client";
 import AboutUs from "../about";
+import background from "@/assets/hero.jpg";
+import { StaticImageData } from "next/image";
 
 interface MediaAbout {
   overview: string;
@@ -11,8 +13,8 @@ interface MediaAbout {
 
 interface MediaContent {
   src: string;
-  poster?: string;
-  background: string;
+  poster: string;
+  background: StaticImageData;
   title: string;
   date: string;
   scrollToExpand: string;
@@ -21,8 +23,8 @@ interface MediaContent {
 
 const sampleMediaContent: MediaContent = {
   src: "/hero.mp4",
-  poster: "/poster.jpg",
-  background: "/hero.jpg",
+  background: background,
+  poster: '/hero/poster.jpg',
   title: "Curățare Cu Brio",
   date: "Noi ne ocupăm de pete",
   scrollToExpand: "Ca tu să fii liniștit",
@@ -62,8 +64,8 @@ export const VideoExpansion = () => {
     <div className="min-h-screen">
       <ScrollExpandMedia
         mediaSrc={currentMedia.src}
-        posterSrc={currentMedia.poster}
-        bgImageSrc={currentMedia.background}
+        posterSrc={currentMedia.poster!}
+        bgImageSrc={currentMedia.background!}
         title={currentMedia.title}
         date={currentMedia.date}
         scrollToExpand={currentMedia.scrollToExpand}

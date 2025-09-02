@@ -8,13 +8,13 @@ import {
   TouchEvent,
   WheelEvent,
 } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react";
 
 interface ScrollExpandMediaProps {
   mediaSrc: string;
-  posterSrc?: string;
-  bgImageSrc: string;
+  posterSrc: string;
+  bgImageSrc: StaticImageData;
   title?: string;
   date?: string;
   scrollToExpand?: string;
@@ -181,9 +181,7 @@ const ScrollExpandMedia = ({
           >
             <Image
               src={bgImageSrc}
-              alt="Background"
-              width={1920}
-              height={1080}
+              alt="Hero Background"
               className="w-screen h-screen"
               style={{
                 objectFit: "cover",
