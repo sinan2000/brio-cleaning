@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Calendar } from "lucide-react";
 import WhatsAppButton from "../WhatsApp";
+import LogoAnimated from "../LogoAnimated";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,6 +83,9 @@ export default function Navbar() {
       {/* Mobile Fullscreen Overlay */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-[60] bg-white/95 backdrop-blur-sm md:hidden">
+          <div className="pt-2 px-4 flex justify-center">
+            <LogoAnimated key="logo-anim-open" />
+          </div>
           {/* Menu content */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
             <nav className="flex flex-col space-y-2">
