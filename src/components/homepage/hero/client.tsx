@@ -42,6 +42,7 @@ const ScrollExpandMedia = ({
 
   const effectiveMediaSrc =
     isMobileState && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
+  console.log(effectiveMediaSrc)
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
 

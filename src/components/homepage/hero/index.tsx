@@ -24,7 +24,7 @@ interface MediaContent {
 
 const sampleMediaContent: MediaContent = {
   src: "/hero/desktop.mp4",
-  mobileMediaSrc: "hero/mobile.mp4",
+  mobileMediaSrc: "/hero/mobile.mp4",
   background: background,
   poster: "/hero/poster.jpg",
   title: "Curățare Cu Brio",
@@ -66,6 +66,7 @@ export const VideoExpansion = () => {
     <div className="min-h-screen">
       <ScrollExpandMedia
         mediaSrc={currentMedia.src}
+        mobileMediaSrc={currentMedia.mobileMediaSrc}
         posterSrc={currentMedia.poster!}
         bgImageSrc={currentMedia.background!}
         title={currentMedia.title}
