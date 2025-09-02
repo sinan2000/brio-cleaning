@@ -35,7 +35,7 @@ export default function MobileOverlay({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.25 }}
-      className="fixed inset-0 z-[60] md:hidden bg-white flex flex-col min-h-dvh"
+      className="fixed inset-0 z-[60] md:hidden bg-white flex flex-col min-h-dvh overflow-y-auto"
     >
       <Image
         src={background}
@@ -96,12 +96,11 @@ export default function MobileOverlay({
       {/* 4) Bottom footer with year + policy links */}
       <div className="shrink-0 border-t border-gray-200 bg-white/85 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-gray-600">
+          <div className="flex flex-col items-center justify-center gap-2 text-sm text-gray-600">
             <span>
               © {new Date().getFullYear()} Brio Cleaning. Toate drepturile
               rezervate.
             </span>
-            <span className="hidden sm:inline">•</span>
             <div className="flex items-center gap-3">
               <Link
                 href="/politica-de-confidentialitate"
@@ -110,7 +109,7 @@ export default function MobileOverlay({
               >
                 Politica de confidențialitate
               </Link>
-              <span className="sm:hidden">•</span>
+              <span>•</span>
               <Link
                 href="/termeni-si-conditii"
                 className="underline hover:text-brio-blue"
