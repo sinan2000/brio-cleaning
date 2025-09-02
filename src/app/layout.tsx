@@ -33,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${openSans.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

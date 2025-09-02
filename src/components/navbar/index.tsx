@@ -42,7 +42,7 @@ export default function Navbar() {
                 href={item.href}
                 className={`flex items-center gap-1 text-sm font-medium transition-colors ${
                   isActive
-                    ? "text-brio-blue underline underline-offset-4"
+                    ? "text-brio-blue-dark underline underline-offset-4"
                     : "text-gray-700 hover:text-brio-blue"
                 }`}
               >

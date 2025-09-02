@@ -11,7 +11,7 @@ export default function AboutUs() {
         />
       </div>
       <div>
-        <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
           Excelență în curățenie, dedicare pentru tine
         </h3>
         <p className="text-gray-600 mb-6 text-pretty">

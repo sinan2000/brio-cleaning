@@ -26,7 +26,7 @@ export default function SocialsSection() {
   return (
     <section className="py-16 bg-brio-blue">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           Urmărește-ne călătoria de curățare online!
         </h2>
         <p className="text-xl text-blue-100 mb-8 text-pretty">

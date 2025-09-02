@@ -38,7 +38,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">
+            <h3 className="text-lg font-semibold mb-4">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">
+            <h3 className="text-lg font-semibold mb-4">
               Services
             </h3>
             <ul className="space-y-2">
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">
+            <h3 className="text-lg font-semibold mb-4">
               Contact Info
             </h3>
             <div className="space-y-3">
