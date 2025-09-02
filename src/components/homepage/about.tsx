@@ -1,11 +1,13 @@
 import { CheckCircle } from "lucide-react";
+import Image from "next/image";
+import photo from "@/assets/hero/about-us.jpg"
 
 export default function AboutUs() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <img
-          src="/about-us.jpg"
+        <Image
+          src={photo}
           alt="BrioCleaning team at work"
           className="rounded-lg shadow-lg w-full h-auto"
         />
@@ -23,17 +25,17 @@ export default function AboutUs() {
         </p>
         <div className="space-y-3">
           <div className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-brio-blue mr-3" />
+            <CheckCircle className="h-5 w-5 text-brio-green mr-3" />
             <span className="text-gray-700">
               Profesioniști certificați în curățenie
             </span>
           </div>
           <div className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-brio-blue mr-3" />
+            <CheckCircle className="h-5 w-5 text-brio-green mr-3" />
             <span className="text-gray-700">Echipamente de ultimă generație</span>
           </div>
           <div className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-brio-blue mr-3" />
+            <CheckCircle className="h-5 w-5 text-brio-green mr-3" />
             <span className="text-gray-700">Complet asigurați și garantați</span>
           </div>
         </div>

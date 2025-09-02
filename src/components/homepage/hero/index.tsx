@@ -4,7 +4,7 @@
 import { useEffect } from "react";
 import ScrollExpandMedia from "./client";
 import AboutUs from "../about";
-import background from "@/assets/hero.jpg";
+import background from "@/assets/hero/background.jpg";
 import { StaticImageData } from "next/image";
 
 interface MediaAbout {

@@ -1,6 +1,3 @@
-- hero make a nice linie ce se inconjoara ca un arc in jos sa vada omul ca e mai jos
-- block mobile navbar open scroll behind text with tailwind only
-
 - make sure texts, colors are matching;
 - finish homepage
 - form
