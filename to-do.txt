@@ -5,6 +5,8 @@
 - texts best for seo, search
 - snsautomation footer
 
+- add animations for all homepage components, it would look really great
+
 !! MAKE ALL MEDIA SMALLER
 
 after payment:

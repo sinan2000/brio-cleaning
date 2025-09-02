@@ -1,6 +1,6 @@
 import { VideoExpansion } from "@/components/homepage/hero";
-import Results from "@/components/homepage/results";
 import ServicesSection from "@/components/homepage/services";
+import Results from "@/components/homepage/results";
 import SocialsSection from "@/components/homepage/socials";
 
 export default function Page() {
@@ -8,8 +8,8 @@ export default function Page() {
     <main>
       <VideoExpansion />
       <ServicesSection />
+      <Results />
       {/*
-            <Results />
              <BookAppointment/> 
             <SocialsSection />
             */}
