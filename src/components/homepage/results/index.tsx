@@ -1,5 +1,3 @@
-import { LayoutGridDemo } from "./grid";
-
 export default function Results() {
   return (
     <section className="py-20 bg-white">
@@ -14,7 +12,6 @@ export default function Results() {
         </div>
       </div>
 
-      <LayoutGridDemo />
     </section>
   );
 }
