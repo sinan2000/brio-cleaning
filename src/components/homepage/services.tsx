@@ -22,7 +22,7 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="pt-0 group hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col"
+              className="pt-0 group hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col gap-0"
             >
               <div className="relative overflow-hidden rounded-t-xl">
                 <Image
@@ -35,9 +35,7 @@ export default function ServicesSection() {
                 </div>
               </div>
 
-              <div className="h-px w-full bg-gray-200" />
-
-              <CardHeader>
+              <CardHeader className="pt-4 pb-2">
                 <CardTitle className="text-xl text-gray-900">
                   {service.title}
                 </CardTitle>
@@ -61,7 +59,7 @@ export default function ServicesSection() {
                 <div className="mt-auto">
                   <Button
                     variant="outline"
-                    className="w-full group-hover:bg-brio-blue transition-colors duration-300 bg-transparent"
+                    className="w-full group-hover:bg-brio-blue-dark group-hover:text-white hover:bg-brio-blue hover:text-white transition-colors duration-300 bg-transparent"
                   >
                     Vezi mai mult
                     <ArrowRight className="ml-2 h-4 w-4" />
