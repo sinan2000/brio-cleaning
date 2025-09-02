@@ -7,8 +7,8 @@ export default function Page() {
   return (
     <main>
       <VideoExpansion />
+      <ServicesSection />
       {/*
-            <ServicesSection />
             <Results />
              <BookAppointment/> 
             <SocialsSection />
