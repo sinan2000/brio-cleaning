@@ -26,3 +26,8 @@ video prezinti:
 - compari design cu competitorii
 - prezinti pagespeed si ahref
 - ii faci la final oferta ii spui daca vrea calendar sincronizat ca va costa si whatsapp auto-reply "DOAR DUPA CE INCEPE SA AIBA REZULTATE" ca sa nu para cal faci de bani
+
+
+idea:
+PROGRAMARE -> Post la /api/programari → trimite în:
+Mail / Slack / GSheet + opțional Google Calendar (event “tentative”).
