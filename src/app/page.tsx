@@ -9,10 +9,7 @@ export default function Page() {
       <VideoExpansion />
       <ServicesSection />
       <Results />
-      {/*
-             <BookAppointment/> 
-            <SocialsSection />
-            */}
+      <SocialsSection />
     </main>
   );
 }

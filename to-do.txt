@@ -1,12 +1,15 @@
 - make sure texts, colors are matching;
 - finish homepage
-- form
-- make service pages (/servicii/[service]) with constants.ts for declaring all 3 services
-- texts best for seo, search
+- booking pace
+- contact page
+- make service pages /servicii and  (/servicii/[service]) with constants.ts for declaring all 3 services
+
 - snsautomation footer
 
-- add animations for all homepage components, it would look really great
+GO OVER EACH COMPONENT:
+- texts best for seo, search
 - check text sizes at different breakpoints
+- add animations for all homepage components, it would look really great
 
 !! MAKE ALL MEDIA SMALLER
 
