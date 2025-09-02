@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import Logo from "../Logo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Calendar } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,12 +23,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image
-            src={logo}
-            alt="BrioCleaning Logo"
-            priority
-            className="h-10 md:h-12 lg:h-14 w-auto"
-          />
+          <Logo />
         </Link>
 
         {/* Desktop Menu */}

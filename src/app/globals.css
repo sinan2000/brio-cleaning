@@ -45,7 +45,7 @@
 
   --color-brio-blue: var(--brio-blue-primary);
   --color-brio-blue-dark: var(--brio-blue-secondary);
-  --color-brio-white: var(--brio-white);
+  --color-brio-green: var(--brio-green);
   --color-brio-gray: var(--brio-gray);
 }
 
@@ -88,8 +88,7 @@
   /* Added BrioCleaning brand colors */
   --brio-blue-primary: #00aeef;
   --brio-blue-secondary: #006994;
-  --brio-green: #38C172;
-  --brio-white: #ffffff;
+  --brio-green: #38c172;
   --brio-gray: #f2f2f2;
 }
 
@@ -136,8 +135,23 @@
     @apply bg-background text-foreground font-open-sans;
   }
 
-  h1, h2, h3, h4, h5, h6 { @apply font-poppins; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-poppins;
+  }
 
-  h1, h2 { @apply font-bold; }
-  h3, h4, h5, h6 { @apply font-semibold; }
+  h1,
+  h2 {
+    @apply font-bold;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
 }
