@@ -13,6 +13,7 @@ import { motion } from "motion/react";
 
 interface ScrollExpandMediaProps {
   mediaSrc: string;
+  mobileMediaSrc?: string;
   posterSrc: string;
   bgImageSrc: StaticImageData;
   title?: string;
@@ -24,6 +25,7 @@ interface ScrollExpandMediaProps {
 
 const ScrollExpandMedia = ({
   mediaSrc,
+  mobileMediaSrc,
   posterSrc,
   bgImageSrc,
   title,
@@ -37,6 +39,9 @@ const ScrollExpandMedia = ({
   const [mediaFullyExpanded, setMediaFullyExpanded] = useState<boolean>(false);
   const [touchStartY, setTouchStartY] = useState<number>(0);
   const [isMobileState, setIsMobileState] = useState<boolean>(false);
+
+  const effectiveMediaSrc =
+    isMobileState && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -159,8 +164,15 @@ const ScrollExpandMedia = ({
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
-  const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
-  const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
+  // Start bigger on desktop (approx YouTube 16:9), keep mobile exactly the same.
+  const baseW = isMobileState ? 300 : 800; // 800x450 start on desktop
+  const baseH = isMobileState ? 400 : 450;
+  // Deltas chosen so desktop final size stays in the same ballpark as before.
+  const deltaW = isMobileState ? 650 : 750; // desktop: 800 -> ~1550 at 100%
+  const deltaH = isMobileState ? 200 : 300; // desktop: 450 -> ~750 at 100%
+  const mediaWidth = baseW + scrollProgress * deltaW;
+  const mediaHeight = baseH + scrollProgress * deltaH;
+
   const textTranslateX = scrollProgress * (isMobileState ? 180 : 150);
 
   const firstWord = title ? title.split(" ")[0] : "";
@@ -204,19 +216,19 @@ const ScrollExpandMedia = ({
                   boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.3)",
                 }}
               >
-                {mediaSrc.includes("youtube.com") ? (
+                {effectiveMediaSrc.includes("youtube.com") ? (
                   <div className="relative w-full h-full pointer-events-none">
                     <iframe
                       width="100%"
                       height="100%"
                       src={
-                        mediaSrc.includes("embed")
-                          ? mediaSrc +
-                            (mediaSrc.includes("?") ? "&" : "?") +
+                        effectiveMediaSrc.includes("embed")
+                          ? effectiveMediaSrc +
+                            (effectiveMediaSrc.includes("?") ? "&" : "?") +
                             "autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1"
-                          : mediaSrc.replace("watch?v=", "embed/") +
+                          : effectiveMediaSrc.replace("watch?v=", "embed/") +
                             "?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&playlist=" +
-                            mediaSrc.split("v=")[1]
+                            effectiveMediaSrc.split("v=")[1]
                       }
                       className="w-full h-full rounded-xl"
                       frameBorder="0"
@@ -238,7 +250,7 @@ const ScrollExpandMedia = ({
                 ) : (
                   <div className="relative w-full h-full pointer-events-none">
                     <video
-                      src={mediaSrc}
+                      src={effectiveMediaSrc}
                       poster={posterSrc}
                       autoPlay
                       muted

@@ -13,6 +13,7 @@ interface MediaAbout {
 
 interface MediaContent {
   src: string;
+  mobileMediaSrc?: string;
   poster: string;
   background: StaticImageData;
   title: string;
@@ -23,8 +24,9 @@ interface MediaContent {
 
 const sampleMediaContent: MediaContent = {
   src: "/hero/desktop.mp4",
+  mobileMediaSrc: "hero/mobile.mp4",
   background: background,
-  poster: '/hero/poster.jpg',
+  poster: "/hero/poster.jpg",
   title: "Curățare Cu Brio",
   date: "Noi ne ocupăm de pete",
   scrollToExpand: "Ca tu să fii liniștit",
