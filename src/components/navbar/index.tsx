@@ -55,7 +55,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu toggle */}
-        <div className="md:hidden z-100">
+        <div className="md:hidden z-[100]">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-gray-700 hover:text-brio-blue p-2"
