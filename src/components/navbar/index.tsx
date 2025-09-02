@@ -6,6 +6,7 @@ import Logo from "../Logo";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Calendar } from "lucide-react";
+import WhatsAppButton from "../WhatsApp";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,8 +15,7 @@ export default function Navbar() {
   const menuItems = [
     { name: "Acasă", href: "/" },
     { name: "Servicii", href: "/servicii" },
-    { name: "Contact", href: "/#contact" },
-    { name: "Programări", href: "/#programari", icon: Calendar },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -40,7 +40,6 @@ export default function Navbar() {
                     : "text-gray-700 hover:text-brio-blue"
                 }`}
               >
-                {item.icon && <item.icon size={16} />}
                 {item.name}
               </Link>
             );
@@ -48,10 +47,22 @@ export default function Navbar() {
         </div>
 
         {/* CTA on desktop */}
-        <div className="hidden md:block">
-          <Link href="/#programari">
-            <Button className="bg-brio-blue hover:bg-brio-blue-dark text-white">
-              Rezervă acum
+        <div className="hidden md:flex items-center gap-3">
+          {/* WhatsApp secondary CTA */}
+          <Link
+            href="https://wa.me/40732405829?text=Buna!%20As%20dori%20o%20programare%20pentru%20curatare."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Scrie-ne pe WhatsApp"
+            className="inline-flex"
+          >
+            <WhatsAppButton />
+          </Link>
+
+          <Link href="/programari">
+            <Button className="bg-brio-blue-dark hover:bg-brio-blue text-white">
+              <Calendar size={16} />
+              Programează acum
             </Button>
           </Link>
         </div>
