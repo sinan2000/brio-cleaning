@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 import { motion } from "motion/react";
 import WhatsAppButton from "../WhatsApp";
 import { Calendar } from "lucide-react";
-import background from "@/assets/mobilemenu.jpg";
+import background from "@/assets/navbar/mobilemenu.jpg";
 
 const listStagger = {
   hidden: { opacity: 1 },
@@ -35,7 +35,7 @@ export default function MobileOverlay({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.25 }}
-      className="fixed inset-0 z-[60] md:hidden bg-white/90 backdrop-blur-sm flex flex-col min-h-dvh"
+      className="fixed inset-0 z-[60] md:hidden bg-white flex flex-col min-h-dvh"
     >
       <Image
         src={background}

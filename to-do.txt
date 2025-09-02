@@ -1,16 +1,3 @@
-- pick on typography and color palette
-- make logo based on the fonts
-- find animation for mobile nav so you can show logo and just after that the text animated
-
-- go over each component, starting from navbar & mobile (with programari button also showing on mobile) and nice animation for mobile, maybe the logo itself rotating or jumping around?
-
-- also mobile phone and/or whatsapp number and link for it?
-- check programari button on navbar rather than infobar
-- check underline if fitting for desktop links
-- mobile navbar cool animation
-- links nicely on mobile nav
-
-
 - dodo hero delete all dead unused code and simply insert a comm with the link of component so its both efficient and easy to change if needed
 - dodo mobile video if screen width is sm size? and little bigger starting dimensions for desktop
 

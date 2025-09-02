@@ -4,17 +4,15 @@ import ServicesSection from "@/components/homepage/services";
 import SocialsSection from "@/components/homepage/socials";
 
 export default function Page() {
-    return (
-        <main>
-            {/*
-            <VideoExpansion />
+  return (
+    <main>
+      <VideoExpansion />
+      {/*
             <ServicesSection />
             <Results />
              <BookAppointment/> 
             <SocialsSection />
             */}
-            <h1 className="text-4xl">test</h1>
-            <p>test</p>
-        </main>
-    )
+    </main>
+  );
 }
