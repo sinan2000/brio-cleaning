@@ -13,7 +13,7 @@ export default function MobileOverlay({
   setIsMenuOpen: (isOpen: boolean) => void;
 }) {
   return (
-    <div className="inset-0 z-[60] md:hidden fixed bg-white/95 backdrop-blur-sm flex flex-col">
+    <div className="fixed inset-0 z-[60] md:hidden bg-white/90 backdrop-blur-sm flex flex-col min-h-dvh">
       <Image
         src={background}
         alt="Background Image"
@@ -26,8 +26,8 @@ export default function MobileOverlay({
       </div>
 
       {/* Menu content */}
-      <div className="flex-1 overflow-y-auto max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6">
-        <nav className="flex flex-col items-center text-center space-y-2">
+      <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-center">
+        <nav className="w-full flex flex-col items-center text-center">
           {menuItems.map((item) => (
             <Link
               key={item.name}
@@ -42,7 +42,11 @@ export default function MobileOverlay({
           {/* Mobile CTAs */}
           <div className="mt-4 flex flex-col items-center gap-3 w-full">
             <WhatsAppButton />
-            <Link href="/programari" onClick={() => setIsMenuOpen(false)} className="w-full">
+            <Link
+              href="/programari"
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full"
+            >
               <Button className="w-full bg-brio-blue-dark hover:bg-brio-blue text-white">
                 <Calendar size={16} />
                 Programează acum
