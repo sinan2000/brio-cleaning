@@ -19,6 +19,10 @@ after payment:
 - buy domain
 - buy mail and link to gmail
 
+
+SMALL FIXES:
+- mobile navbar when open block scroll and ensure its scrollable for really small screen sizes
+
 video prezinti:
 - compari design cu competitorii
 - prezinti pagespeed si ahref
