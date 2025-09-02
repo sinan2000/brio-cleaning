@@ -7,17 +7,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Calendar } from "lucide-react";
 import WhatsAppButton from "../WhatsApp";
-import LogoAnimated from "../LogoAnimated";
+import LogoAnimated from "../Logo/Animated";
+import { menuItems } from "@/lib/constants";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  const menuItems = [
-    { name: "Acasă", href: "/" },
-    { name: "Servicii", href: "/servicii" },
-    { name: "Contact", href: "/contact" },
-  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
@@ -49,16 +44,7 @@ export default function Navbar() {
 
         {/* CTA on desktop */}
         <div className="hidden md:flex items-center gap-3">
-          {/* WhatsApp secondary CTA */}
-          <Link
-            href="https://wa.me/40732405829?text=Buna!%20As%20dori%20o%20programare%20pentru%20curatare."
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Scrie-ne pe WhatsApp"
-            className="inline-flex"
-          >
-            <WhatsAppButton />
-          </Link>
+          <WhatsAppButton />
 
           <Link href="/programari">
             <Button className="bg-brio-blue-dark hover:bg-brio-blue text-white">
