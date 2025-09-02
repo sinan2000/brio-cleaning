@@ -68,30 +68,61 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden z-100">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-gray-700 hover:text-brio-blue p-2"
+            aria-label={isMenuOpen ? "Închide meniul" : "Deschide meniul"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Fullscreen Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 bg-white border-t border-gray-200 space-y-1">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-brio-blue"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+        <div className="fixed inset-0 z-[60] bg-white/95 backdrop-blur-sm md:hidden">
+          {/* Menu content */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+            <nav className="flex flex-col space-y-2">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-3 py-3 text-lg font-medium text-gray-800 hover:text-brio-blue"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+
+              {/* (Optional) mobile CTAs inside overlay */}
+              <div className="mt-4 flex flex-col gap-3">
+                <Link
+                  href="https://wa.me/40732405829?text=Buna!%20As%20dori%20o%20programare%20pentru%20curatare."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Scrie-ne pe WhatsApp"
+                  className="inline-flex"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full border-brio-blue-dark text-brio-blue-dark hover:bg-brio-gray"
+                  >
+                    <WhatsAppButton />
+                    WhatsApp
+                  </Button>
+                </Link>
+
+                <Link href="/programari" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="w-full bg-brio-blue-dark hover:bg-brio-blue text-white">
+                    <Calendar size={16} />
+                    Programează acum
+                  </Button>
+                </Link>
+              </div>
+            </nav>
           </div>
         </div>
       )}
