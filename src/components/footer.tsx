@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Logo from "./Logo";
 import { menuItems, services, contact } from "@/lib/constants";
+import anpcSal from "@/assets/anpc-sal.png";
+import Image from "next/image";
 
 export default function Footer() {
   const quickLinks = [
@@ -58,7 +60,9 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Informații de contact</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              Informații de contact
+            </h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-brio-blue" />
@@ -66,25 +70,57 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-brio-blue" />
-                <span className="text-gray-300 text-sm">
-                  {contact.email}
-                </span>
+                <span className="text-gray-300 text-sm">{contact.email}</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-brio-blue mt-0.5" />
-                <span className="text-gray-300 text-sm">
-                  {contact.address}
-                </span>
+                <span className="text-gray-300 text-sm">{contact.address}</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} BrioCleaning. Toate drepturile rezervate. | Servicii de curățare
-            profesionale în Timișoara
-          </p>
+        <div className="border-t border-gray-800 mt-8 pt-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center md:justify-between">
+            <p className="text-gray-400 text-sm text-center md:text-left">
+              © {new Date().getFullYear()} BrioCleaning. Toate drepturile
+              rezervate. Servicii de curățare profesionale în Timișoara
+            </p>
+
+            <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center">
+              <div className="flex items-center gap-3 text-sm">
+                <Link
+                  href="/termeni-si-conditii"
+                  className="text-gray-300 hover:text-brio-blue transition-colors"
+                >
+                  Termeni și condiții
+                </Link>
+                <span className="hidden sm:inline text-gray-600">•</span>
+                <Link
+                  href="/politica-de-confidentialitate"
+                  className="text-gray-300 hover:text-brio-blue transition-colors"
+                >
+                  Politica de confidențialitate
+                </Link>
+              </div>
+              {/* ANPC logo (optional) ODR link */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://anpc.ro/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                  aria-label="ANPC – Autoritatea Națională pentru Protecția Consumatorilor"
+                >
+                  <Image
+                    src={anpcSal}
+                    alt="ANPC"
+                    className="h-10 w-auto opacity-90 hover:opacity-100 transition"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
