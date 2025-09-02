@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ServicesSection() {
   return (
@@ -57,13 +58,15 @@ export default function ServicesSection() {
                 </ul>
 
                 <div className="mt-auto">
-                  <Button
-                    variant="outline"
-                    className="w-full group-hover:bg-brio-blue-dark group-hover:text-white hover:bg-brio-blue hover:text-white transition-colors duration-300 bg-transparent"
-                  >
-                    Vezi mai mult
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link href={service.href}>
+                    <Button
+                      variant="outline"
+                      className="w-full group-hover:bg-brio-blue-dark group-hover:text-white hover:bg-brio-blue hover:text-white transition-colors duration-300 bg-transparent"
+                    >
+                      Vezi mai mult
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

@@ -29,6 +29,7 @@ export const services = [
       "Eliminarea mirosurilor",
     ],
     image: tapiterii,
+    href: '/servicii/curatare-tapiterie'
   },
   {
     icon: Car,
@@ -42,6 +43,7 @@ export const services = [
       "Protecția vopselei",
     ],
     image: auto,
+    href: "/servicii/curatare-auto"
   },
   {
     icon: Building2,
@@ -55,5 +57,6 @@ export const services = [
       "Servicii de urgență",
     ],
     image: horeca,
+    href: "/servicii/curatare-horeca"
   },
 ];
