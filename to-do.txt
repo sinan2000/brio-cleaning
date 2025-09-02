@@ -1,6 +1,5 @@
 - hero make a nice linie ce se inconjoara ca un arc in jos sa vada omul ca e mai jos
 
-
 - make sure texts, colors are matching;
 - finish homepage
 - form
