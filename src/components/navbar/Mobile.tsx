@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 import { motion } from "motion/react";
 import WhatsAppButton from "../WhatsApp";
 import { Calendar } from "lucide-react";
-import background from "@/assets/navbar/mobilemenu.jpg";
+import background from "@/assets/mobile-navbar.jpg";
 
 const listStagger = {
   hidden: { opacity: 1 },
