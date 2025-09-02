@@ -1,28 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Music } from "lucide-react";
+import { socialLinks } from "@/lib/constants";
+import { Icon } from "@iconify/react";
 
 export default function SocialsSection() {
-  const socialLinks = [
-    {
-      name: "TikTok",
-      icon: Music,
-      href: "https://www.tiktok.com/@briocleaningtimisoara",
-      color: "hover:text-black",
-    },
-    {
-      name: "Facebook",
-      icon: Facebook,
-      href: "https://www.facebook.com/BrioCleaningTm",
-      color: "hover:text-blue-600",
-    },
-    {
-      name: "Instagram",
-      icon: Instagram,
-      href: "https://www.instagram.com/briocleaningtm/",
-      color: "hover:text-pink-600",
-    },
-  ];
-
   return (
     <section className="py-16 bg-brio-blue">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -45,7 +25,7 @@ export default function SocialsSection() {
               asChild
             >
               <a href={social.href} target="_blank" rel="noopener noreferrer">
-                <social.icon className="mr-2 h-5 w-5" />
+                <Icon icon={social.icon} className="mr-2 h-5 w-5" />
                 {social.name}
               </a>
             </Button>

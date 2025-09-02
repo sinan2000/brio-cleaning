@@ -1,6 +1,5 @@
-- make sure texts, colors are matching;
 - finish homepage
-- booking pace
+- booking page
 - contact page
 - make service pages /servicii and  (/servicii/[service]) with constants.ts for declaring all 3 services
 

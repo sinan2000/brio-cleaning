@@ -12,6 +12,7 @@ export const menuItems = [
 export const contact = {
   phone: "+40 787 675 225",
   email: "contact@briocleaning.ro",
+  address: "Timișoara, România"
 };
 
 export const normPhone = () => contact.phone.replace(/[\s+]/g, "");
@@ -29,7 +30,7 @@ export const services = [
       "Eliminarea mirosurilor",
     ],
     image: tapiterii,
-    href: '/servicii/curatare-tapiterie'
+    href: "/servicii/curatare-tapiterie",
   },
   {
     icon: Car,
@@ -43,7 +44,7 @@ export const services = [
       "Protecția vopselei",
     ],
     image: auto,
-    href: "/servicii/curatare-auto"
+    href: "/servicii/curatare-auto",
   },
   {
     icon: Building2,
@@ -57,6 +58,24 @@ export const services = [
       "Servicii de urgență",
     ],
     image: horeca,
-    href: "/servicii/curatare-horeca"
+    href: "/servicii/curatare-horeca",
+  },
+];
+
+export const socialLinks = [
+  {
+    name: "TikTok",
+    icon: "logos:tiktok-icon",
+    href: "https://www.tiktok.com/@briocleaningtimisoara",
+  },
+  {
+    name: "Facebook",
+    icon: "logos:facebook",
+    href: "https://www.facebook.com/BrioCleaningTm",
+  },
+  {
+    name: "Instagram",
+    icon: "logos:instagram-icon",
+    href: "https://www.instagram.com/briocleaningtm/",
   },
 ];
