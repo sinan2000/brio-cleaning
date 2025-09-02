@@ -7,11 +7,13 @@ export default function Results() {
             Vezi Diferența
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
-            Rezultate reale de la clienți reali. Experimentează transformarea BrioCleaning.
+            Rezultate reale de la clienți reali. Experimentează transformarea
+            BrioCleaning.
           </p>
         </div>
       </div>
 
+      hello
     </section>
   );
 }
