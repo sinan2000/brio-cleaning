@@ -12,7 +12,7 @@ export const menuItems = [
 export const contact = {
   phone: "+40 787 675 225",
   email: "contact@briocleaning.ro",
-  address: "Timișoara, România"
+  address: "Timișoara, România",
 };
 
 export const normPhone = () => contact.phone.replace(/[\s+]/g, "");
@@ -31,6 +31,7 @@ export const services = [
     ],
     image: tapiterii,
     href: "/servicii/curatare-tapiterie",
+    fact: "Aspirarea cu filtru HEPA pe textile ajută la reducerea alergenilor din praf; iar curățarea prin extracție cu apă caldă contribuie la îndepărtarea contaminanților din țesături.",
   },
   {
     icon: Car,
@@ -45,6 +46,7 @@ export const services = [
     ],
     image: auto,
     href: "/servicii/curatare-auto",
+    fact: "Volanul unei mașini poate adăposti de până la 9x mai mulți germeni decât un capac de toaletă — curățarea regulată a interiorului are impact real.",
   },
   {
     icon: Building2,
@@ -59,6 +61,7 @@ export const services = [
     ],
     image: horeca,
     href: "/servicii/curatare-horeca",
+    fact: "Spălarea textilelor la ≥71°C pentru un interval adecvat este eficientă în distrugerea microorganismelor — bună practică pentru textilele din HoReCa.",
   },
 ];
 
