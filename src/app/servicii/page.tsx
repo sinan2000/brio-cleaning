@@ -1,4 +1,4 @@
-import { Sparkles, CheckCircle } from "lucide-react";
+import { Sparkles, CheckCircle, InfoIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import Link from "next/link";
@@ -61,7 +61,8 @@ export default function ServicesPage() {
                           <Image
                             src={service.image}
                             alt={service.title}
-                            className="w-full h-[400px] object-cover"
+                            className="w-full h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover"
+                            priority={index === 0}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
@@ -73,8 +74,8 @@ export default function ServicesPage() {
                           isEven ? "lg:order-2" : "lg:order-1"
                         } space-y-6`}
                       >
-                        <div className="flex items-center gap-4 mb-6">
-                          <div className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+                        <div className="flex items-center gap-4 mb-4 md:mb-6">
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg bg-brio-blue/10 text-brio-blue-dark">
                             <service.icon className="h-6 w-6" />{" "}
                           </div>
                           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-balance">
@@ -82,19 +83,19 @@ export default function ServicesPage() {
                           </h2>
                         </div>
 
-                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+                        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
                           {service.description}
                         </p>
 
-                        <aside className="mt-3 rounded-xl border border-primary/20 bg-primary/5 p-4 flex gap-3 items-start">
-                          <Sparkles className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                        <aside className="mt-3 rounded-xl border border-brio-green/30 bg-brio-green/5 p-4 flex gap-3 items-start">
+                          <InfoIcon className="w-5 h-5 text-brio-green mt-0.5 shrink-0" />
                           <p className="text-sm md:text-base text-foreground">
                             <span className="font-semibold">Știați că? </span>
                             {service.fact}
                           </p>
                         </aside>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-2 gap-3 sm:gap-4">
                           {service.features.map((feature, featureIndex) => (
                             <div
                               key={featureIndex}
@@ -112,7 +113,7 @@ export default function ServicesPage() {
                           <Link href={service.href}>
                             <Button
                               size="lg"
-                              className="text-base md:text-lg px-6 md:px-8 py-3"
+                              className="text-base md:text-lg px-6 md:px-8 py-3 bg-brio-blue-dark hover:bg-brio-blue"
                             >
                               Vezi Detalii
                             </Button>
