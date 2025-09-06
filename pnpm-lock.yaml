@@ -14,6 +14,9 @@ importers:
       '@iconify-json/logos':
         specifier: ^1.2.9
         version: 1.2.9
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.50
+        version: 1.2.50
       '@iconify/react':
         specifier: ^6.0.1
         version: 6.0.1(react@19.1.0)
@@ -107,6 +110,9 @@ packages:
 
   '@iconify-json/logos@1.2.9':
     resolution: {integrity: sha512-G6VCdFnwZcrT6Eveq3m43oJfLw/CX8plwFcE+2jgv3fiGB64pTmnU7Yd1MNZ/eA+/Re2iEDhuCfSNOWTHwwK8w==}
+
+  '@iconify-json/simple-icons@1.2.50':
+    resolution: {integrity: sha512-Z2ggRwKYEBB9eYAEi4NqEgIzyLhu0Buh4+KGzMPD6+xG7mk52wZJwLT/glDPtfslV503VtJbqzWqBUGkCMKOFA==}
 
   '@iconify/react@6.0.1':
     resolution: {integrity: sha512-fCocnAfiGXjrA0u7KkS3W/OQHNp9LRFICudvOtxmS3Mf7U92aDhP50wyzRbobZli51zYt9ksZ9g0J7H586XvOQ==}
@@ -926,6 +932,10 @@ snapshots:
       react-hook-form: 7.62.0(react@19.1.0)
 
   '@iconify-json/logos@1.2.9':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/simple-icons@1.2.50':
     dependencies:
       '@iconify/types': 2.0.0
 
