@@ -38,6 +38,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import tapiterii from "@/assets/booking/tapiterii.jpg";
+import auto from "@/assets/booking/auto.jpg";
+import horeca from "@/assets/booking/horeca.jpg";
+import Image from "next/image";
 
 // Service data with images
 const services = [
@@ -45,19 +49,19 @@ const services = [
     id: "tapiterii",
     name: "Curățare Tapițerii",
     description: "Curățare profesională pentru canapele, fotolii și saltele",
-    image: "/professional-upholstery-cleaning-service-with-mode.png",
+    image: tapiterii,
   },
   {
     id: "auto",
     name: "Curățare Auto",
     description: "Curățare completă interior și exterior vehicule",
-    image: "/professional-car-interior-cleaning-service-with-va.png",
+    image: auto,
   },
   {
     id: "horeca",
     name: "Curățare HoReCa",
     description: "Servicii profesionale pentru restaurante și hoteluri",
-    image: "/professional-commercial-cleaning-in-restaurant-hot.png",
+    image: horeca,
   },
 ];
 
@@ -80,16 +84,13 @@ const bookingSchema = z.object({
     ),
   address: z.string().min(5, "Adresa trebuie să aibă minim 5 caractere"),
   date: z.date({
-    required_error: "Selectează o dată",
-    invalid_type_error: "Selectează o dată validă",
+    error: "Selectează o dată",
   }),
   timeSlot: z.string().min(1, "Selectează un interval orar"),
   message: z.string().optional(),
-  gdprConsent: z
-    .boolean()
-    .refine((val) => val === true, {
-      message: "Trebuie să accepți termenii și condițiile",
-    }),
+  gdprConsent: z.boolean().refine((val) => val === true, {
+    message: "Trebuie să accepți termenii și condițiile",
+  }),
 });
 
 type BookingFormData = z.infer<typeof bookingSchema>;
@@ -253,8 +254,8 @@ export default function ProgramarePage() {
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                     step <= currentStep
-                      ? "bg-[#1E839C] text-white"
-                      : "bg-gray-200 text-gray-500"
+                      ? "bg-brio-blue-dark text-white"
+                      : "bg-brio-gray text-gray-500"
                   }`}
                 >
                   {step}
@@ -262,7 +263,7 @@ export default function ProgramarePage() {
                 {step < 4 && (
                   <div
                     className={`w-12 h-0.5 mx-2 ${
-                      step < currentStep ? "bg-[#1E839C]" : "bg-gray-200"
+                      step < currentStep ? "bg-brio-blue-dark" : "bg-brio-gray"
                     }`}
                   />
                 )}
@@ -297,6 +298,20 @@ export default function ProgramarePage() {
                         exit={{ opacity: 0, x: -20 }}
                         className="space-y-4"
                       >
+                        {/* Service Image Preview */}
+                        {selectedService && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="mt-6"
+                          >
+                            <Image
+                              src={selectedService.image}
+                              alt={selectedService.name}
+                              className="w-full h-48 object-contain rounded-lg"
+                            />
+                          </motion.div>
+                        )}
                         <FormField
                           control={form.control}
                           name="service"
@@ -348,21 +363,6 @@ export default function ProgramarePage() {
                             </FormItem>
                           )}
                         />
-
-                        {/* Service Image Preview */}
-                        {selectedService && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="mt-6"
-                          >
-                            <img
-                              src={selectedService.image || "/placeholder.svg"}
-                              alt={selectedService.name}
-                              className="w-full h-48 object-cover rounded-lg"
-                            />
-                          </motion.div>
-                        )}
                       </motion.div>
                     )}
 
