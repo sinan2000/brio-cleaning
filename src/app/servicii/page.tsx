@@ -4,30 +4,17 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import Link from "next/link";
 import { services } from "@/lib/constants";
 import Image from "next/image";
+import Breadcrumbs from "@/components/breadcrumbs";
 
 export default function ServicesPage() {
-  /* 
-  const services = [
-    {
-      icon: <Sofa className="w-8 h-8 text-primary" />,
-      title: "Curățare Tapițerii",
-      description:
-        "Redăm prospețimea canapelelor, fotoliilor și scaunelor tapițate cu echipamente profesionale și produse ecologice.",
-      features: [
-        "Eliminarea petelor",
-        "Dezinfectare completă",
-        "Uscare rapidă",
-        "Protecție anti-pete",
-      ],
-      image: "/hero/poster.jpg",
-      slug: "tapiterie",
-    },
-  ];
-*/
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted">
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-20 md:pt-24 lg:pt-28 pb-12 text-center">
+        <Breadcrumbs
+          items={[{ label: "Acasă", href: "/" }, { label: "Servicii" }]}
+          className="mb-3 flex justify-center md:justify-start"
+        />
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
           Serviciile Noastre
         </h1>
@@ -141,6 +128,14 @@ export default function ServicesPage() {
             Îți redăm prospețimea și confortul cu echipamente profesionale și
             produse de cea mai înaltă calitate.
           </p>
+          <div className="mt-6">
+            <Link
+              href="/programari"
+              className="inline-block underline underline-offset-4 text-primary-foreground"
+            >
+              Fă-ți o programare acum
+            </Link>
+          </div>
         </div>
       </section>
     </div>
