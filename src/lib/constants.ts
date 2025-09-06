@@ -46,7 +46,7 @@ export const services = [
     ],
     image: auto,
     href: "/servicii/curatare-auto",
-    fact: "Volanul unei mașini poate adăposti de până la 9x mai mulți germeni decât un capac de toaletă — curățarea regulată a interiorului are impact real.",
+    fact: "Volanul unei mașini poate adăposti de până la 9x mai mulți germeni decât un capac de toaletă; curățarea regulată a interiorului are impact real.",
   },
   {
     icon: Building2,
@@ -61,7 +61,7 @@ export const services = [
     ],
     image: horeca,
     href: "/servicii/curatare-horeca",
-    fact: "Spălarea textilelor la ≥71°C pentru un interval adecvat este eficientă în distrugerea microorganismelor — bună practică pentru textilele din HoReCa.",
+    fact: "Spălarea textilelor la ≥71°C pentru un interval adecvat este eficientă în distrugerea microorganismelor; bună practică pentru textilele din HoReCa.",
   },
 ];
 

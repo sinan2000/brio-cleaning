@@ -61,10 +61,10 @@ export default function ServicesSection() {
                   <Link href={service.href}>
                     <Button
                       variant="outline"
-                      className="w-full group-hover:bg-brio-blue-dark group-hover:text-white hover:bg-brio-blue hover:text-white transition-colors duration-300 bg-transparent"
+                      className="group w-full group-hover:bg-brio-blue group-hover:text-white hover:bg-brio-blue-dark hover:text-white transition-colors duration-300 bg-transparent"
                     >
                       Vezi mai mult
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Button>
                   </Link>
                 </div>

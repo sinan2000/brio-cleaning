@@ -1,4 +1,4 @@
-import { Sparkles, CheckCircle, InfoIcon } from "lucide-react";
+import { Check, InfoIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import Link from "next/link";
@@ -101,7 +101,7 @@ export default function ServicesPage() {
                               key={featureIndex}
                               className="flex items-center gap-3"
                             >
-                              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                              <Check className="w-5 h-5 text-brio-blue flex-shrink-0" />
                               <span className="text-foreground font-medium text-sm md:text-base">
                                 {feature}
                               </span>
@@ -113,7 +113,7 @@ export default function ServicesPage() {
                           <Link href={service.href}>
                             <Button
                               size="lg"
-                              className="text-base md:text-lg px-6 md:px-8 py-3 bg-brio-blue-dark hover:bg-brio-blue"
+                              className="text-base md:text-lg px-6 md:px-8 py-3 bg-brio-blue hover:bg-brio-blue-dark"
                             >
                               Vezi Detalii
                             </Button>
