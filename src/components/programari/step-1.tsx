@@ -12,18 +12,10 @@ import { Label } from "@/components/ui/label";
 import type { BookingFormData } from "@/app/programari/schema";
 import { services as SERVICE_DATA, slugFromHref } from "@/lib/constants";
 
-type BookingService = {
-  id: string; // slug from href (e.g. "curatare-tapiterie")
-  name: string; // service.title
-  description: string; // service.description
-  image: any; // StaticImageData from your imports
-};
-
 export default function StepService() {
   const { control, watch } = useFormContext<BookingFormData>();
 
-  // Build the list once from your constants
-  const bookingServices: BookingService[] = useMemo(
+  const bookingServices = useMemo(
     () =>
       SERVICE_DATA.map((s) => ({
         id: slugFromHref(s.href),

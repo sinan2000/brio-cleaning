@@ -36,6 +36,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
           alt={service.title}
           fill
           className="object-cover"
+          placeholder="blur"
           priority
           sizes="100vw"
         />
