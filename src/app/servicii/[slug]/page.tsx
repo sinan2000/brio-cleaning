@@ -10,12 +10,8 @@ import {
 } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { services } from "@/lib/constants";
+import { services, slugFromHref } from "@/lib/constants";
 import Breadcrumbs from "@/components/breadcrumbs";
-
-function slugFromHref(href: string) {
-  return href.split("/").filter(Boolean).pop() ?? "";
-}
 
 type Args = {
   params: Promise<{
@@ -221,4 +217,8 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
       </section>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return services.map((s) => ({ slug: slugFromHref(s.href) }));
 }

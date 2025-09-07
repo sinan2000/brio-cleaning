@@ -13,10 +13,10 @@ import img_2b from "@/assets/services/auto/img2.jpg";
 import img_2c from "@/assets/services/auto/img3.jpg";
 import img_2d from "@/assets/services/auto/img4.jpg";
 
-import img_3a from "@/assets/services/horeca/img1.jpg"
-import img_3b from "@/assets/services/horeca/img2.jpg"
-import img_3c from "@/assets/services/horeca/img3.jpg"
-import img_3d from "@/assets/services/horeca/img4.jpg"
+import img_3a from "@/assets/services/horeca/img1.jpg";
+import img_3b from "@/assets/services/horeca/img2.jpg";
+import img_3c from "@/assets/services/horeca/img3.jpg";
+import img_3d from "@/assets/services/horeca/img4.jpg";
 
 export const menuItems = [
   { name: "Acasă", href: "/" },
@@ -36,6 +36,7 @@ export const services = [
   {
     icon: Sofa,
     title: "Curățare Tapițerie",
+    short: "Curățare pentru canapele, fotolii, saltele",
     description:
       "Curățare profesională în profunzime pentru canapele, scaune, saltele și toate mobilierul din țesătură. Restaurăm prospețimea și extindem durata de viață a tapițeriei dumneavoastră.",
     features: [
@@ -80,6 +81,7 @@ export const services = [
   {
     icon: Car,
     title: "Curățare Auto",
+    short: "Curățare interior/exterior vehicule",
     description:
       "Servicii complete de detailing interior și exterior pentru automobile. De la scaune din piele la covoare, facem ca vehiculul dumneavoastră să arate și să se simtă ca nou.",
     features: [
@@ -124,6 +126,7 @@ export const services = [
   {
     icon: Building2,
     title: "Servicii HoReCa",
+    short: "Servicii pentru restaurante și hoteluri",
     description:
       "Curățare specializată pentru hoteluri, restaurante și cafenele. Înțelegem standardele unice de igienă necesare în industria ospitalității.",
     features: [
@@ -163,6 +166,10 @@ export const services = [
   },
 ];
 
+export function slugFromHref(href: string) {
+  return href.split("/").filter(Boolean).pop() ?? "";
+}
+
 export const socialLinks = [
   {
     name: "TikTok",
@@ -180,3 +187,9 @@ export const socialLinks = [
     href: "https://www.instagram.com/briocleaningtm/",
   },
 ];
+
+export const TIME_SLOTS = [
+  { id: "morning", label: "09:00 - 12:00", value: "09-12" },
+  { id: "afternoon", label: "12:00 - 15:00", value: "12-15" },
+  { id: "evening", label: "15:00 - 18:00", value: "15-18" },
+] as const;

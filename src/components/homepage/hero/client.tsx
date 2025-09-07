@@ -195,6 +195,7 @@ const ScrollExpandMedia = ({
               src={bgImageSrc}
               alt="Hero Background"
               className="w-screen h-screen"
+              placeholder="blur"
               style={{
                 objectFit: "cover",
                 objectPosition: "center",
