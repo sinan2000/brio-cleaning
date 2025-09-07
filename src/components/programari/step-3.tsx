@@ -62,8 +62,8 @@ export default function StepSchedule() {
                     <Card
                       className={
                         field.value === slot.value
-                          ? "ring-2 ring-[#1E839C] bg-blue-50"
-                          : "hover:bg-gray-50 transition"
+                          ? "ring-2 ring-[#1E839C] bg-blue-50 py-2 gap-2 "
+                          : "hover:bg-gray-50 transition py-2 gap-2 "
                       }
                     >
                       <CardContent className="p-3">

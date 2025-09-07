@@ -13,6 +13,7 @@ import { TIME_SLOTS } from "@/lib/constants";
 
 // ⬇️ use your services + slugFromHref
 import { services as SERVICE_DATA, slugFromHref } from "@/lib/constants";
+import Link from "next/link";
 
 export default function StepSummary() {
   const { watch, control } = useFormContext<BookingFormData>();
@@ -50,25 +51,32 @@ export default function StepSummary() {
                 onCheckedChange={field.onChange}
               />
             </FormControl>
-            <div className="space-y-1 leading-none">
-              <FormLabel className="text-sm">
-                Sunt de acord cu{" "}
-                <a
-                  href="/termeni-si-conditii"
-                  className="text-[#1E839C] hover:underline"
-                >
-                  Termenii și Condițiile
-                </a>{" "}
-                și{" "}
-                <a
-                  href="/politica-de-confidentialitate"
-                  className="text-[#1E839C] hover:underline"
-                >
-                  Politica de Confidențialitate
-                </a>{" "}
-                *
+
+            {/* make the text area grow + shrink properly */}
+            <div className="flex-1 min-w-0 leading-normal">
+              <FormLabel className="text-[13px] sm:text-sm">
+                {/* keep pieces inline but allow nice wrapping */}
+                <span className="inline-flex flex-wrap items-center gap-x-1 gap-y-0.5">
+                  <span>Sunt de acord cu</span>
+                  <Link
+                    href="/termeni-si-conditii"
+                    className="text-[#1E839C] hover:underline"
+                  >
+                    Termenii și Condițiile
+                  </Link>
+                  <span>și</span>
+                  <Link
+                    href="/politica-de-confidentialitate"
+                    className="text-[#1E839C] hover:underline"
+                  >
+                    Politica de Confidențialitate
+                  </Link>
+                  <span className="text-red-500">*</span>
+                </span>
               </FormLabel>
-              <FormMessage />
+
+              {/* keep the error on a new line, small and subtle */}
+              <FormMessage className="mt-1 text-xs" />
             </div>
           </FormItem>
         )}

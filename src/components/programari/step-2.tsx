@@ -52,7 +52,7 @@ export default function StepContact() {
                 onChange={(e) => field.onChange(formatPhone(e.target.value))}
               />
             </FormControl>
-            <FormDescription>Confirmăm pe WhatsApp în max. 2h</FormDescription>
+            <FormDescription>Confirmăm în max. 2h în timpul programului</FormDescription>
             <FormMessage />
           </FormItem>
         )}
