@@ -13,6 +13,11 @@ import img_2b from "@/assets/services/auto/img2.jpg";
 import img_2c from "@/assets/services/auto/img3.jpg";
 import img_2d from "@/assets/services/auto/img4.jpg";
 
+import img_3a from "@/assets/services/horeca/img1.jpg"
+import img_3b from "@/assets/services/horeca/img2.jpg"
+import img_3c from "@/assets/services/horeca/img3.jpg"
+import img_3d from "@/assets/services/horeca/img4.jpg"
+
 export const menuItems = [
   { name: "Acasă", href: "/" },
   { name: "Servicii", href: "/servicii" },
@@ -154,7 +159,7 @@ export const services = [
         a: "În funcție de numărul de locuri, suprafață, tip material și frecvență (contracte de întreținere au discount). Oferim ofertă scrisă după vizită.",
       },
     ],
-    media: [img_2a, img_2b, img_2c, img_2d],
+    media: [img_3a, img_3b, img_3c, img_3d],
   },
 ];
 
