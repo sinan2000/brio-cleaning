@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import { redirect, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "motion/react";
@@ -24,8 +24,10 @@ import StepSchedule from "@/components/programari/step-3";
 import StepSummary from "@/components/programari/step-4";
 import { submitBooking } from "./actions";
 import { normPhone, services, slugFromHref } from "@/lib/constants";
+import { useRouter } from "next/router";
 
-export default function ProgramarePage() {
+function Programare() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const sp = useSearchParams();
   const preselectedService = sp.get("s") ?? "";
@@ -80,148 +82,155 @@ export default function ProgramarePage() {
       n: data.name.split(" ")[0] || "Client", // optional: first name only
     });
 
-    redirect("/programari/succes");
+    router.replace(`/programari/succes?${qs.toString()}`);
   };
 
   return (
-    <Suspense>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-20">
-        <div className="container mx-auto px-4 py-4 md:py-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-4 md:mb-8">
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                Programează o Curățare
-              </h1>
-              <p className="text-sm sm:text-base text-gray-600">
-                Completează formularul pentru a programa serviciul dorit
-              </p>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-20">
+      <div className="container mx-auto px-4 py-4 md:py-8">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-4 md:mb-8">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Programează o Curățare
+            </h1>
+            <p className="text-sm sm:text-base text-gray-600">
+              Completează formularul pentru a programa serviciul dorit
+            </p>
+          </div>
 
-            {/* Stepper */}
-            <div className="flex items-center justify-center mb-4 md:mb-8">
-              {[1, 2, 3, 4].map((step) => (
-                <div key={step} className="flex items-center">
-                  <div
-                    className={`h-6 w-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                      step <= currentStep
-                        ? "bg-brio-blue-dark text-white"
-                        : "bg-brio-gray text-gray-500"
-                    }`}
-                  >
-                    {step}
-                  </div>
-                  {step < 4 && (
-                    <div
-                      className={`w-12 h-0.5 mx-2 ${
-                        step < currentStep
-                          ? "bg-brio-blue-dark"
-                          : "bg-brio-gray"
-                      }`}
-                    />
-                  )}
+          {/* Stepper */}
+          <div className="flex items-center justify-center mb-4 md:mb-8">
+            {[1, 2, 3, 4].map((step) => (
+              <div key={step} className="flex items-center">
+                <div
+                  className={`h-6 w-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+                    step <= currentStep
+                      ? "bg-brio-blue-dark text-white"
+                      : "bg-brio-gray text-gray-500"
+                  }`}
+                >
+                  {step}
                 </div>
-              ))}
-            </div>
+                {step < 4 && (
+                  <div
+                    className={`w-12 h-0.5 mx-2 ${
+                      step < currentStep ? "bg-brio-blue-dark" : "bg-brio-gray"
+                    }`}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
 
-            <Card className="shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-md sm:text-lg md:text-xl">
-                  {currentStep === 1 && "Alege Serviciul"}
-                  {currentStep === 2 && "Contact & Locație"}
-                  {currentStep === 3 && "Programare"}
-                  {currentStep === 4 && "Rezumat & Consimțământ"}
-                </CardTitle>
-                <CardDescription>Pasul {currentStep} din 4</CardDescription>
-              </CardHeader>
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-md sm:text-lg md:text-xl">
+                {currentStep === 1 && "Alege Serviciul"}
+                {currentStep === 2 && "Contact & Locație"}
+                {currentStep === 3 && "Programare"}
+                {currentStep === 4 && "Rezumat & Consimțământ"}
+              </CardTitle>
+              <CardDescription>Pasul {currentStep} din 4</CardDescription>
+            </CardHeader>
 
-              <CardContent>
-                <FormProvider {...form}>
-                  <Form {...form}>
-                    <form
-                      onSubmit={form.handleSubmit(onSubmit)}
-                      className="space-y-6"
-                    >
-                      <AnimatePresence mode="wait">
-                        {currentStep === 1 && (
-                          <motion.div
-                            key="s1"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                          >
-                            <StepService />
-                          </motion.div>
-                        )}
-                        {currentStep === 2 && (
-                          <motion.div
-                            key="s2"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                          >
-                            <StepContact />
-                          </motion.div>
-                        )}
-                        {currentStep === 3 && (
-                          <motion.div
-                            key="s3"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                          >
-                            <StepSchedule />
-                          </motion.div>
-                        )}
-                        {currentStep === 4 && (
-                          <motion.div
-                            key="s4"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                          >
-                            <StepSummary />
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+            <CardContent>
+              <FormProvider {...form}>
+                <Form {...form}>
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-6"
+                  >
+                    <AnimatePresence mode="wait">
+                      {currentStep === 1 && (
+                        <motion.div
+                          key="s1"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                        >
+                          <StepService />
+                        </motion.div>
+                      )}
+                      {currentStep === 2 && (
+                        <motion.div
+                          key="s2"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                        >
+                          <StepContact />
+                        </motion.div>
+                      )}
+                      {currentStep === 3 && (
+                        <motion.div
+                          key="s3"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                        >
+                          <StepSchedule />
+                        </motion.div>
+                      )}
+                      {currentStep === 4 && (
+                        <motion.div
+                          key="s4"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                        >
+                          <StepSummary />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
 
-                      <div className="flex justify-between pt-6 border-t">
+                    <div className="flex justify-between pt-6 border-t">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={prevStep}
+                        disabled={currentStep === 1}
+                        className="flex items-center bg-transparent"
+                      >
+                        <ChevronLeft className="w-4 h-4 mr-2" /> Înapoi
+                      </Button>
+                      {currentStep < 4 ? (
                         <Button
                           type="button"
-                          variant="outline"
-                          onClick={prevStep}
-                          disabled={currentStep === 1}
-                          className="flex items-center bg-transparent"
+                          onClick={nextStep}
+                          className="flex items-center bg-[#1E839C] hover:bg-[#1a7389]"
                         >
-                          <ChevronLeft className="w-4 h-4 mr-2" /> Înapoi
+                          Următorul <ChevronRight className="w-4 h-4 ml-2" />
                         </Button>
-                        {currentStep < 4 ? (
-                          <Button
-                            type="button"
-                            onClick={nextStep}
-                            className="flex items-center bg-[#1E839C] hover:bg-[#1a7389]"
-                          >
-                            Următorul <ChevronRight className="w-4 h-4 ml-2" />
-                          </Button>
-                        ) : (
-                          <Button
-                            type="submit"
-                            className="flex items-center bg-[#1E839C] hover:bg-[#1a7389]"
-                            disabled={form.formState.isSubmitting}
-                          >
-                            {form.formState.isSubmitting
-                              ? "Se trimite..."
-                              : "Trimite Cererea"}
-                          </Button>
-                        )}
-                      </div>
-                    </form>
-                  </Form>
-                </FormProvider>
-              </CardContent>
-            </Card>
-          </div>
+                      ) : (
+                        <Button
+                          type="submit"
+                          className="flex items-center bg-[#1E839C] hover:bg-[#1a7389]"
+                          disabled={form.formState.isSubmitting}
+                        >
+                          {form.formState.isSubmitting
+                            ? "Se trimite..."
+                            : "Trimite Cererea"}
+                        </Button>
+                      )}
+                    </div>
+                  </form>
+                </Form>
+              </FormProvider>
+            </CardContent>
+          </Card>
         </div>
       </div>
+    </div>
+  );
+}
+
+// --- Wrapper that provides Suspense ---
+export default function ProgramarePage() {
+  return (
+    <Suspense
+      fallback={<div className="pt-20 p-6 text-center">Se încarcă…</div>}
+    >
+      <Programare />
     </Suspense>
   );
 }
