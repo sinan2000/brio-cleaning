@@ -3,6 +3,16 @@ import tapiterii from "@/assets/services/tapiterii.jpg";
 import auto from "@/assets/services/auto.jpg";
 import horeca from "@/assets/services/horeca.jpg";
 
+import img_1a from "@/assets/services/tapiterii/img1.jpg";
+import img_1b from "@/assets/services/tapiterii/img2.jpg";
+import img_1c from "@/assets/services/tapiterii/img3.jpg";
+import img_1d from "@/assets/services/tapiterii/img4.jpg";
+
+import img_2a from "@/assets/services/auto/img1.jpg";
+import img_2b from "@/assets/services/auto/img2.jpg";
+import img_2c from "@/assets/services/auto/img3.jpg";
+import img_2d from "@/assets/services/auto/img4.jpg";
+
 export const menuItems = [
   { name: "Acasă", href: "/" },
   { name: "Servicii", href: "/servicii" },
@@ -32,6 +42,14 @@ export const services = [
     image: tapiterii,
     href: "/servicii/curatare-tapiterie",
     fact: "Aspirarea cu filtru HEPA pe textile ajută la reducerea alergenilor din praf; iar curățarea prin extracție cu apă caldă contribuie la îndepărtarea contaminanților din țesături.",
+    longDescription: "...",
+    faqs: [
+      {
+        q: "...",
+        a: "...",
+      },
+    ],
+    media: [img_1a, img_1b, img_1c, img_1d],
   },
   {
     icon: Car,
@@ -47,6 +65,14 @@ export const services = [
     image: auto,
     href: "/servicii/curatare-auto",
     fact: "Volanul unei mașini poate adăposti de până la 9x mai mulți germeni decât un capac de toaletă; curățarea regulată a interiorului are impact real.",
+    longDescription: "...",
+    faqs: [
+      {
+        q: "...",
+        a: "...",
+      },
+    ],
+    media: [img_2a, img_2b, img_2c, img_2d],
   },
   {
     icon: Building2,
