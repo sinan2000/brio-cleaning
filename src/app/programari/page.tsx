@@ -23,11 +23,10 @@ import StepContact from "@/components/programari/step-2";
 import StepSchedule from "@/components/programari/step-3";
 import StepSummary from "@/components/programari/step-4";
 import { submitBooking } from "./actions";
-import { normPhone, services, slugFromHref } from "@/lib/constants";
-import { useRouter } from "next/router";
+
+export const dynamic = 'force-dynamic';
 
 function Programare() {
-  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const sp = useSearchParams();
   const preselectedService = sp.get("s") ?? "";
@@ -60,29 +59,8 @@ function Programare() {
 
   const prevStep = () => setCurrentStep((s) => Math.max(1, s - 1));
 
-  const generateWhatsAppLink = () => {
-    const v = form.getValues();
-    const s = services.find((x) => slugFromHref(x.href) === v.service);
-    const msg = `Bună ziua! Aș dori o ${s?.title.toLowerCase()} pe ${v.date?.toLocaleDateString(
-      "ro-RO"
-    )} în intervalul ${v.timeSlot}. Nume: ${v.name}, tel: ${v.phone}, adresa: ${
-      v.address
-    }.${v.message ? " Mesaj: " + v.message : ""}`;
-    return `https://wa.me/${normPhone()}?text=${encodeURIComponent(msg)}`;
-  };
-
   const onSubmit = async (data: BookingFormData) => {
     await submitBooking(data);
-
-    // build a compact query (avoid long/PII if you prefer)
-    const qs = new URLSearchParams({
-      s: data.service, // slug, e.g. "curatare-tapiterie"
-      d: data.date ? new Date(data.date).toISOString().slice(0, 10) : "", // YYYY-MM-DD
-      t: data.timeSlot, // "09-12"
-      n: data.name.split(" ")[0] || "Client", // optional: first name only
-    });
-
-    router.replace(`/programari/succes?${qs.toString()}`);
   };
 
   return (

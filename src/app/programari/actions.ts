@@ -5,6 +5,7 @@ import { Vonage } from "@vonage/server-sdk";
 import { Auth } from "@vonage/auth";
 import { contact, normPhone, services, slugFromHref } from "@/lib/constants";
 import { format, parse, isValid } from "date-fns";
+import { redirect } from "next/navigation";
 
 export async function submitBooking(input: unknown) {
   const parsed = bookingSchema.safeParse(input);
@@ -81,7 +82,7 @@ async function sendSms(data: any) {
 
   try {
     await vonage.sms.send({
-      to: "40732405829",//normPhone(),
+      to: "40732405829", //normPhone(),
       from,
       text: cleanText,
     });
@@ -91,4 +92,13 @@ async function sendSms(data: any) {
       `A apărut o eroare. Vă rugăm să ne sunați direct la ${contact.phone}`
     );
   }
+
+  const qs = new URLSearchParams({
+    s: svc.title, // slug, e.g. "curatare-tapiterie"
+    d: dateStr,
+    t: data.timeSlot, // "09-12"
+    n: data.name.split(" ")[0] || data.name
+  });
+
+  redirect(`/programari/succes?${qs.toString()}`);
 }
