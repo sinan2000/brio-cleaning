@@ -64,7 +64,7 @@ export function Reveal({
     <div
       ref={ref}
       className={cn(
-        "transition-opacity duration-500",
+        "transition-opacity duration-500 animate-swipe-in",
         "overflow-hidden will-change[clip-path,opacity]",
         visible
           ? "opacity-100 animate-swipe-in motion-reduce:animate-none"
