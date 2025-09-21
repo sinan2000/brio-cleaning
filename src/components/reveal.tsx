@@ -12,7 +12,6 @@ interface RevealProps {
   root?: Element | null; // for scrollable containers
   rootMargin?: string;
   reserveHeight?: number; // px reserved when lazyMount=true
-  animationClass: string
 }
 
 export function Reveal({
@@ -24,7 +23,6 @@ export function Reveal({
   root = null,
   rootMargin = "0px",
   reserveHeight = 0, // only used when lazyMount=true
-  animationClass = "animate-fade-scale-in"
 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -66,8 +64,8 @@ export function Reveal({
     <div
       ref={ref}
       className={cn(
-        visible ? animationClass : "opacity-0",
-        "will-change-transform",
+        "transition-opacity duration-500 will-change-transform",
+        visible ? "opacity-100" : "opacity-0",
         className
       )}
     >
