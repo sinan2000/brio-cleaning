@@ -84,7 +84,7 @@ export default function MobileOverlay({
               onClick={() => setIsMenuOpen(false)}
               className="w-full"
             >
-              <Button className="w-full bg-brio-blue-dark hover:bg-brio-blue text-white">
+              <Button className="w-full bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
                 <Calendar size={16} />
                 Programează acum
               </Button>

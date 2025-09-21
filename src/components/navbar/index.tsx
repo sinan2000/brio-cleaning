@@ -30,7 +30,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1 text-sm lg:text-base font-medium transition-colors ${
                   isActive
                     ? "text-brio-blue-dark underline underline-offset-4"
                     : "text-gray-700 hover:text-brio-blue"
@@ -47,7 +47,7 @@ export default function Navbar() {
           <WhatsAppButton />
 
           <Link href="/programari">
-            <Button className="bg-brio-blue-dark hover:bg-brio-blue text-white">
+            <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
               <Calendar size={16} />
               Programează acum
             </Button>
