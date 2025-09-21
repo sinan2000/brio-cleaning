@@ -32,7 +32,7 @@ const sampleMediaContent: MediaContent = {
   scrollToExpand: "Ca tu să fii liniștit",
   about: {
     overview:
-      "BrioCleaning este serviciul de curățare de top din Timișoara, specializat în curățarea tapițeriei, auto și comercială. Combinăm ani de experiență cu tehnici de vârf pentru a oferi rezultate excepționale care depășesc așteptările.",
+      "La Brio Cleaning credem că un spațiu curat înseamnă sănătate, confort și voie bună. Suntem specializați în curățarea și igienizarea canapelelor, fotoliilor, saltelelor, mochetelor, interior auto si suprafețelor din piele.",
   },
 };
 
