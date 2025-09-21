@@ -6,8 +6,7 @@ import SocialsSection from "@/components/homepage/socials";
 export default function Page() {
   return (
     <main>
-      <VideoExpansion />
-      <ServicesSection />
+            <ServicesSection />
       <Results />
       <SocialsSection />
     </main>

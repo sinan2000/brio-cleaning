@@ -4,12 +4,13 @@ import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { Reveal } from "../reveal";
 
 export default function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-brio-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16" animationClass="animate-fade-scale-in">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Serviciile Noastre
           </h2>
@@ -17,7 +18,7 @@ export default function ServicesSection() {
             Soluții complete de curățare adaptate nevoilor dumneavoastră
             specifice. Rezultate profesionale, de fiecare dată.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (

@@ -47,7 +47,7 @@ export default function Navbar() {
           <WhatsAppButton />
 
           <Link href="/programari">
-            <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
+            <Button className="bg-orange-700 hover:bg-orange-800 text-white">
               <Calendar size={16} />
               Programează acum
             </Button>
