@@ -67,7 +67,7 @@ export default function ServicesSection() {
                     {/* Button: solid hover, better tap targets */}
                     <Button
                       variant="outline"
-                      className="group w-full h-10 md:h-11 lg:h-12 text-sm md:text-base group-hover:bg-brio-blue group-hover:text-white hover:bg-brio-blue-dark hover:text-white transition-colors duration-300 bg-transparent"
+                      className="group w-full h-10 md:h-11 lg:h-12 text-sm md:text-base group-hover:bg-brio-blue-dark group-hover:text-white hover:bg-brio-blue-dark hover:text-white transition-colors duration-300 bg-transparent"
                     >
                       Vezi mai mult
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

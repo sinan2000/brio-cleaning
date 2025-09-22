@@ -20,6 +20,7 @@ import horeca from "@/assets/servicii/horeca.jpg";
 export const menuItems = [
   { name: "Acasă", href: "/" },
   { name: "Servicii", href: "/servicii" },
+  { name: "HoReCa", href: "/servicii/horeca " },
   { name: "Contact", href: "/contact" },
 ];
 
