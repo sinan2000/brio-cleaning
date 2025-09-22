@@ -32,7 +32,7 @@ export const services = [
       "Redăm confortul și frumusețea canapelei tale printr-o curățare profesională în profunzime.",
     features: [
       "Aspirare cu Kirby - elimină praf, acarieni și alergeni",
-      "Dezinfectare cu abur la 150 °C - igienizare totală și mirosuri neutralizate",
+      "Dezinfectare cu abur la 150 °C - igienizare `totală și mirosuri neutralizate",
       "Soluții ecologice - sigure pentru familie și animale de companie",
       "Îndepărtarea petelor (cafea, suc, ulei, uzură)",
       "Clătire/neutralizare și periere pentru textură uniformă",
@@ -82,6 +82,8 @@ export const services = [
       { label: "Colțar 6 locuri", p: 310 },
       { label: "Colțar 7 locuri", p: 410 },
       { label: "Colțar 8 locuri", p: 460 },
+    ],
+    extensie: [
       { label: "Extensie", p: 50 },
       { label: "Pernă mică", p: 15 },
       { label: "Pernă mare", p: 35 },
@@ -308,6 +310,8 @@ export const services = [
         p: 510,
       },
       { label: "Detailing interior complet", p: 850 },
+    ],
+    extensie: [
       { label: "Jeep / 4x4 supliment", p: 50 },
       { label: "Tapițerie piele supliment", p: 50 },
     ],
