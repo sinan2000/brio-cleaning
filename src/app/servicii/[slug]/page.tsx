@@ -51,10 +51,10 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
             <p className="text-base sm:text-lg md:text-xl mb-6 text-pretty opacity-90">
               {service.description}
             </p>
-            <Link href="/programari">
+            <Link href={`/programari?s=${slug}`}>
               <Button
                 size="lg"
-                className="bg-brio-blue hover:bg-brio-blue-dark text-white px-8 py-3"
+                className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white px-8 py-3"
               >
                 Programează-te acum
               </Button>
@@ -131,8 +131,8 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </div>
 
                 <div className="pt-2">
-                  <Link href="/programari">
-                    <Button className="bg-brio-blue hover:bg-brio-blue-dark text-white">
+                  <Link href={`/programari?s=${slug}`}>
+                    <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
                       Rezervă acum
                     </Button>
                   </Link>
@@ -212,7 +212,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
             <Link href={`/programari?s=${slug}`}>
               <Button
                 size="lg"
-                className="bg-brio-blue hover:bg-brio-blue-dark text-white px-8 py-3"
+                className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white px-8 py-3"
               >
                 Fă o programare
               </Button>

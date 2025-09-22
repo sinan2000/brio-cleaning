@@ -17,6 +17,29 @@ import saltele from "@/assets/servicii/curatare-saltele.jpg";
 import standard from "@/assets/lol.jpg";
 import horeca from "@/assets/servicii/horeca.jpg";
 
+import s1_a from "@/assets/servicii/canapele/img1.jpg";
+import s1_b from "@/assets/servicii/canapele/img2.jpg";
+import s1_c from "@/assets/servicii/canapele/img3.jpg";
+import s1_d from "@/assets/servicii/canapele/img4.jpg";
+
+import s2_a from "@/assets/servicii/saltele/img1.jpg";
+import s2_b from "@/assets/servicii/saltele/img2.jpg";
+
+import s3_a from "@/assets/servicii/fotolii/img1.jpg";
+import s3_b from "@/assets/servicii/fotolii/img2.jpg";
+import s3_c from "@/assets/servicii/fotolii/img3.jpg";
+import s3_d from "@/assets/servicii/fotolii/img4.jpg";
+
+import s4_a from "@/assets/servicii/horeca/img1.jpg";
+import s4_b from "@/assets/servicii/horeca/img2.jpg";
+import s4_c from "@/assets/servicii/horeca/img3.jpg";
+import s4_d from "@/assets/servicii/horeca/img4.jpg";
+
+import s5_a from "@/assets/servicii/auto/img1.jpg";
+import s5_b from "@/assets/servicii/auto/img2.jpg";
+import s5_c from "@/assets/servicii/auto/img3.jpg";
+import s5_d from "@/assets/servicii/auto/img4.jpg";
+
 export const menuItems = [
   { name: "Acasă", href: "/" },
   { name: "Servicii", href: "/servicii" },
@@ -69,7 +92,7 @@ export const services = [
         a: "Da, ajustăm presiunea/temperatura și testăm pe zonă ascunsă.",
       },
     ],
-    media: [],
+    media: [s1_a, s1_b, s1_c, s1_d],
     highlights: [
       { icon: Shield, text: "Eco & sigur pentru copii/pets" },
       { icon: SprayCan, text: "Neutralizare mirosuri" },
@@ -128,7 +151,7 @@ export const services = [
         a: "Da, reducerea alergenilor poate ameliora simptomele.",
       },
     ],
-    media: [],
+    media: [s2_a, s2_b],
     prices: [
       { label: "Saltea 1 persoană (față-verso)", p: 150 },
       { label: "Saltea 2 persoane 140x200 cm", p: 180 },
@@ -170,7 +193,7 @@ export const services = [
         a: "3-6 ore, în funcție de țesătură și ventilație.",
       },
     ],
-    media: [],
+    media: [s3_a, s3_b, s3_c, s3_d],
     prices: [
       { label: "Fotoliu / extensibil", p: 90 },
       { label: "Scaun cu spătar (dimensiune mică)", p: 20 },
@@ -220,7 +243,7 @@ export const services = [
         a: "În funcție de suprafață: 2-8 h; oferim estimare la inspecție.",
       },
     ],
-    media: [],
+    media: [s4_a, s4_b, s4_c, s4_d],
     highlights: [
       { icon: Shield, text: "Siguranță & dezinfectare" },
       { icon: SprayCan, text: "Neutralizare mirosuri" },
@@ -304,7 +327,7 @@ export const services = [
         a: "Da, cu umezeală minimă pentru a evita desprinderea materialului.",
       },
     ],
-    media: [],
+    media: [s5_a, s5_b, s5_c, s5_d],
     prices: [
       { label: "Pachet Standard (banchetă + scaune)", p: 300 },
       { label: "Pachet Gold (banchetă, scaune, mochetă)", p: 385 },
