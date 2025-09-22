@@ -163,6 +163,8 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
             </ScrollReveal>
           </div>
 
+          <hr className="my-12 border-t border-gray-200" />
+
           <PriceDisplay service={service} />
         </div>
       </section>

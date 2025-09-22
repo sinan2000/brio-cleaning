@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { slugFromHref } from "@/lib/helpers";
+import { Check } from "lucide-react";
 
 export default function PriceDisplay({ service }: { service: any }) {
   const prices = service.prices ?? [];
@@ -18,15 +19,25 @@ export default function PriceDisplay({ service }: { service: any }) {
         Prețuri
       </h2>
 
-      {/* Always-included freebies */}
       {service.gratis && (
-        <div className="mb-5 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs md:text-sm bg-green-50 border-green-200 text-green-700">
-            Igienizare cu abur 150 °C - GRATUIT
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs md:text-sm bg-green-50 border-green-200 text-green-700">
-            Sterilizare Ozon & UV-C - GRATUIT
-          </span>
+        <div className="mb-8 rounded-xl border border-green-200 bg-gradient-to-br from-green-50 to-white p-5 md:p-6 shadow-sm">
+          <h3 className="text-sm md:text-base font-semibold text-green-800 mb-3">
+            Mereu inclus, fără cost suplimentar:
+          </h3>
+          <ul className="grid sm:grid-cols-2 gap-2">
+            <li className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
+              <span className="text-sm md:text-base text-green-700">
+                Igienizare cu abur 150 °C
+              </span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
+              <span className="text-sm md:text-base text-green-700">
+                Sterilizare Ozon & UV-C
+              </span>
+            </li>
+          </ul>
         </div>
       )}
 
@@ -108,7 +119,7 @@ export default function PriceDisplay({ service }: { service: any }) {
       {/* CTA under pricing */}
       <div className="mt-6">
         <Link href={`/programari?s=${slugFromHref(service.href)}`}>
-          <Button className="bg-brio-blue hover:bg-brio-blue-dark text-white">
+          <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
             Programează-te
           </Button>
         </Link>
