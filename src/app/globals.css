@@ -98,9 +98,10 @@
 
   /* Added BrioCleaning brand colors */
   --brio-blue-primary: #00aeef;
-  --brio-blue-secondary: #006994;
-  --brio-green: #38c172;
+  --brio-blue-secondary: #1A4E8C;
+  --brio-green: #4CAF50;
   --brio-gray: #f2f2f2;
+  --brio-orange: #FF7F11;
 }
 
 .dark {
