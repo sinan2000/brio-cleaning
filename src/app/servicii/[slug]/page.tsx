@@ -13,6 +13,7 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { services } from "@/lib/constants";
 import { slugFromHref } from "@/lib/helpers";
 import Breadcrumbs from "@/components/breadcrumbs";
+import PriceDisplay from "@/components/price-display";
 
 type Args = {
   params: Promise<{
@@ -161,6 +162,8 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
               </div>
             </ScrollReveal>
           </div>
+
+          <PriceDisplay service={service} />
         </div>
       </section>
 
