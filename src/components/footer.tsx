@@ -29,8 +29,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Logo />
             <p className="text-gray-300 text-sm text-pretty">
-              Servicii profesionale de curățare în Timișoara. Aducem strălucire
-              fiecărei suprafețe cu produse ecologice.
+              Curățenie profesională în Timișoara, sigură pentru oameni și mediu. Aducem prospețime și strălucire fiecărei suprafețe.
             </p>
             <div className="pt-1 flex gap-3">
               {socialLinks.map((s) => (

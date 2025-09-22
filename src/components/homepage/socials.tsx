@@ -7,12 +7,12 @@ export default function SocialsSection() {
     <section className="py-16 bg-brio-blue">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Urmărește-ne călătoria de curățare online!
+          Urmărește magia curățeniei cu Brio Cleaning!
         </h2>
         <p className="text-xl text-blue-100 mb-8 text-pretty">
-          Rămâi la curent cu cele mai recente lucrări, sfaturi de curățare și
-          conținut din culise. Alătură-te comunității noastre de clienți
-          mulțumiți!
+          Vezi transformările spectaculoase, primește sfaturi utile și
+          inspiră-te din momentele noastre din culise. Alătură-te comunității
+          noastre pe Instagram, Facebook și TikTok!
         </p>
 
         <div className="flex justify-center space-x-6 mb-8">
@@ -33,7 +33,8 @@ export default function SocialsSection() {
         </div>
 
         <p className="text-blue-100 text-sm">
-          {"Etichetează-ne în postările tale cu #BrioClean!"}
+          Arată-ne transformările tale! Etichetează-ne cu #BrioCleaning și fii
+          parte din comunitatea noastră.
         </p>
       </div>
     </section>

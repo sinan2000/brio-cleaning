@@ -121,19 +121,20 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground text-balance">
-              Rezultatele se văd de la prima curățare
+              Prospețime vizibilă. Igienă garantată.
             </h2>
           </div>
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto text-pretty">
-            Îți redăm prospețimea și confortul cu echipamente profesionale și
-            produse de cea mai înaltă calitate.
+            Indiferent că este vorba de casa ta, biroul, restaurantul sau sala
+            de evenimente, serviciile Brio Cleaning aduc confort și siguranță
+            pentru oameni și spații.
           </p>
           <div className="mt-6">
             <Link
               href="/programari"
               className="inline-block underline underline-offset-4 text-primary-foreground"
             >
-              Fă-ți o programare acum
+              Fă-ți o programare acum și redescoperă prospețimea!
             </Link>
           </div>
         </div>
