@@ -93,6 +93,7 @@ export const services = [
       },
     ],
     media: [s1_a, s1_b, s1_c, s1_d],
+    orientation: ["portrait", "landscape", "portrait", "portrait"],
     highlights: [
       { icon: Shield, text: "Eco & sigur pentru copii/pets" },
       { icon: SprayCan, text: "Neutralizare mirosuri" },
@@ -152,6 +153,7 @@ export const services = [
       },
     ],
     media: [s2_a, s2_b],
+    orientation: ["portrait", "portrait"],
     prices: [
       { label: "Saltea 1 persoană (față-verso)", p: 150 },
       { label: "Saltea 2 persoane 140x200 cm", p: 180 },
@@ -194,6 +196,7 @@ export const services = [
       },
     ],
     media: [s3_a, s3_b, s3_c, s3_d],
+    orientation: ["portrait", "landscape", "portrait", "portrait"],
     prices: [
       { label: "Fotoliu / extensibil", p: 90 },
       { label: "Scaun cu spătar (dimensiune mică)", p: 20 },
@@ -244,6 +247,7 @@ export const services = [
       },
     ],
     media: [s4_a, s4_b, s4_c, s4_d],
+    orientation: ["landscape", "landscape", "portrait", "portrait"],
     highlights: [
       { icon: Shield, text: "Siguranță & dezinfectare" },
       { icon: SprayCan, text: "Neutralizare mirosuri" },
@@ -328,6 +332,7 @@ export const services = [
       },
     ],
     media: [s5_a, s5_b, s5_c, s5_d],
+    orientation: ["landscape", "landscape", "portrait", "portrait"],
     prices: [
       { label: "Pachet Standard (banchetă + scaune)", p: 300 },
       { label: "Pachet Gold (banchetă, scaune, mochetă)", p: 385 },

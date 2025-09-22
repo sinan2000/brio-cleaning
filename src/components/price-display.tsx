@@ -42,7 +42,7 @@ export default function PriceDisplay({ service }: { service: any }) {
           </p>
           <div className="mt-4">
             <Link href="/programari">
-              <Button className="bg-brio-blue hover:bg-brio-blue-dark text-white">
+              <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
                 Cere ofertă
               </Button>
             </Link>
@@ -109,13 +109,15 @@ export default function PriceDisplay({ service }: { service: any }) {
       )}
 
       {/* CTA under pricing */}
-      <div className="mt-6">
-        <Link href={`/programari?s=${slugFromHref(service.href)}`}>
-          <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
-            Programează-te
-          </Button>
-        </Link>
-      </div>
+      {!service.media ? (
+        <div className="mt-6">
+          <Link href={`/programari?s=${slugFromHref(service.href)}`}>
+            <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
+              Programează-te
+            </Button>
+          </Link>
+        </div>
+      ) : null}
     </section>
   );
 }

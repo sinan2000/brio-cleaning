@@ -14,6 +14,7 @@ import { services } from "@/lib/constants";
 import { slugFromHref } from "@/lib/helpers";
 import Breadcrumbs from "@/components/breadcrumbs";
 import PriceDisplay from "@/components/price-display";
+import Mosaic from "@/components/mosaic";
 
 type Args = {
   params: Promise<{
@@ -23,7 +24,7 @@ type Args = {
 
 export default async function ServicePage({ params: paramsPromise }: Args) {
   const { slug = "" } = await paramsPromise;
-  console.log(slug);
+
   const service = services.find((s) => slugFromHref(s.href) === slug);
   if (!service) return notFound();
 
@@ -142,23 +143,11 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
 
             {/* MOSAIC COLUMN */}
             <ScrollReveal>
-              <div className="order-2 lg:order-1 grid grid-cols-2 gap-3 auto-rows-[140px] sm:auto-rows-[160px] md:auto-rows-[180px] rounded-2xl overflow-hidden">
-                {media.map((img, i) => (
-                  <div
-                    key={i}
-                    className={`relative rounded-lg overflow-hidden bg-muted ${
-                      i < 2 ? "row-span-1" : "row-span-2"
-                    }`}
-                  >
-                    <Image
-                      src={img}
-                      alt={`${service.title} ${i + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width:1024px) 50vw, 100vw"
-                    />
-                  </div>
-                ))}
+              <div className="order-2 lg:order-1">
+                <Mosaic
+                  media={service.media}
+                  orientation={service.orientation ?? ([] as any)}
+                />
               </div>
             </ScrollReveal>
           </div>
