@@ -182,28 +182,31 @@ const TestimonialsColumn = (props: {
                     key={i}
                   >
                     <div>{text}</div>
-                    <div className="flex items-center gap-2 mt-5">
-                      <Image
-                        src={image}
-                        alt={name}
-                        placeholder="blur"
-                        className="h-10 w-10 rounded-full"
-                      />
-                      <div className="flex flex-col">
-                        <div className="font-medium tracking-tight leading-5">
-                          {name}
-                        </div>
-                        <div className="leading-5 opacity-60 tracking-tight">
-                          {role}
+
+                    <div className="flex items-center justify-between mt-5">
+                      <div className="flex items-center gap-2">
+                        <Image
+                          src={image}
+                          alt={name}
+                          placeholder="blur"
+                          className="h-10 w-10 rounded-full"
+                        />
+                        <div className="flex flex-col">
+                          <div className="font-medium tracking-tight leading-5">
+                            {name}
+                          </div>
+                          <div className="leading-5 opacity-60 tracking-tight">
+                            {role}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="shrink-0">
-                      {source === "go" ? (
-                        <GoogleIcon  /> // styled Google
-                      ) : (
-                        <FacebookIcon /> // styled Facebook
-                      )}
+                      <div className="shrink-0">
+                        {source === "go" ? (
+                          <GoogleIcon /> // styled Google
+                        ) : (
+                          <FacebookIcon /> // styled Facebook
+                        )}
+                      </div>
                     </div>
                   </div>
                 )
