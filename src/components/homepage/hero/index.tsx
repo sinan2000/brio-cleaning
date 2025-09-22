@@ -8,7 +8,7 @@ import background from "@/assets/hero/background.jpg";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 import { CheckCircle, ThermometerSun, Timer, Wind } from "lucide-react";
-import AboutUs from "../about";
+import photo from "@/assets/hero/about-us.jpg";
 
 interface MediaAbout {
   overview: string;
@@ -54,20 +54,35 @@ const MediaSection = () => {
       {/* Secțiunea 2: Igienizăm, dezinfectăm, protejăm */}
       <div className="mt-10 rounded-2xl border bg-card text-card-foreground shadow-sm">
         <div className="p-6 md:p-8">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-2">
+          <h3 className="text-2xl md:text-3xl font-semibold mb-6">
             Igienizăm, dezinfectăm, protejăm
           </h3>
-          <p className="text-muted-foreground">
-            La Brio Cleaning spălăm, igienizăm și dezinfectăm canapele, saltele,
-            fotolii și toate textilele din casa sau mașina ta, readucând
-            prospețimea și confortul în fiecare colț. <br />
-            Folosim echipamente profesionale, <b>abur la 150&nbsp;°C</b> și
-            soluții ecologice, sigure pentru întreaga familie și animale de
-            companie.
-          </p>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Checklist */}
+          {/* ROW 1: Image + Description (stacked; image first on mobile, text first on desktop) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+            <Image
+              src={photo}
+              alt="BrioCleaning la lucru"
+              className="rounded-xl shadow-lg w-full h-auto order-1 md:order-2"
+              priority
+            />
+
+            <div className="order-2">
+              <p className="text-muted-foreground">
+                La Brio Cleaning spălăm, igienizăm și dezinfectăm canapele,
+                saltele, fotolii și toate textilele din casa sau mașina ta,
+                readucând prospețimea și confortul în fiecare colț.
+              </p>
+              <p className="text-muted-foreground mt-3">
+                Folosim echipamente profesionale, <b>abur la 150&nbsp;°C</b> și
+                soluții ecologice, sigure pentru întreaga familie și animale de
+                companie.
+              </p>
+            </div>
+          </div>
+
+          {/* ROW 2: Checks + Beneficii */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <ul className="space-y-3">
               {[
                 "Profesioniști dedicați și cu experiență",
@@ -84,7 +99,6 @@ const MediaSection = () => {
               ))}
             </ul>
 
-            {/* Beneficii cu pictograme */}
             <div className="rounded-xl p-4 md:p-5 bg-muted/60">
               <h4 className="font-semibold mb-3">Beneficii</h4>
               <ul className="space-y-3">
@@ -113,11 +127,6 @@ const MediaSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* AboutUs vizual sub secțiunea de beneficii */}
-      <div className="mt-8">
-        <AboutUs />
       </div>
     </div>
   );
