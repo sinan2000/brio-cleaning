@@ -16,8 +16,6 @@ export async function submitBooking(input: unknown) {
   }
   const data = parsed.data;
 
-  console.log(data);
-
   await sendSms(data);
 
   return { ok: true };
@@ -38,6 +36,34 @@ function toGSM(input: string) {
     .replace(/…/g, "...");
 
   return s;
+}
+
+function formatIOSDate(d: Date, tz = "Europe/Bucharest") {
+  // => "16.09.2025"
+  return new Intl.DateTimeFormat("ro-RO", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: tz,
+  }).format(d);
+}
+
+function normalizeSlot(slot: string) {
+  // Accept "9-12", "09-12", "09:00-12", "09:00-12:00", "09–12" etc.
+  const m = slot.match(
+    /^\s*(\d{1,2})(?::?(\d{2}))?\s*[-–]\s*(\d{1,2})(?::?(\d{2}))?\s*$/
+  );
+  if (!m) return slot.trim(); // fallback, keep as-is
+  const sH = m[1].padStart(2, "0");
+  const sM = (m[2] ?? "00").padStart(2, "0");
+  const eH = m[3].padStart(2, "0");
+  const eM = (m[4] ?? "00").padStart(2, "0");
+  return `${sH}:${sM}-${eH}:${eM}`; // GSM-safe hyphen
+}
+
+function formatIOSDateTime(dateInput: string | Date, slot: string) {
+  const d = new Date(dateInput);
+  return `${formatIOSDate(d)} ${normalizeSlot(slot)}`; // "16.09.2025 09:00-12:00"
 }
 
 // dd/MM/yyyy with safe parsing of 'yyyy-MM-dd' (no UTC shift)
@@ -74,10 +100,11 @@ async function sendSms(data: any) {
 
   const svc = services.find((s) => slugFromHref(s.href) === service)!;
   const dateStr = formatDMY(date);
+  const iosDateTime = formatIOSDateTime(date, timeSlot);
 
   const from = "Website";
   const text =
-    `Programare nouă de la ${name}, tel. ${phone}, pentru ${svc.title}, pe ${dateStr}, orele ${timeSlot}, adresa ${addressInline}.` +
+    `Programare nouă de la ${name}, tel. ${phone}, pentru ${svc.title}, pe ${iosDateTime}, adresa ${addressInline}.` +
     (messageInline ? `Mesaj: ${messageInline}` : "");
   const cleanText = toGSM(text);
 

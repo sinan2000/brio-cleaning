@@ -24,7 +24,7 @@ import StepSchedule from "@/components/programari/step-3";
 import StepSummary from "@/components/programari/step-4";
 import { submitBooking } from "./actions";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 function Programare() {
   const [currentStep, setCurrentStep] = useState(1);
