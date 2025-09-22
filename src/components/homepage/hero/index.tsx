@@ -8,6 +8,7 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import { CheckCircle, ThermometerSun, Timer, Wind } from "lucide-react";
 import photo from "@/assets/hero/about-us.jpg";
+import { Reveal } from "@/components/reveal";
 
 interface MediaAbout {
   overview: string;
@@ -42,7 +43,7 @@ const MediaSection = () => {
   const currentMedia = sampleMediaContent;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-6">
+    <Reveal className="max-w-4xl mx-auto px-4 md:px-6">
       <h2 className="text-3xl md:text-4xl leading-tight font-bold mb-4 text-foreground">
         Cine suntem noi?
       </h2>
@@ -127,7 +128,7 @@ const MediaSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Reveal>
   );
 };
 
