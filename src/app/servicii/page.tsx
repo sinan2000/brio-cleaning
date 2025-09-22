@@ -6,6 +6,7 @@ import { services } from "@/lib/constants";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs";
 import { Reveal } from "@/components/reveal";
+import { getPriceText } from "@/lib/helpers";
 
 export default function ServicesPage() {
   return (
@@ -53,6 +54,15 @@ export default function ServicesPage() {
                             priority={index === 0}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+
+                          {/* PRICE BADGE */}
+                          <span
+                            className="absolute top-4 right-4 bg-brio-blue-dark text-white
+                 text-xs sm:text-sm md:text-base font-semibold
+                 px-3 py-1.5 rounded-full shadow-lg"
+                          >
+                            {getPriceText(service)}
+                          </span>
                         </div>
                       </div>
 
