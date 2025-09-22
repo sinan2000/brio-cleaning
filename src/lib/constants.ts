@@ -56,9 +56,9 @@ export const services = [
     description:
       "Redăm confortul și frumusețea canapelei tale printr-o curățare profesională în profunzime.",
     features: [
-      "Aspirare cu Kirby – elimină praf, acarieni și alergeni",
-      "Dezinfectare cu abur la 150 °C – igienizare totală și mirosuri neutralizate",
-      "Soluții ecologice – sigure pentru familie și animale de companie",
+      "Aspirare cu Kirby - elimină praf, acarieni și alergeni",
+      "Dezinfectare cu abur la 150 °C - igienizare totală și mirosuri neutralizate",
+      "Soluții ecologice - sigure pentru familie și animale de companie",
       "Îndepărtarea petelor (cafea, suc, ulei, uzură)",
       "Clătire/neutralizare și periere pentru textură uniformă",
     ],
@@ -79,11 +79,11 @@ export const services = [
     faqs: [
       {
         q: "Cât durează intervenția?",
-        a: "60–180 minute, în funcție de mărime și gradul de murdărie.",
+        a: "60-180 minute, în funcție de mărime și gradul de murdărie.",
       },
       {
         q: "În cât timp se usucă?",
-        a: "4–6 ore cu ventilație normală (mai mult iarna/umiditate mare).",
+        a: "4-6 ore cu ventilație normală (mai mult iarna/umiditate mare).",
       },
       {
         q: "Scoateți toate petele?",
@@ -128,11 +128,11 @@ export const services = [
     faqs: [
       {
         q: "Cât durează?",
-        a: "30–90 minute pe saltea, în funcție de dimensiune și stare.",
+        a: "30-90 minute pe saltea, în funcție de dimensiune și stare.",
       },
       {
         q: "Se poate dormi în aceeași zi?",
-        a: "Da, după uscarea completă (de obicei 4–6 ore cu aerisire).",
+        a: "Da, după uscarea completă (de obicei 4-6 ore cu aerisire).",
       },
       {
         q: "Ajută la alergii?",
@@ -173,7 +173,7 @@ export const services = [
       },
       {
         q: "Timp de uscare?",
-        a: "3–6 ore, în funcție de țesătură și ventilație.",
+        a: "3-6 ore, în funcție de țesătură și ventilație.",
       },
     ],
     media: [],
@@ -243,7 +243,7 @@ export const services = [
     longDescription:
       "Aspirare detaliată, pretratare pete, extracție pentru textile, curățare delicată + hidratare pentru piele, detaliere bord/volan, igienizare puncte de contact.",
     faqs: [
-      { q: "Cât durează?", a: "2–4 ore în funcție de mărime și stare." },
+      { q: "Cât durează?", a: "2-4 ore în funcție de mărime și stare." },
       {
         q: "Rămâne umezeală?",
         a: "Nu—extracție controlată și aerisire; uscarea în câteva ore.",
@@ -299,9 +299,9 @@ export const priceList = [
   {
     group: "Incluse în orice serviciu",
     includes: [
-      "Igienizare cu abur la 150°C – elimină bacteriile, acarienii și alergenii",
-      "Sterilizare cu ozon & lampă UV-C – aer curat și mirosuri neutralizate",
-      "Soluții ecologice – sigure pentru copii și animale de companie",
+      "Igienizare cu abur la 150°C - elimină bacteriile, acarienii și alergenii",
+      "Sterilizare cu ozon & lampă UV-C - aer curat și mirosuri neutralizate",
+      "Soluții ecologice - sigure pentru copii și animale de companie",
       "Rezultate vizibile de la prima curățare",
     ],
     items: [],
@@ -312,7 +312,7 @@ export const priceList = [
       { name: "Curățare fotoliu / extensibil", price: 90, unit: "lei" },
       {
         name: "Curățare scaun cu spătar",
-        price: "20–30",
+        price: "20-30",
         unit: "lei",
         note: "în funcție de dimensiune",
       },
@@ -323,14 +323,14 @@ export const priceList = [
   {
     group: "Saltele",
     items: [
-      { name: "Saltea 1 persoană (față–verso)", price: 150, unit: "lei" },
+      { name: "Saltea 1 persoană (față-verso)", price: 150, unit: "lei" },
       {
-        name: "Saltea 2 pers. (față–verso) 140×200 cm",
+        name: "Saltea 2 pers. (față-verso) 140×200 cm",
         price: 180,
         unit: "lei",
       },
       {
-        name: "Saltea 2 pers. (față–verso) 200×200 cm",
+        name: "Saltea 2 pers. (față-verso) 200×200 cm",
         price: 220,
         unit: "lei",
       },
@@ -345,7 +345,7 @@ export const priceList = [
       { name: "Colțar 3 locuri", price: 175, unit: "lei" },
       { name: "Colțar 4 locuri", price: 220, unit: "lei" },
       { name: "Colțar 5 locuri", price: 260, unit: "lei" },
-      { name: "Colțar 6–8 locuri", price: 310, unit: "lei" },
+      { name: "Colțar 6-8 locuri", price: 310, unit: "lei" },
       { name: "Colțar 7 locuri", price: 410, unit: "lei" },
       { name: "Colțar 8 locuri", price: 460, unit: "lei" },
       { name: "Extensie", price: 50, unit: "lei" },
