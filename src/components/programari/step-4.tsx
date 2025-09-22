@@ -12,7 +12,8 @@ import type { BookingFormData } from "@/app/programari/schema";
 import { TIME_SLOTS } from "@/lib/constants";
 
 // ⬇️ use your services + slugFromHref
-import { services as SERVICE_DATA, slugFromHref } from "@/lib/constants";
+import { services as SERVICE_DATA } from "@/lib/constants";
+import { slugFromHref } from "@/lib/helpers";
 import Link from "next/link";
 
 export default function StepSummary() {

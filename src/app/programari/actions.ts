@@ -3,7 +3,8 @@
 import { bookingSchema } from "./schema";
 import { Vonage } from "@vonage/server-sdk";
 import { Auth } from "@vonage/auth";
-import { contact, normPhone, services, slugFromHref } from "@/lib/constants";
+import { contact, services } from "@/lib/constants";
+import { normPhone, slugFromHref } from "@/lib/helpers";
 import { format, parse, isValid } from "date-fns";
 import { redirect } from "next/navigation";
 
@@ -82,7 +83,7 @@ async function sendSms(data: any) {
 
   try {
     await vonage.sms.send({
-      to: "40732405829", //normPhone(),
+      to: normPhone(),
       from,
       text: cleanText,
     });
@@ -97,7 +98,7 @@ async function sendSms(data: any) {
     s: svc.title, // slug, e.g. "curatare-tapiterie"
     d: dateStr,
     t: data.timeSlot, // "09-12"
-    n: data.name.split(" ")[0] || data.name
+    n: data.name.split(" ")[0] || data.name,
   });
 
   redirect(`/programari/succes?${qs.toString()}`);

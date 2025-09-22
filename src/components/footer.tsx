@@ -1,16 +1,11 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Logo from "./Logo";
-import {
-  menuItems,
-  services,
-  contact,
-  socialLinks,
-  normPhone,
-} from "@/lib/constants";
+import { menuItems, services, contact, socialLinks } from "@/lib/constants";
 import anpcSal from "@/assets/anpc-sal.png";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { normPhone } from "@/lib/helpers";
 
 export default function Footer() {
   const quickLinks = [
@@ -29,7 +24,8 @@ export default function Footer() {
           <div className="space-y-4">
             <Logo />
             <p className="text-gray-300 text-sm text-pretty">
-              Curățenie profesională în Timișoara, sigură pentru oameni și mediu. Aducem prospețime și strălucire fiecărei suprafețe.
+              Curățenie profesională în Timișoara, sigură pentru oameni și
+              mediu. Aducem prospețime și strălucire fiecărei suprafețe.
             </p>
             <div className="pt-1 flex gap-3">
               {socialLinks.map((s) => (

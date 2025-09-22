@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
-import { timeAgo } from "@/lib/constants";
+import { timeAgo } from "@/lib/helpers";
 
 import asset1 from "@/assets/reviews/1.jpg";
 import asset2 from "@/assets/reviews/2.png";

@@ -10,7 +10,8 @@ import {
 } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { services, slugFromHref } from "@/lib/constants";
+import { services } from "@/lib/constants";
+import { slugFromHref } from "@/lib/helpers";
 import Breadcrumbs from "@/components/breadcrumbs";
 
 type Args = {

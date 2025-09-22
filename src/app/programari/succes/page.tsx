@@ -1,7 +1,8 @@
 // app/programari/succes/page.tsx
 import { CheckCircle, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { services, slugFromHref } from "@/lib/constants";
+import { services } from "@/lib/constants";
+import { slugFromHref } from "@/lib/helpers";
 
 type PageProps = {
   searchParams: Promise<Record<string, string | undefined>>;

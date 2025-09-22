@@ -1,4 +1,5 @@
-import { contact, normPhone } from "@/lib/constants";
+import { contact } from "@/lib/constants";
+import { normPhone } from "@/lib/helpers";
 import Link from "next/link";
 
 export default function WhatsAppButton() {

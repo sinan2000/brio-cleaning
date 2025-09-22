@@ -24,14 +24,6 @@ export const menuItems = [
   { name: "Contact", href: "/contact" },
 ];
 
-export const contact = {
-  phone: "+40 787 675 225",
-  email: "contact@briocleaning.ro",
-  address: "Timișoara, România",
-};
-
-export const normPhone = () => contact.phone.replace(/[\s+]/g, "");
-
 export const services = [
   {
     icon: Sofa,
@@ -83,6 +75,19 @@ export const services = [
       { icon: Shield, text: "Eco & sigur pentru copii/pets" },
       { icon: SprayCan, text: "Neutralizare mirosuri" },
     ],
+    prices: [
+      { label: "Canapea 2 locuri", p: 130 },
+      { label: "Colțar 3 locuri", p: 175 },
+      { label: "Colțar 4 locuri", p: 220 },
+      { label: "Colțar 5 locuri", p: 260 },
+      { label: "Colțar 6 locuri", p: 310 },
+      { label: "Colțar 7 locuri", p: 410 },
+      { label: "Colțar 8 locuri", p: 460 },
+      { label: "Extensie", p: 50 },
+      { label: "Pernă mică", p: 15 },
+      { label: "Pernă mare", p: 35 },
+    ],
+    gratis: true,
   },
   {
     icon: Bed,
@@ -317,109 +322,11 @@ export const services = [
   },
 ];
 
-export const priceList = [
-  {
-    group: "Incluse în orice serviciu",
-    includes: [
-      "Igienizare cu abur la 150°C - elimină bacteriile, acarienii și alergenii",
-      "Sterilizare cu ozon & lampă UV-C - aer curat și mirosuri neutralizate",
-      "Soluții ecologice - sigure pentru copii și animale de companie",
-      "Rezultate vizibile de la prima curățare",
-    ],
-    items: [],
-  },
-  {
-    group: "Scaune & Fotolii",
-    items: [
-      { name: "Curățare fotoliu / extensibil", price: 90, unit: "lei" },
-      {
-        name: "Curățare scaun cu spătar",
-        price: "20-30",
-        unit: "lei",
-        note: "în funcție de dimensiune",
-      },
-      { name: "Dezinfectare cu abur", price: "GRATUIT" },
-      { name: "Sterilizare cu ozon & UV-C", price: "GRATUIT" },
-    ],
-  },
-  {
-    group: "Saltele",
-    items: [
-      { name: "Saltea 1 persoană (față-verso)", price: 150, unit: "lei" },
-      {
-        name: "Saltea 2 pers. (față-verso) 140×200 cm",
-        price: 180,
-        unit: "lei",
-      },
-      {
-        name: "Saltea 2 pers. (față-verso) 200×200 cm",
-        price: 220,
-        unit: "lei",
-      },
-      { name: "Dezinfectare cu abur", price: "GRATUIT" },
-      { name: "Sterilizare cu ozon & UV-C", price: "GRATUIT" },
-    ],
-  },
-  {
-    group: "Canapele & Colțare",
-    items: [
-      { name: "Canapea 2 locuri", price: 130, unit: "lei" },
-      { name: "Colțar 3 locuri", price: 175, unit: "lei" },
-      { name: "Colțar 4 locuri", price: 220, unit: "lei" },
-      { name: "Colțar 5 locuri", price: 260, unit: "lei" },
-      { name: "Colțar 6-8 locuri", price: 310, unit: "lei" },
-      { name: "Colțar 7 locuri", price: 410, unit: "lei" },
-      { name: "Colțar 8 locuri", price: 460, unit: "lei" },
-      { name: "Extensie", price: 50, unit: "lei" },
-      { name: "Pernă mică", price: 15, unit: "lei" },
-      { name: "Pernă mare", price: 35, unit: "lei" },
-      { name: "Dezinfectare cu abur", price: "GRATUIT" },
-      { name: "Sterilizare cu ozon & UV-C", price: "GRATUIT" },
-    ],
-  },
-  {
-    group: "Tapițerie auto",
-    items: [
-      { name: "Pachet Standard (banchetă + scaune)", price: 300, unit: "lei" },
-      {
-        name: "Pachet Gold (banchetă, scaune, mochetă)",
-        price: 385,
-        unit: "lei",
-      },
-      {
-        name: "Pachet Deluxe (banchetă, scaune, mochetă, portbagaj, fețe uși, preșuri textile)",
-        price: 510,
-        unit: "lei",
-      },
-      { name: "Detailing interior complet", price: 850, unit: "lei" },
-      { name: "Jeep/4x4 (supliment)", price: 50, unit: "lei" },
-      { name: "Tapițerie piele (supliment)", price: 50, unit: "lei" },
-      { name: "Dezinfectare cu abur", price: "GRATUIT" },
-      { name: "Sterilizare cu ozon & UV-C", price: "GRATUIT" },
-    ],
-  },
-  {
-    group: "Covoare & Mochete",
-    items: [
-      { name: "Curățare mochetă", price: 14, unit: "lei/mp" },
-      { name: "Dezinfectare cu abur", price: "GRATUIT" },
-      { name: "Sterilizare cu ozon & UV-C", price: "GRATUIT" },
-    ],
-  },
-  {
-    group: "Mențiuni",
-    items: [
-      {
-        name: "Autoutilitare, microbuze, autobuze, autocare",
-        price: "Ofertă personalizată",
-      },
-    ],
-  },
-];
-
-export function slugFromHref(href: string) {
-  return href.split("/").filter(Boolean).pop() ?? "";
-}
+export const TIME_SLOTS = [
+  { id: "morning", label: "09:00 - 12:00", value: "09-12" },
+  { id: "afternoon", label: "12:00 - 15:00", value: "12-15" },
+  { id: "evening", label: "15:00 - 18:00", value: "15-18" },
+] as const;
 
 export const socialLinks = [
   {
@@ -439,24 +346,8 @@ export const socialLinks = [
   },
 ];
 
-export const TIME_SLOTS = [
-  { id: "morning", label: "09:00 - 12:00", value: "09-12" },
-  { id: "afternoon", label: "12:00 - 15:00", value: "12-15" },
-  { id: "evening", label: "15:00 - 18:00", value: "15-18" },
-] as const;
-
-export function timeAgo(dateString: string): string {
-  const now = new Date();
-  const then = new Date(dateString);
-
-  const diffMonths =
-    (now.getFullYear() - then.getFullYear()) * 12 +
-    (now.getMonth() - then.getMonth());
-
-  if (diffMonths < 12) {
-    return `${diffMonths} month${diffMonths !== 1 ? "s" : ""} ago`;
-  }
-
-  const diffYears = Math.floor(diffMonths / 12);
-  return `${diffYears} year${diffYears !== 1 ? "s" : ""} ago`;
-}
+export const contact = {
+  phone: "+40 787 675 225",
+  email: "contact@briocleaning.ro",
+  address: "Timișoara, România",
+};

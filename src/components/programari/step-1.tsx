@@ -11,7 +11,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 
 import type { BookingFormData } from "@/app/programari/schema";
-import { services as SERVICE_DATA, slugFromHref } from "@/lib/constants";
+import { services as SERVICE_DATA } from "@/lib/constants";
+import { slugFromHref } from "@/lib/helpers";
 
 export default function StepService() {
   const { control, watch } = useFormContext<BookingFormData>();
