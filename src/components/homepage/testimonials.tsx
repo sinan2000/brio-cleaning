@@ -16,6 +16,7 @@ import asset10 from "@/assets/reviews/10.png";
 import asset11 from "@/assets/reviews/11.jpg";
 import asset12 from "@/assets/reviews/12.png";
 import Image from "next/image";
+import { FacebookIcon, GoogleIcon } from "../icons";
 
 const testimonials = [
   {
@@ -174,31 +175,39 @@ const TestimonialsColumn = (props: {
         {[
           ...new Array(2).fill(0).map((_, index) => (
             <React.Fragment key={index}>
-              {props.testimonials.map(({ text, image, name, role }, i) => (
-                <div
-                  className="p-10 rounded-3xl border shadow-lg shadow-primary/10 max-w-xs w-full"
-                  key={i}
-                >
-                  <div>{text}</div>
-                  <div className="flex items-center gap-2 mt-5">
-                    <Image
-                      //width={40}
-                      //height={40}
-                      src={image}
-                      alt={name}
-                      className="h-10 w-10 rounded-full"
-                    />
-                    <div className="flex flex-col">
-                      <div className="font-medium tracking-tight leading-5">
-                        {name}
-                      </div>
-                      <div className="leading-5 opacity-60 tracking-tight">
-                        {role}
+              {props.testimonials.map(
+                ({ text, image, name, role, source }, i) => (
+                  <div
+                    className="p-10 rounded-3xl border shadow-lg shadow-primary/10 max-w-xs w-full"
+                    key={i}
+                  >
+                    <div>{text}</div>
+                    <div className="flex items-center gap-2 mt-5">
+                      <Image
+                        src={image}
+                        alt={name}
+                        placeholder="blur"
+                        className="h-10 w-10 rounded-full"
+                      />
+                      <div className="flex flex-col">
+                        <div className="font-medium tracking-tight leading-5">
+                          {name}
+                        </div>
+                        <div className="leading-5 opacity-60 tracking-tight">
+                          {role}
+                        </div>
                       </div>
                     </div>
+                    <div className="shrink-0">
+                      {source === "go" ? (
+                        <GoogleIcon  /> // styled Google
+                      ) : (
+                        <FacebookIcon /> // styled Facebook
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </React.Fragment>
           )),
         ]}
