@@ -3,6 +3,7 @@ import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import SNSFooter from "@/components/sns/footer-client";
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -30,12 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className="scroll-smooth">
-      <body
-        className={`${poppins.variable} ${openSans.variable} antialiased`}
-      >
+      <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />
+        <SNSFooter />
       </body>
     </html>
   );
