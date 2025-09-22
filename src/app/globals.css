@@ -47,6 +47,7 @@
   --color-brio-blue-dark: var(--brio-blue-secondary);
   --color-brio-green: var(--brio-green);
   --color-brio-gray: var(--brio-gray);
+  --color-brio-orange: var(--brio-orange);
 
   --animate-swipe-in: swipe-in 2s cubic-bezier(0.22, 1, 0.36, 1) both;
 
