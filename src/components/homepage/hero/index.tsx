@@ -44,17 +44,17 @@ const MediaSection = () => {
 
   return (
     <Reveal className="max-w-4xl mx-auto px-4 md:px-6">
-      <h2 className="text-3xl md:text-4xl leading-tight font-bold mb-4 text-foreground">
+      <h2 className="text-3xl md:text-4xl leading-tight mb-4 text-foreground">
         Cine suntem noi?
       </h2>
-      <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
+      <p className="text-base md:text-lg lg:text-xl text-gray-700">
         {currentMedia.about.overview}
       </p>
 
       {/* Secțiunea 2: Igienizăm, dezinfectăm, protejăm */}
       <div className="mt-10 rounded-2xl border bg-card text-card-foreground shadow-sm">
         <div className="p-6 md:p-8">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-6">
+          <h3 className="text-2xl md:text-3xl mb-6">
             Igienizăm, dezinfectăm, protejăm
           </h3>
 
@@ -64,16 +64,16 @@ const MediaSection = () => {
               src={photo}
               alt="BrioCleaning la lucru"
               className="rounded-xl shadow-lg w-full h-auto order-2 md:order-1"
-              priority
+              placeholder="blur"
             />
 
             <div className="order-1 md:order-2">
-              <p className="text-muted-foreground text-base md:text-lg">
+              <p className="text-gray-700 text-base md:text-lg">
                 La Brio Cleaning spălăm, igienizăm și dezinfectăm canapele,
                 saltele, fotolii și toate textilele din casa sau mașina ta,
                 readucând prospețimea și confortul în fiecare colț.
               </p>
-              <p className="text-muted-foreground mt-3 text-base md:text-lg">
+              <p className="text-gray-700 mt-3 text-base md:text-lg">
                 Folosim echipamente profesionale, <b>abur la 150&nbsp;°C</b> și
                 soluții ecologice, sigure pentru întreaga familie și animale de
                 companie.

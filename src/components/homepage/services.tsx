@@ -11,10 +11,10 @@ export default function ServicesSection() {
     <section id="services" className="py-20 bg-brio-gray">
       <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl tracking-tight mb-4">
             Serviciile Noastre
           </h2>
-          <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto text-pretty">
+          <p className="text-base md:text-lg text-gray-900 max-w-2xl mx-auto text-pretty">
             Soluții complete de curățare adaptate nevoilor dumneavoastră
             specifice. Rezultate profesionale, de fiecare dată.
           </p>
@@ -28,7 +28,7 @@ export default function ServicesSection() {
               <Card
                 key={index}
                 className="group overflow-hidden md:col-span-3 flex flex-col md:flex-row
-             md:items-stretch md:min-h-[320px] lg:min-h-[340px] py-0 gap-0"
+             md:items-stretch md:min-h-[240px] lg:min-h-[280px] py-0 gap-0"
               >
                 {/* IMAGE LEFT */}
                 <div className="relative md:w-2/5 h-48 md:h-auto md:self-stretch overflow-hidden">
@@ -45,13 +45,13 @@ export default function ServicesSection() {
                 {/* CONTENT RIGHT */}
                 <div className="flex-1 flex flex-col">
                   <CardHeader className="pt-4 pb-2 md:pt-5 md:pb-2">
-                    <CardTitle className="text-xl md:text-2xl text-gray-900">
+                    <CardTitle className="text-lg md:text-xl text-gray-900">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
 
-                  <CardContent className="pt-0 px-4 md:px-6 pb-4 md:pb-5 space-y-3 flex-1 flex flex-col">
-                    <p className="text-gray-600 text-sm md:text-base line-clamp-2">
+                  <CardContent className="pt-0 px-4 md:px-6 pb-4 md:pb-7 space-y-3 flex-1 flex flex-col">
+                    <p className="text-gray-700 text-sm">
                       {service.description}
                     </p>
 
@@ -59,7 +59,7 @@ export default function ServicesSection() {
                       {service.features.slice(0, 3).map((feature, i) => (
                         <li
                           key={i}
-                          className="flex items-center text-sm md:text-base text-gray-700"
+                          className="flex items-center text-sm text-gray-700"
                         >
                           <div className="w-2 h-2 bg-brio-blue rounded-full mr-3" />
                           {feature}
@@ -101,13 +101,13 @@ export default function ServicesSection() {
                 </div>
 
                 <CardHeader className="pt-4 pb-2">
-                  <CardTitle className="text-lg md:text-xl lg:text-2xl text-gray-900">
+                  <CardTitle className="text-lg md:text-xl text-gray-900">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="pt-0 space-y-4 flex-1 flex flex-col">
-                  <p className="text-gray-600 text-sm md:text-base">
+                  <p className="text-gray-700 text-sm">
                     {service.description}
                   </p>
 
@@ -117,7 +117,7 @@ export default function ServicesSection() {
                       .map((feature, featureIndex) => (
                         <li
                           key={featureIndex}
-                          className="flex items-center text-sm md:text-base text-gray-700"
+                          className="flex items-center text-sm text-gray-700"
                         >
                           <div className="w-2 h-2 bg-brio-blue rounded-full mr-3" />
                           {feature}
