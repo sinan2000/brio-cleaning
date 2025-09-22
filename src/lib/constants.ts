@@ -364,9 +364,9 @@ export const services = [
 ];
 
 export const TIME_SLOTS = [
-  { id: "morning", label: "09:00 - 12:00", value: "09-12" },
-  { id: "afternoon", label: "12:00 - 15:00", value: "12-15" },
-  { id: "evening", label: "15:00 - 18:00", value: "15-18" },
+  { id: "morning", label: "08:00 - 11:30", value: "08-12" },
+  { id: "afternoon", label: "12:00 - 15:30", value: "12-16" },
+  { id: "evening", label: "16:00 - 19:30", value: "16-20" },
 ] as const;
 
 export const socialLinks = [

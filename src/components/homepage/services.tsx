@@ -4,13 +4,13 @@ import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { Reveal } from "../reveal";
 import { getPriceText } from "@/lib/helpers";
+import { ScrollReveal } from "../scroll-reveal";
 
 export default function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-brio-gray">
-      <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl tracking-tight mb-4">
             Serviciile Noastre
@@ -150,7 +150,7 @@ export default function ServicesSection() {
             );
           })}
         </div>
-      </Reveal>
+      </ScrollReveal>
     </section>
   );
 }
