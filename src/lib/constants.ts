@@ -126,6 +126,12 @@ export const services = [
       },
     ],
     media: [],
+    prices: [
+      { label: "Saltea 1 persoană (față-verso)", p: 150 },
+      { label: "Saltea 2 persoane 140x200 cm", p: 180 },
+      { label: "Saltea 2 persoane 200x200 cm", p: 220 },
+    ],
+    gratis: true,
   },
   {
     icon: Armchair,
@@ -161,6 +167,12 @@ export const services = [
       },
     ],
     media: [],
+    prices: [
+      { label: "Fotoliu / extensibil", p: 90 },
+      { label: "Scaun cu spătar (dimensiune mică)", p: 20 },
+      { label: "Scaun cu spătar (dimensiune mare)", p: 30 },
+    ],
+    gratis: true,
   },
   {
     special: true,
@@ -209,6 +221,9 @@ export const services = [
       { icon: Shield, text: "Siguranță & dezinfectare" },
       { icon: SprayCan, text: "Neutralizare mirosuri" },
     ],
+    prices: [],
+    gratis: false,
+    note: "Ofertă personalizată în funcție de spațiu și suprafață.",
   },
   {
     icon: Layers,
@@ -245,6 +260,8 @@ export const services = [
       },
     ],
     media: [],
+    prices: [{ label: "Curățare mochetă", p: 14, unit: "mp" }],
+    gratis: true,
   },
   {
     icon: Car,
@@ -282,6 +299,19 @@ export const services = [
       },
     ],
     media: [],
+    prices: [
+      { label: "Pachet Standard (banchetă + scaune)", p: 300 },
+      { label: "Pachet Gold (banchetă, scaune, mochetă)", p: 385 },
+      {
+        label:
+          "Pachet Deluxe (banchetă, scaune, mochetă, portbagaj, fețe de uși, preșuri)",
+        p: 510,
+      },
+      { label: "Detailing interior complet", p: 850 },
+      { label: "Jeep / 4x4 supliment", p: 50 },
+      { label: "Tapițerie piele supliment", p: 50 },
+    ],
+    gratis: true,
   },
   {
     icon: Droplet,
@@ -318,6 +348,9 @@ export const services = [
       },
     ],
     media: [],
+    prices: [],
+    gratis: false,
+    note: "Preț stabilit în funcție de suprafață și tip de piele",
   },
 ];
 
