@@ -377,7 +377,7 @@ export const socialLinks = [
   },
   {
     name: "Instagram",
-    icon: "simple-icons:instagram",
+    icon: "skill-icons:instagram",
     href: "https://www.instagram.com/briocleaningtm/",
   },
 ];
