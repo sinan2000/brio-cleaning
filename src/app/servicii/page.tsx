@@ -5,6 +5,7 @@ import Link from "next/link";
 import { services } from "@/lib/constants";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs";
+import { Reveal } from "@/components/reveal";
 
 export default function ServicesPage() {
   return (
@@ -13,12 +14,12 @@ export default function ServicesPage() {
       <section className="container mx-auto px-4 pt-20 md:pt-24 lg:pt-28 pb-12 text-center">
         <Breadcrumbs
           items={[{ label: "Acasă", href: "/" }, { label: "Servicii" }]}
-          className="mb-3 flex justify-center md:justify-start"
+          className="sr-only mb-3 flex justify-center md:justify-start"
         />
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+        <h1 className="text-4xl md:text-5xl text-foreground mb-6 text-balance">
           Serviciile Noastre
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+        <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto text-pretty">
           De la tapițerii și auto, până la HoReCa — oferim curățare profesională
           pentru orice nevoie.
         </p>
@@ -30,7 +31,7 @@ export default function ServicesPage() {
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
-              <ScrollReveal key={index} delay={index * 200}>
+              <Reveal key={index}>
                 <div className="min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center">
                   <div className="container mx-auto px-4">
                     <div
@@ -66,12 +67,12 @@ export default function ServicesPage() {
                             <service.icon className="h-6 w-6" />{" "}
                           </div>
                           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-balance">
-                            {service.title}
+                            {service.title ?? ""}
                           </h2>
                         </div>
 
-                        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-                          {service.description}
+                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-pretty">
+                          {service.description ?? ""}
                         </p>
 
                         <aside className="mt-3 rounded-xl border border-brio-green/30 bg-brio-green/5 p-4 flex gap-3 items-start">
@@ -83,24 +84,26 @@ export default function ServicesPage() {
                         </aside>
 
                         <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                          {service.features.map((feature, featureIndex) => (
-                            <div
-                              key={featureIndex}
-                              className="flex items-center gap-3"
-                            >
-                              <Check className="w-5 h-5 text-brio-blue flex-shrink-0" />
-                              <span className="text-foreground font-medium text-sm md:text-base">
-                                {feature}
-                              </span>
-                            </div>
-                          ))}
+                          {service.features
+                            .slice(0, 4)
+                            .map((feature, featureIndex) => (
+                              <div
+                                key={featureIndex}
+                                className="flex items-center gap-3"
+                              >
+                                <Check className="w-5 h-5 text-brio-blue flex-shrink-0" />
+                                <span className="text-foreground font-medium text-sm md:text-base">
+                                  {feature}
+                                </span>
+                              </div>
+                            ))}
                         </div>
 
                         <div className="pt-4">
                           <Link href={service.href}>
                             <Button
                               size="lg"
-                              className="text-base md:text-lg px-6 md:px-8 py-3 bg-brio-blue hover:bg-brio-blue-dark"
+                              className="text-base md:text-lg px-6 md:px-8 py-3 bg-brio-blue-dark/90 hover:bg-brio-blue-dark"
                             >
                               Vezi Detalii
                             </Button>
@@ -110,7 +113,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
+              </Reveal>
             );
           })}
         </div>

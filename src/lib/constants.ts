@@ -111,6 +111,7 @@ export const services = [
       "Îmbunătățește calitatea somnului",
       "Prelungește durata de utilizare a saltelei",
     ],
+    fact: "Aspirarea profundă HEPA combinată cu abur controlat ajută la reducerea alergenilor din stratul superior al saltelei fără a o îmbiba.",
     longDescription:
       "Aspirare profundă cu filtru HEPA, pretratare pete, igienizare cu abur controlat, neutralizare și aerare pentru uscare rapidă.",
     faqs: [
@@ -156,6 +157,7 @@ export const services = [
       "Menținerea aspectului estetic și a confortului",
       "Prevenirea uzurii premature",
     ],
+    fact: "Uleiurile de piele și praful se fixează în fibrele zonelor de contact; pretratarea țintită + extracția controlează re-depunerea.",
     longDescription:
       "Aspirare HEPA, pretratare pete, extracție/abur în funcție de material, clătire/neutralizare, periere finală.",
     faqs: [
@@ -249,6 +251,7 @@ export const services = [
       "Uscare rapidă, fără disconfort",
       "Protecție îndelungată pentru suprafață",
     ],
+    fact: "Mocheta reține praful fin în suportul textil; extracția profesională desprinde particulele pe care aspirarea casnică nu le poate scoate.",
     longDescription:
       "Aspirare industrială, pretratare pete, spălare/extracție, clătire/neutralizare, uscare accelerată. Opțional: protecție anti-pete.",
     faqs: [
@@ -287,6 +290,7 @@ export const services = [
       "Protejarea și menținerea materialelor interioare",
       "Aspect îngrijit și prospețime la fiecare drum",
     ],
+    fact: "Aburul la temperatură înaltă neutralizează mirosurile din textile fără parfumuri puternice și reduce biofilmul de pe zonele de contact.",
     longDescription:
       "Aspirare detaliată, pretratare pete, extracție pentru textile, curățare delicată + hidratare pentru piele, detaliere bord/volan, igienizare puncte de contact.",
     faqs: [
@@ -339,6 +343,7 @@ export const services = [
       "Păstrarea fineții și a confortului materialului",
       "Prelungirea duratei de viață a suprafețelor din piele",
     ],
+    fact: "Curățarea pH-neutră urmată de hidratare previne uscarea și microfisurarea pielii, menținându-i elasticitatea și aspectul natural.",
     longDescription:
       "Aspirare fină, curățare pH-neutră, tratament punctual al petelor, hidratare și protecție cu balsamuri profesionale.",
     faqs: [

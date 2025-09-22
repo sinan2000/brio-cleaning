@@ -305,18 +305,18 @@ const ScrollExpandMedia = ({
                   textBlend ? "mix-blend-difference" : "mix-blend-normal"
                 }`}
               >
-                <motion.h2
+                <motion.h1
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-white transition-none"
                   style={{ transform: `translateX(-${textTranslateX}vw)` }}
                 >
                   {beforeLast}
-                </motion.h2>
-                <motion.h2
+                </motion.h1>
+                <motion.h1
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-brio-blue transition-none"
                   style={{ transform: `translateX(${textTranslateX}vw)` }}
                 >
                   {lastWord}
-                </motion.h2>
+                </motion.h1>
               </div>
             </div>
 
