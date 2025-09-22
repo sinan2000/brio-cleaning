@@ -15,23 +15,7 @@ import canapele from "@/assets/servicii/curatare-canapele.jpg";
 import fotolii from "@/assets/servicii/curatare-fotolii-scaune.jpg";
 import saltele from "@/assets/servicii/curatare-saltele.jpg";
 import standard from "@/assets/lol.jpg";
-
 import horeca from "@/assets/services/horeca.jpg";
-
-import img_1a from "@/assets/services/tapiterii/img1.jpg";
-import img_1b from "@/assets/services/tapiterii/img2.jpg";
-import img_1c from "@/assets/services/tapiterii/img3.jpg";
-import img_1d from "@/assets/services/tapiterii/img4.jpg";
-
-import img_2a from "@/assets/services/auto/img1.jpg";
-import img_2b from "@/assets/services/auto/img2.jpg";
-import img_2c from "@/assets/services/auto/img3.jpg";
-import img_2d from "@/assets/services/auto/img4.jpg";
-
-import img_3a from "@/assets/services/horeca/img1.jpg";
-import img_3b from "@/assets/services/horeca/img2.jpg";
-import img_3c from "@/assets/services/horeca/img3.jpg";
-import img_3d from "@/assets/services/horeca/img4.jpg";
 
 export const menuItems = [
   { name: "Acasă", href: "/" },
@@ -48,7 +32,6 @@ export const contact = {
 export const normPhone = () => contact.phone.replace(/[\s+]/g, "");
 
 export const services = [
-  // 1) CANAPELE
   {
     icon: Sofa,
     title: "Curățare și igienizare canapele",
@@ -100,8 +83,6 @@ export const services = [
       { icon: SprayCan, text: "Neutralizare mirosuri" },
     ],
   },
-
-  // 2) SALTELE
   {
     icon: Bed,
     title: "Curățare și igienizare saltele",
@@ -141,8 +122,6 @@ export const services = [
     ],
     media: [],
   },
-
-  // 3) FOTOLII & SCAUNE
   {
     icon: Armchair,
     title: "Curățare fotolii și scaune",
@@ -178,8 +157,6 @@ export const services = [
     ],
     media: [],
   },
-
-  // 4) MOCHETĂ
   {
     icon: Layers,
     title: "Curățare mochetă",
@@ -216,8 +193,6 @@ export const services = [
     ],
     media: [],
   },
-
-  // 5) INTERIOR AUTO
   {
     icon: Car,
     title: "Curățare interior auto",
@@ -255,8 +230,6 @@ export const services = [
     ],
     media: [],
   },
-
-  // 6) PIELE
   {
     icon: Droplet,
     title: "Îngrijire și curățare piele",
@@ -292,6 +265,54 @@ export const services = [
       },
     ],
     media: [],
+  },
+  {
+    special: true,
+    icon: Building2,
+    title: "HoReCa - Curățenie profesională",
+    short: "Spații sigure, clienți fericiți.",
+    description:
+      "Igienizare completă pentru restaurante, cafenele, hoteluri și săli de evenimente — curat, sigur și plăcut pentru clienți și personal.",
+    features: [
+      "Igienizare textile, tapițerii și covoare",
+      "Curățare/igienizare scaune și mochete",
+      "Dezinfectare suprafețe și zone de contact",
+      "Eliminare bacterii, viruși și alergeni",
+      "Proces rapid, fără întreruperea activității",
+    ],
+    image: horeca,
+    href: "/servicii/horeca",
+    didYouKnow:
+      "Tapițeriile și mochetele pot aduna milioane de bacterii și alergeni chiar dacă arată curate. Igienizarea profesională cu abur le elimină eficient.",
+    benefits: [
+      "Mediu sigur pentru clienți și angajați",
+      "Eliminarea mirosurilor și a riscurilor microbiologice",
+      "Reducerea alergenilor și îmbunătățirea calității aerului",
+      "Intervenție rapidă, programabilă off-hours",
+      "Imagine impecabilă pentru locație",
+    ],
+    fact: "Aburul la ~150 °C dezinfectează în profunzime, iar aspirarea profesională extrage particulele fine fără exces de umezeală.",
+    longDescription:
+      "Inspecție spații (front of house / back of house), aspirare industrială HEPA, pretratare pete, igienizare cu abur a textilelor și suprafețelor de contact, extracție/neutralizare, uscare accelerată. La cerere: protecție anti-pete / plan recurent.",
+    faqs: [
+      {
+        q: "Deranjați activitatea locației?",
+        a: "Nu. Planificăm seara/noaptea sau pe zone, pentru continuitate.",
+      },
+      {
+        q: "Ce zone acoperiți?",
+        a: "Săli, recepții, holuri, scaune, mochete, banchete, mese și puncte de contact.",
+      },
+      {
+        q: "Cât durează?",
+        a: "În funcție de suprafață: 2-8 h; oferim estimare la inspecție.",
+      },
+    ],
+    media: [],
+    highlights: [
+      { icon: Shield, text: "Siguranță & dezinfectare" },
+      { icon: SprayCan, text: "Neutralizare mirosuri" },
+    ],
   },
 ];
 
