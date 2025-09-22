@@ -16,7 +16,9 @@ export default function BeforeAfterMasonry({ items }: { items: BAImage[] }) {
             src={img.src}
             alt={img.alt}
             className="w-full h-auto rounded-xl shadow-sm ring-1 ring-gray-200 bg-white"
-            sizes="(min-width:1280px) 32vw, (min-width:640px) 48vw, 100vw"
+            quality={60}
+            loading="lazy"
+            sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
           />
           {/* optional tiny caption */}
           <figcaption className="mt-2 text-xs text-gray-600">

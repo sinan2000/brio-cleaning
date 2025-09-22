@@ -194,17 +194,23 @@ const ScrollExpandMedia = ({
             animate={{ opacity: 1 - scrollProgress }}
             transition={{ duration: 0.1 }}
           >
-            <Image
-              src={bgImageSrc}
-              alt="Hero Background"
-              className="w-screen h-screen"
-              placeholder="blur"
-              style={{
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-              priority
-            />
+            <div className="absolute inset-0">
+              <Image
+                src={bgImageSrc}
+                alt="Hero Background"
+                fill
+                placeholder="blur"
+                quality={60}
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                priority
+                loading="eager"
+                fetchPriority="high"
+              />
+            </div>
             <div className="absolute inset-0 bg-black/10" />
           </motion.div>
 
@@ -260,7 +266,7 @@ const ScrollExpandMedia = ({
                       muted
                       loop
                       playsInline
-                      preload="auto"
+                      preload="none"
                       className="w-full h-full object-cover rounded-xl"
                       controls={false}
                       disablePictureInPicture

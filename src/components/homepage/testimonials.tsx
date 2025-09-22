@@ -189,7 +189,12 @@ const TestimonialsColumn = (props: {
                           src={image}
                           alt={name}
                           placeholder="blur"
-                          className="h-10 w-10 rounded-full"
+                          width={40}
+                          height={40}
+                          className="rounded-full"
+                          quality={60}
+                          sizes="40px"
+                          loading="lazy"
                         />
                         <div className="flex flex-col">
                           <div className="font-medium tracking-tight leading-5">

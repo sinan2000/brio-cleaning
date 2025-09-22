@@ -36,7 +36,10 @@ export default function ServicesSection() {
                   <Image
                     src={service.image}
                     alt={service.title}
-                    className="block w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    quality={60}
+                    sizes="(min-width:1024px) 40vw, 100vw"
                   />
                   <div className="absolute top-4 left-4 bg-brio-blue-dark text-white p-3 rounded-full">
                     <service.icon className="h-6 w-6 md:h-7 md:w-7" />
@@ -94,11 +97,14 @@ export default function ServicesSection() {
                 key={index}
                 className="pt-0 group hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col gap-0"
               >
-                <div className="relative overflow-hidden rounded-t-xl">
+                <div className="relative overflow-hidden rounded-t-xl h-48 md:h-56 lg:h-60 xl:h-64">
                   <Image
                     src={service.image}
                     alt={service.title}
-                    className="block w-full h-48 md:h-56 lg:h-60 xl:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    quality={60}
+                    sizes="(min-width:1280px) 33vw, (min-width:768px) 50vw, 100vw"
                   />
                   <div className="absolute top-4 left-4 bg-brio-blue-dark text-white p-3 rounded-full">
                     <service.icon className="h-6 w-6 md:h-7 md:w-7" />
