@@ -24,7 +24,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
           {services.map((service, index) => {
             const isHoreca = index === 3; // or check service.href === "/servicii/horeca"
-            
+
             return isHoreca ? (
               <Card
                 key={index}
@@ -50,10 +50,7 @@ export default function ServicesSection() {
                       {service.title}
                     </CardTitle>
 
-                    <span
-                      className="text-xs md:text-sm px-2.5 py-1 rounded-full
-                       bg-brio-blue/10 text-brio-blue-dark border border-brio-blue/20"
-                    >
+                    <span className="text-xs md:text-sm py-1 text-brio-blue-dark">
                       {getPriceText(service)}
                     </span>
                   </CardHeader>
