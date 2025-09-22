@@ -5,6 +5,7 @@ import { services } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "../reveal";
+import { getPriceText } from "@/lib/helpers";
 
 export default function ServicesSection() {
   return (
@@ -23,7 +24,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
           {services.map((service, index) => {
             const isHoreca = index === 3; // or check service.href === "/servicii/horeca"
-
+            
             return isHoreca ? (
               <Card
                 key={index}
@@ -48,6 +49,13 @@ export default function ServicesSection() {
                     <CardTitle className="text-lg md:text-xl text-gray-900">
                       {service.title}
                     </CardTitle>
+
+                    <span
+                      className="text-xs md:text-sm px-2.5 py-1 rounded-full
+                       bg-brio-blue/10 text-brio-blue-dark border border-brio-blue/20"
+                    >
+                      {getPriceText(service)}
+                    </span>
                   </CardHeader>
 
                   <CardContent className="pt-0 px-4 md:px-6 pb-4 md:pb-7 space-y-3 flex-1 flex flex-col">
@@ -104,12 +112,17 @@ export default function ServicesSection() {
                   <CardTitle className="text-lg md:text-xl text-gray-900">
                     {service.title}
                   </CardTitle>
+
+                  <span
+                    className="text-xs md:text-sm px-2.5 py-1 rounded-full
+                       bg-brio-blue/10 text-brio-blue-dark border border-brio-blue/20"
+                  >
+                    {getPriceText(service)}
+                  </span>
                 </CardHeader>
 
                 <CardContent className="pt-0 space-y-4 flex-1 flex flex-col">
-                  <p className="text-gray-700 text-sm">
-                    {service.description}
-                  </p>
+                  <p className="text-gray-700 text-sm">{service.description}</p>
 
                   <ul className="space-y-2">
                     {service.features
