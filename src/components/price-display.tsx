@@ -14,30 +14,22 @@ export default function PriceDisplay({ service }: { service: any }) {
   const hasAnyPrices = prices.length > 0;
 
   return (
-    <section className="pt-6">
+    <section className="mt-12 pt-10 border-t border-border/60">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4">
         Prețuri
       </h2>
 
       {service.gratis && (
-        <div className="mb-8 rounded-xl border border-green-200 bg-gradient-to-br from-green-50 to-white p-5 md:p-6 shadow-sm">
-          <h3 className="text-sm md:text-base font-semibold text-green-800 mb-3">
-            Mereu inclus, fără cost suplimentar:
-          </h3>
-          <ul className="grid sm:grid-cols-2 gap-2">
-            <li className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm md:text-base text-green-700">
-                Igienizare cu abur 150 °C
-              </span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm md:text-base text-green-700">
-                Sterilizare Ozon & UV-C
-              </span>
-            </li>
-          </ul>
+        <div className="mb-6">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-black">
+            <div className="inline-flex items-center gap-2">
+              <p>La orice pachet achiziționat, aveți parte de </p>
+              <b>Igienizare cu abur 150 °C</b>
+              <p>și</p>
+              <b>Sterilizare Ozon &amp; UV-C</b>
+              <p>în mod gratuit.</p>
+            </div>
+          </div>
         </div>
       )}
 
