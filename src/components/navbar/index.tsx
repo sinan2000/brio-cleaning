@@ -30,7 +30,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center gap-1 text-sm lg:text-base font-medium transition-colors ${
+                className={`flex items-center gap-1 text-sm lg:text-base xl:text-lg font-medium transition-colors ${
                   isActive
                     ? "text-brio-blue-dark underline underline-offset-4"
                     : "text-gray-700 hover:text-brio-blue"

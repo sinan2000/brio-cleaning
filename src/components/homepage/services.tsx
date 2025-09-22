@@ -47,7 +47,7 @@ export default function ServicesSection() {
                 <p className="text-gray-600 text-sm">{service.description}</p>
 
                 <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
+                  {service.features.slice(0, 3).map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
                       className="flex items-center text-sm text-gray-700"

@@ -3,7 +3,6 @@
 
 import { useEffect } from "react";
 import ScrollExpandMedia from "./client";
-// ❌ scos: import AboutUs from "../about";
 import background from "@/assets/hero/background.jpg";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
@@ -44,10 +43,10 @@ const MediaSection = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 md:px-6">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+      <h2 className="text-3xl md:text-4xl leading-tight font-bold mb-4 text-foreground">
         Cine suntem noi?
       </h2>
-      <p className="text-lg md:text-xl text-muted-foreground">
+      <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
         {currentMedia.about.overview}
       </p>
 
@@ -63,17 +62,17 @@ const MediaSection = () => {
             <Image
               src={photo}
               alt="BrioCleaning la lucru"
-              className="rounded-xl shadow-lg w-full h-auto order-1 md:order-2"
+              className="rounded-xl shadow-lg w-full h-auto order-2 md:order-1"
               priority
             />
 
-            <div className="order-2">
-              <p className="text-muted-foreground">
+            <div className="order-1 md:order-2">
+              <p className="text-muted-foreground text-base md:text-lg">
                 La Brio Cleaning spălăm, igienizăm și dezinfectăm canapele,
                 saltele, fotolii și toate textilele din casa sau mașina ta,
                 readucând prospețimea și confortul în fiecare colț.
               </p>
-              <p className="text-muted-foreground mt-3">
+              <p className="text-muted-foreground mt-3 text-base md:text-lg">
                 Folosim echipamente profesionale, <b>abur la 150&nbsp;°C</b> și
                 soluții ecologice, sigure pentru întreaga familie și animale de
                 companie.

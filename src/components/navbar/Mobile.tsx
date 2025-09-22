@@ -60,7 +60,7 @@ export default function MobileOverlay({
             <motion.div key={item.name} variants={fadeUp as any} className="w-full">
               <Link
                 href={item.href}
-                className="block px-3 py-3 text-xl font-medium text-gray-800 hover:text-brio-blue"
+                className="block px-3 py-3 text-xl sm:text-2xl font-semibold text-gray-800 hover:text-brio-blue"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
