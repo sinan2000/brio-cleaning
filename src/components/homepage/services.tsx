@@ -110,10 +110,7 @@ export default function ServicesSection() {
                     {service.title}
                   </CardTitle>
 
-                  <span
-                    className="text-xs md:text-sm px-2.5 py-1 rounded-full
-                       bg-brio-blue/10 text-brio-blue-dark border border-brio-blue/20"
-                  >
+                  <span className="text-sm py-1 text-brio-blue-dark">
                     {getPriceText(service)}
                   </span>
                 </CardHeader>

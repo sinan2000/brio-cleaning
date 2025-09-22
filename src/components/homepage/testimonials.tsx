@@ -120,14 +120,15 @@ const Testimonials = () => {
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
           <div className="flex justify-center">
-            <div className="border py-1 px-4 rounded-lg">Testimonials</div>
+            <div className="border py-0.5 px-1 rounded-lg">Recenzii</div>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
-            What our users say
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tighter mt-5">
+            Ce recenzii avem?
           </h2>
           <p className="text-center mt-5 opacity-75">
-            See what our customers have to say about us.
+            Vezi împreună cu noi ce scor avem atât pe Google Maps, unde avem 5
+            stele, cât și pe Facebook!
           </p>
         </motion.div>
 
