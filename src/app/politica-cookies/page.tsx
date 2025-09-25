@@ -1,12 +1,14 @@
+import { todayRo } from "@/lib/todayRo";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Politica de Cookie-uri | BRIO CLEANING",
+  title: "Politica de Cookie-uri | Brio Cleaning",
   description:
-    "Află ce cookie-uri folosim pe site-ul BRIO CLEANING SRL și cum îți poți gestiona preferințele.",
+    "Află ce cookie-uri folosim pe site-ul Brio Cleaning SRL și cum îți poți gestiona preferințele.",
 };
 
 export default function CookiesPolicyPage() {
+
   return (
     <main className="min-h-screen bg-background py-20">
       <div className="container mx-auto px-4 max-w-3xl space-y-4 text-gray-800">
@@ -14,7 +16,7 @@ export default function CookiesPolicyPage() {
           Politica de Cookie-uri
         </h1>
         <p className="text-sm text-muted-foreground mb-10">
-          Ultima actualizare: 22 Septembrie 2025
+          Ultima actualizare: {todayRo}
         </p>
 
         <h2>1. Ce sunt cookie-urile?</h2>
@@ -26,7 +28,7 @@ export default function CookiesPolicyPage() {
 
         <h2>2. Ce cookie-uri folosim</h2>
         <p>Folosim două categorii principale:</p>
-        <ul>
+        <ul className="list-disc pl-6">
           <li>
             <strong>Esențiale</strong> – necesare pentru funcționarea site-ului
             (ex. preferințe tehnice de sesiune).
@@ -36,6 +38,12 @@ export default function CookiesPolicyPage() {
             anonimizate privind traficul și utilizarea site-ului.
           </li>
         </ul>
+        <p>
+          Folosim și <strong>Google Tag Manager (GTM)</strong> pentru a gestiona
+          etichetele de pe site. GTM nu plasează cookie-uri de urmărire; el doar
+          încarcă etichetele (de exemplu, Google Analytics) după ce îți exprimi
+          consimțământul.
+        </p>
 
         <h3>Google Analytics</h3>
         <p>
@@ -45,13 +53,34 @@ export default function CookiesPolicyPage() {
           afara SEE pe baza clauzelor contractuale standard.
         </p>
 
-        <h2>3. Exemple de cookie-uri analitice</h2>
-        <table>
+        <h2>3. Exemple de cookie-uri</h2>
+        <h3 className="mt-4">Esențiale</h3>
+        <table className="w-full text-sm border-collapse">
           <thead>
             <tr>
-              <th>Nume</th>
-              <th>Scop</th>
-              <th>Durată</th>
+              <th className="text-left border-b py-2">Nume</th>
+              <th className="text-left border-b py-2">Scop</th>
+              <th className="text-left border-b py-2">Durată</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>brio_consent</code>
+              </td>
+              <td>Reține opțiunea ta (Accept/Refuz pentru analytics)</td>
+              <td>12 luni</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 className="mt-6">Analitice</h3>
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr>
+              <th className="text-left border-b py-2">Nume</th>
+              <th className="text-left border-b py-2">Scop</th>
+              <th className="text-left border-b py-2">Durată</th>
             </tr>
           </thead>
           <tbody>
@@ -84,15 +113,23 @@ export default function CookiesPolicyPage() {
         </p>
 
         <h2>4. Consimțământ și administrarea cookie-urilor</h2>
-        <ul>
+        <ul className="list-disc pl-6">
           <li>
             Pentru cookie-urile analitice, solicităm consimțământul tău prin
-            bannerul de pe site. Îți poți modifica opțiunile oricând.
+            bannerul de pe site.
           </li>
-          <li>Poți bloca sau șterge cookie-urile din setările browserului.</li>
           <li>
-            Poți folosi și extensia oficială Google pentru opt-out: „Google
-            Analytics Opt-out”.
+            În lipsa unei alegeri, <strong>nu încărcăm Google Analytics</strong>
+            . Etichetele analitice sunt încărcate doar după ce apeși „Accept”.
+            Dacă alegi „Refuz”, nu încărcăm Google Analytics.
+          </li>
+          <li>
+            Îți poți modifica opțiunile oricând (de exemplu, din linkul „Schimbă
+            preferințele cookie” din subsolul site-ului).
+          </li>
+          <li>
+            Poți bloca sau șterge cookie-urile din setările browserului și poți
+            folosi extensia oficială Google „Google Analytics Opt-out”.
           </li>
         </ul>
 
@@ -100,7 +137,7 @@ export default function CookiesPolicyPage() {
         <p>
           Pentru detalii privind prelucrarea datelor personale, te rugăm să
           consulți{" "}
-          <a href="/politica-confidentialitate">
+          <a href="/politica-confidentialitate" className="underline">
             Politica de confidențialitate
           </a>
           .

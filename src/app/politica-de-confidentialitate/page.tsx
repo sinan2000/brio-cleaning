@@ -1,9 +1,12 @@
 import { Metadata } from "next";
+import ResetConsentLink from "./helper";
+import { todayRo } from "@/lib/todayRo";
+import { contact } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Politica de Confidențialitate | BRIO CLEANING",
+  title: "Politica de Confidențialitate | Brio Cleaning",
   description:
-    "Află cum colectăm, folosim și protejăm datele tale personale la BRIO CLEANING SRL.",
+    "Află cum colectăm, folosim și protejăm datele tale personale la Brio Cleaning SRL.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -14,21 +17,21 @@ export default function PrivacyPolicyPage() {
           Politica de Confidențialitate
         </h1>
         <p className="text-sm text-muted-foreground mb-10">
-          Ultima actualizare: 22 Septembrie 2025
+          Ultima actualizare: {todayRo}
         </p>
 
         <h2>Cine suntem</h2>
         <p>
-          Operator de date: <strong>BRIO CLEANING SRL</strong> <br />
+          Operator de date: <strong>Brio Cleaning SRL</strong> <br />
           Sediu social: Sat Pischia, 215 Cod 307325 <br />
           CUI: 52064082 <br />
           Nr. Reg. Com.: J2025047235004 <br />
-          Email: contact@briocleaning.ro <br />
-          Telefon: +40 787 675 225
+          Email: {contact.email} <br />
+          Telefon: {contact.phone}
         </p>
 
         <h2>Ce date colectăm</h2>
-        <ul>
+        <ul className="list-disc pl-6 space-y-1">
           <li>
             Date introduse de tine în formularul de programare: nume, telefon,
             adresă, serviciul selectat, data și ora dorită, mesaj.
@@ -41,7 +44,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>Cum folosim aceste date</h2>
         <p>Folosim datele tale pentru:</p>
-        <ul>
+        <ul className="list-disc pl-6 space-y-1">
           <li>procesarea și confirmarea programărilor;</li>
           <li>contactarea ta pentru detalii suplimentare sau modificări;</li>
           <li>comunicare directă prin telefon / WhatsApp dacă este necesar;</li>
@@ -53,19 +56,19 @@ export default function PrivacyPolicyPage() {
 
         <h2>Cine are acces la date</h2>
         <p>
-          Angajații BRIO CLEANING SRL, furnizori de servicii IT/hosting, Google
+          Angajații Brio Cleaning SRL, furnizori de servicii IT/hosting, Google
           Ireland Limited (Google Analytics). Nu vindem și nu închiriem datele
           tale către terți.
         </p>
 
         <h2>Cât timp păstrăm datele</h2>
-        <ul>
+        <ul className="list-disc pl-6 space-y-1">
           <li>Datele din formular: maxim 2 ani de la ultima interacțiune.</li>
           <li>Datele Analytics: conform setărilor Google (14 luni).</li>
         </ul>
 
         <h2>Drepturile tale</h2>
-        <ul>
+        <ul className="list-disc pl-6 space-y-1">
           <li>acces la datele tale;</li>
           <li>rectificare sau ștergere;</li>
           <li>restricționare sau opoziție la prelucrare;</li>
@@ -78,16 +81,16 @@ export default function PrivacyPolicyPage() {
 
         <h2>Cookie-uri</h2>
         <p>
-          Site-ul folosește cookie-uri pentru funcționarea Google Analytics și
-          funcționalități esențiale. Poți controla cookie-urile din setările
-          browserului.
+          Site-ul folosește cookie-uri pentru funcționalități esențiale și, doar
+          după consimțământul tău, pentru Google Analytics. Poți modifica
+          opțiunea oricând: <ResetConsentLink />.
         </p>
 
         <h2>Contact</h2>
         <p>
           Pentru orice întrebări legate de protecția datelor:
           <br />
-          contact@plastmach.ro sau +40 787 675 225
+          {contact.email} sau {contact.phone}
         </p>
       </div>
     </main>

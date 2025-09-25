@@ -1,3 +1,5 @@
+import { contact } from "@/lib/constants";
+import { todayRo } from "@/lib/todayRo";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +16,7 @@ export default function TermsPage() {
           Termeni și Condiții
         </h1>
         <p className="text-sm text-muted-foreground mb-10">
-          Ultima actualizare: 22 Septembrie 2025
+          Ultima actualizare: {todayRo}
         </p>
 
         <h2>1. Cine suntem</h2>
@@ -54,7 +56,7 @@ export default function TermsPage() {
         </p>
         <ul>
           <li>
-            Recomandat: anunț cu cel puțin <strong>[ex.: 24 de ore]</strong>{" "}
+            Recomandat: anunț cu cel puțin <strong>24 de ore</strong>{" "}
             înainte.
           </li>
           <li>
@@ -63,7 +65,6 @@ export default function TermsPage() {
             fermă.
           </li>
         </ul>
-        {/* ↑ Editează intervalul dorit în loc de [ex.: 24 de ore] */}
 
         <h2>5. Prețuri și plăți</h2>
         <ul>
@@ -140,7 +141,7 @@ export default function TermsPage() {
           Sediu: Sat Pischia, 215 Cod 307325 <br />
           CUI: 52064082 <br />
           Nr. Reg. Com.: J2025047235004 <br />
-          Email: contact@briocleaning.ro &nbsp;|&nbsp; Telefon: +40 787 675 225
+          Email: {contact.email} &nbsp;|&nbsp; Telefon: {contact.phone}
         </p>
       </div>
     </main>
