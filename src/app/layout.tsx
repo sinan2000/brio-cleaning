@@ -5,6 +5,8 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import SNSFooter from "@/components/sns/footer-client";
 import { GoogleTagManager } from "@next/third-parties/google";
+import GTMWithConsent from "@/components/privacy/GTMWithConsent";
+import CookieConsent from "@/components/privacy/CookieConsent";
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -32,12 +34,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className="scroll-smooth">
-      <GoogleTagManager gtmId="GTM-MNK9QBS2" />
       <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
         <Navbar />
+        <GTMWithConsent gtmId="GTM-MNK9QBS2" />
         {children}
         <Footer />
         <SNSFooter />
+        <CookieConsent />
       </body>
     </html>
   );
