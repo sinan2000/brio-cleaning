@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/lib/constants";
 import { Icon } from "@iconify/react";
+import { Reveal } from "../reveal";
 
 export default function SocialsSection() {
   return (
     <section className="py-16 bg-brio-blue">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Reveal className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           Urmărește magia curățeniei cu Brio Cleaning!
         </h2>
@@ -36,7 +37,7 @@ export default function SocialsSection() {
           Arată-ne transformările tale! Etichetează-ne cu #BrioCleaning și fii
           parte din comunitatea noastră.
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }

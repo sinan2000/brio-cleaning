@@ -22,9 +22,9 @@ export default function ServicesSection() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-6">
           {services.map((service, index) => {
-            const isHoreca = index === 3; // or check service.href === "/servicii/horeca"
+            const isHoreca = index === 3; // or check service.href === "/servicii/horeca" or service.special ?? false
 
             return (
               <ScrollReveal
@@ -60,13 +60,13 @@ export default function ServicesSection() {
                           {service.title}
                         </CardTitle>
 
-                        <span className="text-xs md:text-sm py-1 text-brio-blue-dark">
+                        <span className="text-sm md:text-base py-1 font-semibold text-brio-blue-dark">
                           {getPriceText(service)}
                         </span>
                       </CardHeader>
 
                       <CardContent className="pt-0 px-4 md:px-6 pb-4 md:pb-7 space-y-3 flex-1 flex flex-col">
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-gray-700 text-[15px] md:text-base leading-relaxed">
                           {service.description}
                         </p>
 
@@ -123,13 +123,13 @@ export default function ServicesSection() {
                         {service.title}
                       </CardTitle>
 
-                      <span className="text-sm py-1 text-brio-blue-dark">
+                      <span className="text-base py-1 font-semibold text-brio-blue-dark">
                         {getPriceText(service)}
                       </span>
                     </CardHeader>
 
                     <CardContent className="pt-0 space-y-4 flex-1 flex flex-col">
-                      <p className="text-gray-700 text-sm">
+                      <p className="text-gray-700 text-[15px] md:text-base leading-relaxed">
                         {service.description}
                       </p>
 
