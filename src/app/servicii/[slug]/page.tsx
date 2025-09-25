@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
-import { ScrollReveal } from "@/components/scroll-reveal";
+import { Reveal } from "@/components/reveal";
 import { services } from "@/lib/constants";
 import { slugFromHref } from "@/lib/helpers";
 import Breadcrumbs from "@/components/breadcrumbs";
@@ -45,7 +45,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <ScrollReveal>
+          <Reveal>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">
               {service.title}
             </h1>
@@ -60,7 +60,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 Programează-te acum
               </Button>
             </Link>
-          </ScrollReveal>
+          </Reveal>
         </div>
       </section>
 
@@ -83,7 +83,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
           {/* Text first on mobile, mosaic second; reverse on desktop */}
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             {/* TEXT COLUMN */}
-            <ScrollReveal delay={150}>
+            <Reveal>
               <div className="order-1 lg:order-2 space-y-6">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                   Despre serviciu
@@ -180,17 +180,17 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                   </Link>
                 </div>
               </div>
-            </ScrollReveal>
+            </Reveal>
 
             {/* MOSAIC COLUMN */}
-            <ScrollReveal>
+            <Reveal>
               <div className="order-2 lg:order-1">
                 <Mosaic
                   media={service.media}
                   orientation={service.orientation ?? ([] as any)}
                 />
               </div>
-            </ScrollReveal>
+            </Reveal>
           </div>
 
           <hr className="my-12 border-t border-gray-200" />
@@ -203,7 +203,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
       {service.faqs?.length ? (
         <section className="py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ScrollReveal>
+            <Reveal>
               <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 text-foreground">
                 Întrebări frecvente
               </h2>
@@ -225,7 +225,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                   )
                 )}
               </Accordion>
-            </ScrollReveal>
+            </Reveal>
           </div>
         </section>
       ) : null}
@@ -233,7 +233,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
       {/* Final CTA */}
       <section className="py-16 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
+          <Reveal>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground text-balance">
               Pregătit să îți cureți tapițeria?
             </h2>
@@ -249,7 +249,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 Fă o programare
               </Button>
             </Link>
-          </ScrollReveal>
+          </Reveal>
         </div>
       </section>
     </div>

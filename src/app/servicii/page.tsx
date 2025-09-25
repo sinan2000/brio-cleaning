@@ -1,6 +1,5 @@
 import { Check, InfoIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ScrollReveal } from "@/components/scroll-reveal";
 import Link from "next/link";
 import { services } from "@/lib/constants";
 import Image from "next/image";
@@ -32,7 +31,7 @@ export default function ServicesPage() {
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
-              <ScrollReveal key={index}>
+              <Reveal key={index}>
                 <div className="min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center">
                   <div className="container mx-auto px-4">
                     <div
@@ -123,7 +122,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
-              </ScrollReveal>
+              </Reveal>
             );
           })}
         </div>
