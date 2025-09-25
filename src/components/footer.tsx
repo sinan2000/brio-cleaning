@@ -132,7 +132,7 @@ export default function Footer() {
             {/* Policy links (under © on large screens) */}
             <div className="flex items-center justify-center gap-3 text-sm lg:justify-start lg:row-start-2 lg:col-start-1">
               <Link
-                href="/termeni-si-conditii"
+                href="/termeni"
                 className="text-gray-300 underline hover:text-brio-blue transition-colors"
               >
                 Termeni și condiții

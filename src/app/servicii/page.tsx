@@ -32,7 +32,7 @@ export default function ServicesPage() {
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
-              <Reveal key={index}>
+              <ScrollReveal key={index}>
                 <div className="min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center">
                   <div className="container mx-auto px-4">
                     <div
@@ -123,7 +123,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
-              </Reveal>
+              </ScrollReveal>
             );
           })}
         </div>

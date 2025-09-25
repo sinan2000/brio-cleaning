@@ -111,7 +111,7 @@ export default function MobileOverlay({
               </Link>
               <span>•</span>
               <Link
-                href="/termeni-si-conditii"
+                href="/termeni"
                 className="underline hover:text-brio-blue"
                 onClick={() => setIsMenuOpen(false)}
               >
