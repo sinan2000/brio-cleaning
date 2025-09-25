@@ -210,24 +210,24 @@ export const services = [
     title: "HoReCa - Curățenie profesională",
     short: "Spații sigure, clienți fericiți.",
     description:
-      "Igienizare completă pentru restaurante, cafenele, hoteluri și săli de evenimente — curat, sigur și plăcut pentru clienți și personal.",
+      "La Brio Cleaning, ne ocupăm de igienizarea completă a restaurantelor, cafenelelor, hotelurilor și sălilor de evenimente, astfel încât să oferiți clienților un mediu curat, sigur și plăcut.",
     features: [
       "Igienizare textile, tapițerii și covoare",
       "Curățare/igienizare scaune și mochete",
       "Dezinfectare suprafețe și zone de contact",
       "Eliminare bacterii, viruși și alergeni",
-      "Proces rapid, fără întreruperea activității",
     ],
     image: horeca,
     href: "/servicii/horeca",
     didYouKnow:
       "Tapițeriile și mochetele pot aduna milioane de bacterii și alergeni chiar dacă arată curate. Igienizarea profesională cu abur le elimină eficient.",
     benefits: [
-      "Mediu sigur pentru clienți și angajați",
-      "Eliminarea mirosurilor și a riscurilor microbiologice",
-      "Reducerea alergenilor și îmbunătățirea calității aerului",
-      "Intervenție rapidă, programabilă off-hours",
-      "Imagine impecabilă pentru locație",
+      "Igienizare profesională a textilelor, tapițeriilor și covoarelor",
+      "Curățare și igienizare scaune și mochete",
+      "Dezinfectare completă a suprafețelor și zonelor de contact",
+      "Eliminarea bacteriilor, virușilor și alergenilor",
+      "Proces rapid și eficient, fără a perturba activitatea",
+      "Spații sigure și confortabile pentru clienți și personal"
     ],
     fact: "Aburul la ~150 °C dezinfectează în profunzime, iar aspirarea profesională extrage particulele fine fără exces de umezeală.",
     longDescription:
