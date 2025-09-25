@@ -219,19 +219,63 @@ export const services = [
     ],
     image: horeca,
     href: "/servicii/horeca",
-    didYouKnow:
-      "Tapițeriile și mochetele pot aduna milioane de bacterii și alergeni chiar dacă arată curate. Igienizarea profesională cu abur le elimină eficient.",
+    didYouKnowList: [
+      "Tapițeriile și mochetele din restaurante, hoteluri sau săli de evenimente pot aduna milioane de bacterii și alergeni, chiar dacă arată curate.",
+      "Igienizarea profesională cu abur și aspirarea profesională elimină aceste riscuri, oferind siguranță și confort pentru clienți și angajați.",
+    ],
     benefits: [
       "Igienizare profesională a textilelor, tapițeriilor și covoarelor",
       "Curățare și igienizare scaune și mochete",
       "Dezinfectare completă a suprafețelor și zonelor de contact",
       "Eliminarea bacteriilor, virușilor și alergenilor",
       "Proces rapid și eficient, fără a perturba activitatea",
-      "Spații sigure și confortabile pentru clienți și personal"
+      "Spații sigure și confortabile pentru clienți și personal",
     ],
     fact: "Aburul la ~150 °C dezinfectează în profunzime, iar aspirarea profesională extrage particulele fine fără exces de umezeală.",
-    longDescription:
-      "Inspecție spații (front of house / back of house), aspirare industrială HEPA, pretratare pete, igienizare cu abur a textilelor și suprafețelor de contact, extracție/neutralizare, uscare accelerată. La cerere: protecție anti-pete / plan recurent.",
+    longDescription: (
+      <div className="space-y-6">
+        <p>
+          Folosim echipamente profesionale, <b>abur la 150 °C</b> și soluții ecologice,
+          sigure pentru angajați, clienți și mediu.
+        </p>
+
+        <div>
+          <h3 className="text-lg font-semibold">
+            Tipuri de spații și servicii
+          </h3>
+
+          <div className="mt-3 space-y-4">
+            <div>
+              <h4 className="font-medium">Restaurant / Cafenea:</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Igienizare scaune, banchete și covoare</li>
+                <li>Dezinfectarea meselor și suprafețelor de contact</li>
+                <li>Neutralizarea mirosurilor neplăcute</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium">Hotel / Pensiune:</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Curățare și igienizare camere, saltele și textile</li>
+                <li>Dezinfectarea holurilor, recepției și spațiilor comune</li>
+                <li>Menținerea unui mediu sănătos pentru oaspeți</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium">Săli de evenimente:</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Curățare scaune și mochete înainte și după evenimente</li>
+                <li>Igienizare completă a suprafețelor de contact</li>
+                <li>Eliminarea petelor, mirosurilor și bacteriilor</li>
+                <li>Pregătire rapidă a sălii pentru următorul eveniment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
     faqs: [
       {
         q: "Deranjați activitatea locației?",

@@ -5,13 +5,31 @@ import { Check } from "lucide-react";
 
 export default function PriceDisplay({ service }: { service: any }) {
   const prices = service.prices ?? [];
+  const addons = service.extensie ?? [];
+  const hasAnyPrices = prices.length > 0;
+
+  // ADD: centralize how we open WhatsApp
+  const getWhatsAppHref = () => {
+    // Prefer explicit phone on the service if you have it, else fall back to env, else a query with service title
+    const phone =
+      service.whatsappPhone ||
+      process.env.NEXT_PUBLIC_WHATSAPP_PHONE || // e.g. "0040740123456"
+      "";
+    const base = phone
+      ? `https://wa.me/${phone.replace(/\D/g, "")}`
+      : `https://wa.me/?text=Salut!%20Aș%20dori%20o%20ofertă%20pentru%20${encodeURIComponent(
+          service.title || "serviciu"
+        )}`;
+    const text =
+      `Salut! Aș dori o ofertă pentru ${service.title || "serviciu"} – ` +
+      `${service.href ? slugFromHref(service.href) : ""}.`;
+    return `${base}${base.includes("?") ? "&" : "?"}text=${encodeURIComponent(
+      text
+    )}`;
+  };
 
   const formatPrice = (i: { p: number | string; unit?: string }) =>
     `${i.p} lei${i.unit ? `/${i.unit}` : ""}`;
-
-  const addons = service.extensie ?? [];
-
-  const hasAnyPrices = prices.length > 0;
 
   return (
     <section className="mt-12 pt-10 border-t border-border/60">
@@ -23,10 +41,10 @@ export default function PriceDisplay({ service }: { service: any }) {
         <div className="mb-6">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-black">
             <div className="inline-flex items-center gap-2">
-              <p>La orice pachet achiziționat, aveți parte de </p>
-              <b>Igienizare cu abur 150 °C</b>
+              <p>La orice pachet achiziționat, aveți parte de</p>
+              <b>igienizare cu abur 150 °C</b>
               <p>și</p>
-              <b>Sterilizare Ozon &amp; UV-C</b>
+              <b>sterilizare Ozon &amp; UV-C</b>
               <p>în mod gratuit.</p>
             </div>
           </div>
@@ -40,11 +58,32 @@ export default function PriceDisplay({ service }: { service: any }) {
             {service.note ??
               "Ofertă personalizată în funcție de suprafață și specificul lucrării."}
           </p>
-          <div className="mt-4">
-            <Link href="/programari">
-              <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
-                Cere ofertă
+
+          {/* Simple benefits line (optional) */}
+          <ul className="mt-3 space-y-1 text-sm text-foreground/80">
+            <li className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-brio-green" />
+              Estimare rapidă după o scurtă evaluare
+            </li>
+            <li className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-brio-green" />
+              Programare la ore convenabile
+            </li>
+          </ul>
+
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href={getWhatsAppHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-[#25D366] hover:bg-[#1ebe57] text-white">
+                WhatsApp — Cere ofertă
               </Button>
+            </Link>
+
+            <Link href={`/programari?s=${slugFromHref(service.href)}`}>
+              <Button variant="outline">Completează formular</Button>
             </Link>
           </div>
         </div>
@@ -72,9 +111,18 @@ export default function PriceDisplay({ service }: { service: any }) {
               </ul>
             </div>
             {/* tiny trust microcopy */}
-            <p className="mt-2 text-xs text-muted-foreground">
-              Fără costuri ascunse. Prețurile includ manoperă și materiale.
-            </p>
+            <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+              <p className="text-sm md:text-base text-foreground">
+                <span className="mr-2">💚</span>
+                <span className="font-semibold">Promisiunea Brio Cleaning</span>
+              </p>
+              <p className="mt-1 text-sm md:text-base text-foreground/90">
+                Știm cât de neplăcut e să descoperi taxe ascunse. De aceea, la
+                noi plătești exact prețul afișat, indiferent de gradul de
+                murdărie. Cu noi, surprizele apar doar în rezultat – o curățenie
+                impecabilă!
+              </p>
+            </div>
           </div>
 
           {/* ADD-ONS */}

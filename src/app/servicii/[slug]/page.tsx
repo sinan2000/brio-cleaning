@@ -88,12 +88,53 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                   Despre serviciu
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
-                  {service.longDescription}
-                </p>
-                {/* Știați că? chiar înainte de CTA */}
-                {service.fact && (
+                {typeof service.longDescription === "string" ? (
+                  <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                    {service.longDescription}
+                  </p>
+                ) : (
+                  <div className="text-sm sm:text-base md:text-lg leading-relaxed">
+                    {service.longDescription /* JSX fragment from HoReCa */}
+                  </div>
+                )}
+
+                {/* Știați că? */}
+                {Array.isArray((service as any).didYouKnowList) ? (
+                  <aside className="rounded-xl border border-brio-green/30 bg-brio-green/5 p-4">
+                    <div className="flex items-start gap-3">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5 mt-0.5 shrink-0 text-brio-green"
+                        aria-hidden
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          className="fill-current/10"
+                        />
+                        <path
+                          d="M12 8.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Zm-1.1 2.2a1.1 1.1 0 0 1 2.2 0v6.1h-2.2v-6.1Z"
+                          className="fill-current"
+                        />
+                      </svg>
+                      <div>
+                        <p className="text-xs sm:text-sm md:text-base text-foreground font-semibold">
+                          Știați că?
+                        </p>
+                        <ul className="mt-2 list-disc pl-5 space-y-1 text-xs sm:text-sm md:text-base text-foreground">
+                          {(service as any).didYouKnowList.map(
+                            (item: string, i: number) => (
+                              <li key={i}>{item}</li>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    </div>
+                  </aside>
+                ) : service.fact ? (
                   <aside className="rounded-xl border border-brio-green/30 bg-brio-green/5 p-4 flex gap-3 items-start">
+                    {/* existing single-fact icon */}
                     <svg
                       viewBox="0 0 24 24"
                       className="w-5 h-5 mt-0.5 shrink-0 text-brio-green"
@@ -115,7 +156,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                       {service.fact}
                     </p>
                   </aside>
-                )}
+                ) : null}
 
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
                   {" "}
@@ -177,7 +218,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                       <AccordionTrigger className="text-left font-medium hover:no-underline">
                         {faq.q}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground leading-relaxed">
+                      <AccordionContent className="text-gray-800 leading-relaxed">
                         {faq.a}
                       </AccordionContent>
                     </AccordionItem>
