@@ -55,7 +55,7 @@ export const services = [
       "Redăm confortul și frumusețea canapelei tale printr-o curățare profesională în profunzime.",
     features: [
       "Aspirare cu Kirby - elimină praf, acarieni și alergeni",
-      "Dezinfectare cu abur la 150 °C - igienizare `totală și mirosuri neutralizate",
+      "Dezinfectare cu abur la 150 °C - igienizare totală și mirosuri neutralizate",
       "Soluții ecologice - sigure pentru familie și animale de companie",
       "Îndepărtarea petelor (cafea, suc, ulei, uzură)",
       "Clătire/neutralizare și periere pentru textură uniformă",
@@ -63,7 +63,7 @@ export const services = [
     image: canapele,
     href: "/servicii/curatare-canapele",
     didYouKnow:
-      "O canapea poate ascunde milioane de acarieni și bacterii care afectează calitatea aerului din casă și sănătatea familiei.",
+      "O canapea poate ascunde milioane de acarieni și bacterii care afectează calitatea aerului din casă și sănătatea familiei. Cu aspirarea profesională și igienizarea cu abur, redăm prospețimea și protecția de care au nevoie cei dragi.",
     benefits: [
       "Redă aspectul și prospețimea canapelei",
       "Elimină petele și mirosurile persistente",
@@ -127,7 +127,7 @@ export const services = [
     image: saltele,
     href: "/servicii/curatare-saltele",
     didYouKnow:
-      "Saltelele neigienizate adună alergeni și bacterii care perturbă somnul; aburul la 150 °C dezinfectează profund.",
+      "Saltelele neigienizate pot fi un adevărat cuib de acarieni și bacterii, care perturbă somnul și provoacă alergii. Dezinfectarea cu abur la temperaturi ridicate asigură un somn curat, sănătos și odihnitor pentru întreaga familie.",
     benefits: [
       "Elimină acarienii, bacteriile și pielea moartă",
       "Previne alergiile și problemele respiratorii",
@@ -174,7 +174,7 @@ export const services = [
     image: fotolii,
     href: "/servicii/curatare-fotolii-scaune",
     didYouKnow:
-      "Chiar dacă arată curate, fotoliile pot ascunde microparticule invizibile care provoacă alergii.",
+      "Chiar dacă arată curate, fotoliile pot ascunde micro-particule invizibile care provoacă alergii. Curățarea profesională le face complet igienice.",
     benefits: [
       "Reîmprospătarea și igienizarea locurilor de relaxare",
       "Înlăturarea murdăriei și petelor dificile",
@@ -270,7 +270,7 @@ export const services = [
     image: standard,
     href: "/servicii/curatare-mocheta",
     didYouKnow:
-      "Mochetele acumulează praf, polen și păr de animale invizibil cu ochiul liber; curățarea profesională le face sigure și curate.",
+      "Mochetelor li se adună praf, polen și păr de animale invizibil cu ochiul liber. Curățarea profesională le transformă în suprafețe sigure și curate.",
     benefits: [
       "Curățare în profunzime a fibrelor textile",
       "Revitalizarea culorilor și a aspectului inițial",
@@ -309,7 +309,7 @@ export const services = [
     image: auto,
     href: "/servicii/curatare-auto",
     didYouKnow:
-      "Interiorul unei mașini poate fi de până la 5 ori mai murdar decât suprafețe uzuale din casă.",
+      "Interiorul unei mașini poate fi de până la 5 ori mai murdar decât majoritatea suprafețelor din casă. Aspirarea și igienizarea cu abur fac aerul și suprafețele mai sănătoase.",
     benefits: [
       "Igienizare completă a habitaclului (tapițerie, plafon, podea)",
       "Eliminarea bacteriilor, acarienilor și mirosurilor",
@@ -363,7 +363,7 @@ export const services = [
     image: standard,
     href: "/servicii/ingrijire-piele",
     didYouKnow:
-      "Fără îngrijire regulată, pielea se usucă și se poate crăpa; tratamentul profesional îi păstrează elasticitatea.",
+      "Fără îngrijire regulată, pielea se poate crăpa și își pierde luciul. Tratamentul profesional redă finețea și aspectul elegant pentru mulți ani.",
     benefits: [
       "Îndepărtează murdăria și petele",
       "Hidratare și protecție pentru a preveni crăparea",

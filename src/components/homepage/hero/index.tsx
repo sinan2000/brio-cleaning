@@ -11,7 +11,8 @@ import photo from "@/assets/hero/about-us.jpg";
 import { Reveal } from "@/components/reveal";
 
 interface MediaAbout {
-  overview: string;
+  overview1: string;
+  overview2: string;
 }
 
 interface MediaData {
@@ -34,8 +35,10 @@ const sampleMediaContent: MediaData = {
   date: "Noi ne ocupăm de pete",
   scrollToExpand: "Ca tu să fii liniștit",
   about: {
-    overview:
-      "La Brio Cleaning credem că un spațiu curat înseamnă sănătate, confort și voie bună. Suntem specializați în curățarea și igienizarea canapelelor, fotoliilor, saltelelor, mochetelor, interior auto și suprafețelor din piele. Folosim echipamente profesionale și soluții sigure pentru familie și animale de companie, oferind mereu rezultate vizibile și de durată. Brio Cleaning – curățenie cu grijă pentru tine și casa ta.",
+    overview1:
+      "La Brio Cleaning credem că un spațiu curat înseamnă sănătate, confort și voie bună. Suntem specializați în curățarea și igienizarea canapelelor, fotoliilor, saltelelor, mochetelor, interior auto și suprafețelor din piele. ",
+    overview2:
+      "Folosim echipamente profesionale și soluții sigure pentru familie și animale de companie, oferind mereu rezultate vizibile și de durată.",
   },
 };
 
@@ -48,11 +51,19 @@ const MediaSection = () => {
         Cine suntem noi?
       </h2>
       <p className="text-base md:text-lg lg:text-xl text-gray-700">
-        {currentMedia.about.overview}
+        {currentMedia.about.overview1}
+      </p>
+      <br />
+      <p className="text-base md:text-lg lg:text-xl text-gray-700">
+        {currentMedia.about.overview2}
       </p>
 
+      <h4 className="text-lg md:text-xl lg:text-2xl mt-6">
+        Brio Cleaning - curățenie cu grijă pentru tine și casa ta.
+      </h4>
+
       {/* Secțiunea 2: Igienizăm, dezinfectăm, protejăm */}
-      <div className="mt-10 rounded-2xl border bg-card text-card-foreground shadow-sm">
+      <div className="mt-8 rounded-2xl border bg-card text-card-foreground shadow-sm">
         <div className="p-6 md:p-8">
           <h3 className="text-2xl md:text-3xl mb-6">
             Igienizăm, dezinfectăm, protejăm
