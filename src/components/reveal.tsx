@@ -12,6 +12,7 @@ interface RevealProps {
   root?: Element | null; // for scrollable containers
   rootMargin?: string;
   reserveHeight?: number; // px reserved when lazyMount=true
+  style?: React.CSSProperties;
 }
 
 export function Reveal({
@@ -23,6 +24,7 @@ export function Reveal({
   root = null,
   rootMargin = "0px",
   reserveHeight = 0, // only used when lazyMount=true
+  style
 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -63,6 +65,7 @@ export function Reveal({
   return (
     <div
       ref={ref}
+      style={style}
       className={cn(
         "transition-opacity duration-500 animate-swipe-in",
         "overflow-hidden will-change[clip-path,opacity]",

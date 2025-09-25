@@ -15,13 +15,13 @@ export default function SocialsSection() {
           noastre pe Instagram, Facebook și TikTok!
         </p>
 
-        <div className="flex justify-center space-x-6 mb-8">
+        <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-6 mb-8">
           {socialLinks.map((social) => (
             <Button
               key={social.name}
               variant="outline"
               size="lg"
-              className="bg-white/10 border-white/20 text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+              className="w-full sm:w-auto text-sm sm:text-base bg-white/10 border-white/20 text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
               asChild
             >
               <a href={social.href} target="_blank" rel="noopener noreferrer">
