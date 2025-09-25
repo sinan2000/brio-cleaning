@@ -144,6 +144,13 @@ export default function Footer() {
               >
                 Politica de confidențialitate
               </Link>
+              <span className="hidden sm:inline text-gray-600">•</span>
+              <Link
+                href="/politica-cookies"
+                className="text-gray-300 underline hover:text-brio-blue transition-colors"
+              >
+                Politica Cookies
+              </Link>
             </div>
 
             {/* ANPC at the end of the first row on large screens */}

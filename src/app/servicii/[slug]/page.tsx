@@ -171,14 +171,6 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                     </div>
                   ))}{" "}
                 </div>
-
-                <div className="pt-2">
-                  <Link href={`/programari?s=${slug}`}>
-                    <Button className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white">
-                      Rezervă acum
-                    </Button>
-                  </Link>
-                </div>
               </div>
             </Reveal>
 

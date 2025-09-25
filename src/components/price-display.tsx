@@ -54,7 +54,7 @@ export default function PriceDisplay({ service }: { service: any }) {
       {/* If no structured prices, show note / CTA */}
       {!hasAnyPrices ? (
         <div className="rounded-xl border bg-muted/40 p-5 md:p-6">
-          <p className="text-sm md:text-base text-muted-foreground">
+          <p className="text-sm md:text-base">
             {service.note ??
               "Ofertă personalizată în funcție de suprafață și specificul lucrării."}
           </p>

@@ -31,7 +31,7 @@ export default function ServicesPage() {
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
-              <Reveal key={index}>
+              <Reveal threshold={0.3} key={index}>
                 <div className="min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center">
                   <div className="container mx-auto px-4">
                     <div
@@ -58,7 +58,7 @@ export default function ServicesPage() {
                           <span
                             className="absolute top-4 right-4 bg-brio-blue-dark text-white
                  text-xs sm:text-sm md:text-base font-semibold
-                 px-3 py-1.5 rounded-full shadow-lg"
+                 px-3 py-1.5 rounded-full shadow-lg inline-block truncate max-w-[90%]"
                           >
                             {getPriceText(service)}
                           </span>
