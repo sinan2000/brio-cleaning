@@ -24,7 +24,7 @@ function generateOG(
     type: "website",
     images: [
       {
-        url: photo || "/logo-og.png",
+        url: photo || "/logo-og.jpg",
         alt: alt ? "Photo of " + alt : "Brio Cleaning Poster",
         width: 1200,
         height: 630,
@@ -84,7 +84,7 @@ export const homePageMeta: Metadata = {
       "Curățare canapele, igienizare saltele și interior auto în Timișoara. Abur 150 °C, soluții sigure, preț transparent. Programează online și redescoperă confortul.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -116,7 +116,7 @@ export const servicesPageMeta: Metadata = {
       "Toate serviciile Brio Cleaning: curățare canapele, igienizare saltele, interior auto, mochetă, piele, HoReCa. Rezultate profesionale, programări rapide.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -178,7 +178,7 @@ export const notFoundMeta: Metadata = {
     card: "summary_large_image",
     title: "404 - Pagina nu a fost găsită | Brio Cleaning",
     description: "Pagina pe care o căutați nu a fost găsită.",
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -206,7 +206,7 @@ export const contactPageMeta: Metadata = {
       "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -233,7 +233,7 @@ export const cookiesPolicyMeta: Metadata = {
       "Ce cookie-uri folosim și cum îți poți gestiona preferințele.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -260,7 +260,7 @@ export const termsMeta: Metadata = {
       "Condițiile de utilizare a site-ului și serviciilor Brio Cleaning.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -287,7 +287,7 @@ export const confidentialityMeta: Metadata = {
       "Află cum colectăm, folosim și protejăm datele tale personale.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -313,7 +313,7 @@ export const bookingMeta: Metadata = {
       "Rezervă online curățare canapele, igienizare saltele, interior auto sau mochetă.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };
 
@@ -339,7 +339,7 @@ export const successMeta: Metadata = {
     locale: "ro_RO",
     images: [
       {
-        url: "/logo-og.png", // relative ok if metadataBase is set globally
+        url: "/logo-og.jpg", // relative ok if metadataBase is set globally
         width: 1200,
         height: 630,
         alt: "Brio Cleaning",
@@ -353,6 +353,6 @@ export const successMeta: Metadata = {
       "Cererea ta de programare a fost trimisă. Îți confirmăm telefonic sau pe WhatsApp în cel mai scurt timp.",
       160
     ),
-    images: ["/logo-og.png"],
+    images: ["/logo-og.jpg"],
   },
 };

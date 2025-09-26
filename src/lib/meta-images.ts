@@ -3,7 +3,7 @@ import type { StaticImageData } from "next/image";
 
 type Media = string | StaticImageData;
 
-export function getMetadataImage(media?: Media[], fallback = "/logo-og.png") {
+export function getMetadataImage(media?: Media[], fallback = "/logo-og.jpg") {
   const m = media?.[0];
   if (!m) return fallback; // relative ok because you set metadataBase
   return typeof m === "string" ? m : m.src;
