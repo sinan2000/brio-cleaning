@@ -16,6 +16,7 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import PriceDisplay from "@/components/price-display";
 import Mosaic from "@/components/mosaic";
 import { detailPageMeta } from "@/lib/metadatas";
+import { generateFAQSchema, generateServiceSchema } from "@/lib/jsonLd";
 
 type Args = {
   params: Promise<{
@@ -33,10 +34,25 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
   const service = services.find((s) => slugFromHref(s.href) === slug);
   if (!service) return notFound();
 
-  const media = (service.media ?? []).slice(0, 4); // first 4 images only
 
   return (
     <div className="min-h-screen bg-background">
+      <script
+        id="individual-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateServiceSchema(service)),
+        }}
+      />
+
+      <script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(service.faqs)),
+        }}
+      />
+
       {/* HERO — under sticky navbar */}
       <section className="relative h-[60vh] pt-20 md:pt-24 lg:pt-28 flex items-center justify-center overflow-hidden">
         <Image

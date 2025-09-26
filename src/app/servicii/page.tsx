@@ -7,12 +7,19 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import { Reveal } from "@/components/reveal";
 import { getPriceText } from "@/lib/helpers";
 import { servicesPageMeta } from "@/lib/metadatas";
+import { servicesSchema } from "@/lib/jsonLd";
 
 export const metadata = servicesPageMeta;
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted">
+      <script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-20 md:pt-24 lg:pt-28 pb-12 text-center">
         <Breadcrumbs

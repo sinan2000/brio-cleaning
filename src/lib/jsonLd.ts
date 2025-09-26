@@ -7,6 +7,8 @@ import {
   Service,
   ListItem,
   FAQPage,
+  OfferCatalog,
+  Offer,
 } from "schema-dts";
 import { contact, services, socialLinks } from "./constants";
 
@@ -30,6 +32,54 @@ const slugify = (label: string) =>
     .trim()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+
+export const offerCatalogSchema: WithContext<OfferCatalog> = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Servicii Brio Cleaning",
+  itemListElement: services.map((s, i): ListItem => {
+    // Build a Service with optional Offers (one per price line)
+    const serviceWithOffers = {
+      "@type": "Service",
+      name: s.title,
+      description: s.short ?? s.description,
+      url: abs(s.href),
+      serviceType: s.seoKicker,
+      areaServed: { "@type": "City", name: "Timișoara" },
+      provider: { "@type": "LocalBusiness", "@id": `${ORIGIN}#org` },
+      ...(s.prices?.length
+        ? {
+            offers: s.prices.map(
+              (p: any): Offer => ({
+                "@type": "Offer",
+                name: p.label,
+                priceCurrency: "RON",
+                price: typeof p.p === "number" ? p.p : undefined,
+                url: abs(`${s.href}#preturi`),
+                // If price per unit (e.g., /mp):
+                ...(p.unit
+                  ? {
+                      priceSpecification: {
+                        "@type": "UnitPriceSpecification",
+                        price: typeof p.p === "number" ? p.p : undefined,
+                        priceCurrency: "RON",
+                        unitText: p.unit, // e.g. "mp"
+                      },
+                    }
+                  : {}),
+              })
+            ),
+          }
+        : {}),
+    };
+
+    return {
+      "@type": "ListItem",
+      position: i + 1,
+      item: serviceWithOffers as Service,
+    };
+  }),
+};
 
 export const webSiteSchema: WithContext<WebSite> = {
   "@context": "https://schema.org",
@@ -87,6 +137,7 @@ export const businessSchema: WithContext<LocalBusiness> = {
   ],
   // Optional: add extra semantic hint about niche using productontology
   additionalType: "http://www.productontology.org/id/Carpet_cleaning",
+  hasOfferCatalog: offerCatalogSchema,
 };
 
 export const navSchema: WithContext<SiteNavigationElement> = {
@@ -193,7 +244,7 @@ export const generateBreadcrumbsSchema = (
   };
 };
 
-export const serviceSchema: WithContext<Service> = {
+export const servicesSchema: WithContext<Service> = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Servicii Brio Cleaning",
@@ -204,26 +255,7 @@ export const serviceSchema: WithContext<Service> = {
     "@type": "LocalBusiness",
     "@id": "https://www.briocleaning.ro",
   },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Categorii de Servicii",
-    itemListElement: [
-      {
-        "@type": "Service",
-        name: "Remodelare Corporală",
-        url: "https://www.slimandbeauty.ro/servicii/remodelare-corporala",
-        description:
-          "Tratamente non-invazive pentru remodelarea corporală și eliminarea celulitei.",
-      },
-      {
-        "@type": "Service",
-        name: "Dermato Cosmetică",
-        url: "https://www.slimandbeauty.ro/servicii/dermato-cosmetica",
-        description:
-          "Tratamente avansate pentru îngrijirea pielii, corectarea imperfecțiunilor și îmbunătățirea aspectului tenului.",
-      },
-    ],
-  },
+  hasOfferCatalog: offerCatalogSchema,
 };
 
 export const generateServiceSchema = (service: any): WithContext<Service> => {
@@ -262,17 +294,17 @@ export const generateServiceSchema = (service: any): WithContext<Service> => {
 };
 
 export const generateFAQSchema = (
-  faq: { question: string; answer: string }[]
+  faq: { q: string; a: string }[]
 ): WithContext<FAQPage> => {
   const schema: WithContext<FAQPage> = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faq.map((item) => ({
       "@type": "Question",
-      name: item.question,
+      name: item.q,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: item.a,
       },
     })),
   };
