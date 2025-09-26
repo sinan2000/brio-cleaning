@@ -57,18 +57,18 @@ export const rootMeta: Metadata = {
 
 export const homePageMeta: Metadata = {
   title: serpTruncate(
-    "Curățare canapele & igienizare saltele Timișoara | Brio Cleaning"
+    "Curățare canapele Timișoara | Saltele & Auto - Brio Cleaning"
   ),
   description: serpTruncate(
-    "Curățare canapele, igienizare saltele și interior auto în Timișoara. Abur 150 °C, soluții sigure, preț transparent. Programează online și redescoperă confortul.",
+    "Curățare canapele în Timișoara, plus igienizare saltele și tapițerie auto. Abur 150 °C, soluții sigure, prețuri clare. Programează online în 1 minut.",
     160
   ),
   openGraph: generateOG(
     serpTruncate(
-      "Curățare canapele & igienizare saltele Timișoara | Brio Cleaning"
+      "Curățare canapele Timișoara | Saltele & Auto - Brio Cleaning"
     ),
     serpTruncate(
-      "Curățare canapele, igienizare saltele și interior auto în Timișoara. Abur 150 °C, soluții sigure, preț transparent. Programează online și redescoperă confortul.",
+      "Curățare canapele în Timișoara, plus igienizare saltele și tapițerie auto. Abur 150 °C, soluții sigure, prețuri clare. Programează online în 1 minut.",
       160
     )
   ),
@@ -137,7 +137,8 @@ export async function detailPageMeta({
   const description = serpTruncate(
     (typeof serviceData.longDescription === "string"
       ? serviceData.longDescription
-      : serviceData.description) + " Programează-te acum la Brio Cleaning!",
+      : serviceData.description) +
+      " Servicii în Timișoara cu abur 150 °C, pete și mirosuri eliminate. Programează-te acum la Brio Cleaning!",
     160
   );
   return {
@@ -183,7 +184,7 @@ export const notFoundMeta: Metadata = {
 };
 
 export const contactPageMeta: Metadata = {
-  title: serpTruncate("Contact Brio Cleaning Timișoara - programări & oferte"),
+  title: serpTruncate("Contact Brio Cleaning Timișoara - Programări & Oferte"),
   description: serpTruncate(
     "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email. Servicii de curățare profesionale în Timișoara și împrejurimi.",
     160
@@ -294,13 +295,13 @@ export const confidentialityMeta: Metadata = {
 export const bookingMeta: Metadata = {
   title: serpTruncate("Programări curățare în Timișoara | Brio Cleaning"),
   description: serpTruncate(
-    "Rezervă online curățare canapele, igienizare saltele, interior auto sau mochetă în Timișoara. Confirmare rapidă și prețuri clare.",
+    "Rezervă online curățare canapele, saltele și tapițerie auto în Timișoara. Confirmare rapidă, prețuri transparente.",
     160
   ),
   openGraph: generateOG(
     serpTruncate("Programări curățare în Timișoara | Brio Cleaning"),
     serpTruncate(
-      "Rezervă online curățare canapele, igienizare saltele, interior auto sau mochetă în Timișoara. Confirmare rapidă și prețuri clare.",
+      "Rezervă online curățare canapele, saltele și tapițerie auto în Timișoara. Confirmare rapidă, prețuri transparente.",
       160
     ),
     abs("/programari")
@@ -318,7 +319,7 @@ export const bookingMeta: Metadata = {
 };
 
 export const successMeta: Metadata = {
-  title: serpTruncate("Programare trimisă – îți mulțumim! | Brio Cleaning"),
+  title: serpTruncate("Programare trimisă - îți mulțumim! | Brio Cleaning"),
   description: serpTruncate(
     "Cererea ta de programare a fost trimisă. Îți confirmăm telefonic sau pe WhatsApp în cel mai scurt timp.",
     160
@@ -329,7 +330,7 @@ export const successMeta: Metadata = {
   },
   openGraph: {
     siteName: "Brio Cleaning",
-    title: serpTruncate("Programare trimisă – îți mulțumim! | Brio Cleaning"),
+    title: serpTruncate("Programare trimisă - îți mulțumim! | Brio Cleaning"),
     description: serpTruncate(
       "Cererea ta de programare a fost trimisă. Îți confirmăm telefonic sau pe WhatsApp în cel mai scurt timp.",
       160
@@ -348,7 +349,7 @@ export const successMeta: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: serpTruncate("Programare trimisă – îți mulțumim! | Brio Cleaning"),
+    title: serpTruncate("Programare trimisă - îți mulțumim! | Brio Cleaning"),
     description: serpTruncate(
       "Cererea ta de programare a fost trimisă. Îți confirmăm telefonic sau pe WhatsApp în cel mai scurt timp.",
       160

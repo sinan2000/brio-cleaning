@@ -25,10 +25,10 @@ import s1_d from "@/assets/servicii/canapele/img4.jpg";
 import s2_a from "@/assets/servicii/saltele/img1.jpg";
 import s2_b from "@/assets/servicii/saltele/img2.jpg";
 
-import s3_a from "@/assets/servicii/fotolii/img1.jpg";
+import s3_a from "@/assets/servicii/fotolii/img1.webp";
 import s3_b from "@/assets/servicii/fotolii/img2.jpg";
 import s3_c from "@/assets/servicii/fotolii/img3.jpg";
-import s3_d from "@/assets/servicii/fotolii/img4.jpg";
+import s3_d from "@/assets/servicii/fotolii/img4.webp";
 
 import s4_a from "@/assets/servicii/horeca/img1.jpg";
 import s4_b from "@/assets/servicii/horeca/img2.jpg";
