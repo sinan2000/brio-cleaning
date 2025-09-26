@@ -1,11 +1,8 @@
+import { cookiesPolicyMeta } from "@/lib/metadatas";
 import { todayRo } from "@/lib/todayRo";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Politica de Cookie-uri | Brio Cleaning",
-  description:
-    "Află ce cookie-uri folosim pe site-ul Brio Cleaning SRL și cum îți poți gestiona preferințele.",
-};
+export const metadata = cookiesPolicyMeta
 
 export default function CookiesPolicyPage() {
 

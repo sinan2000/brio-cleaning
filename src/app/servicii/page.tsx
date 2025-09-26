@@ -6,6 +6,9 @@ import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs";
 import { Reveal } from "@/components/reveal";
 import { getPriceText } from "@/lib/helpers";
+import { servicesPageMeta } from "@/lib/metadatas";
+
+export const metadata = servicesPageMeta
 
 export default function ServicesPage() {
   return (

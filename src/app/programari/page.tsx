@@ -23,8 +23,11 @@ import StepContact from "@/components/programari/step-2";
 import StepSchedule from "@/components/programari/step-3";
 import StepSummary from "@/components/programari/step-4";
 import { submitBooking } from "./actions";
+import { bookingMeta } from "@/lib/metadatas";
 
 export const dynamic = "force-dynamic";
+
+export const metadata = bookingMeta;
 
 function Programare() {
   const [currentStep, setCurrentStep] = useState(1);

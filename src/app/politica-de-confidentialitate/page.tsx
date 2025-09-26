@@ -2,12 +2,9 @@ import { Metadata } from "next";
 import ResetConsentLink from "./helper";
 import { todayRo } from "@/lib/todayRo";
 import { contact } from "@/lib/constants";
+import { confidentialityMeta } from "@/lib/metadatas";
 
-export const metadata: Metadata = {
-  title: "Politica de Confidențialitate | Brio Cleaning",
-  description:
-    "Află cum colectăm, folosim și protejăm datele tale personale la Brio Cleaning SRL.",
-};
+export const metadata = confidentialityMeta
 
 export default function PrivacyPolicyPage() {
   return (

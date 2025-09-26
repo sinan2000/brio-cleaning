@@ -1,6 +1,9 @@
 import { contact } from "@/lib/constants";
 import { normPhone } from "@/lib/helpers";
+import { contactPageMeta } from "@/lib/metadatas";
 import React from "react";
+
+export const metadata = contactPageMeta;
 
 export default function ContactPage() {
   return (

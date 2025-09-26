@@ -7,6 +7,7 @@ import SNSFooter from "@/components/sns/footer-client";
 import { GoogleTagManager } from "@next/third-parties/google";
 import GTMWithConsent from "@/components/privacy/GTMWithConsent";
 import CookieConsent from "@/components/privacy/CookieConsent";
+import { rootMeta } from "@/lib/metadatas";
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -21,11 +22,7 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
 });
 
-export const metadata: Metadata = {
-  title: "BrioCleaning - Servicii profesionale de curățare în Timișoara",
-  description:
-    "Servicii profesionale de curățare a tapițeriei, auto și HoReCa în Timișoara. Aducem strălucire fiecărei suprafețe cu produse ecologice.",
-};
+export const metadata = rootMeta;
 
 export default function RootLayout({
   children,

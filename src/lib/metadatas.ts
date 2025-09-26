@@ -110,7 +110,7 @@ export const servicesPageMeta: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: serpTruncate(
-      "Servicii de curățare în Timișoara – canapele, saltele, auto | Brio Cleaning"
+      "Servicii de curățare în Timișoara - canapele, saltele, auto | Brio Cleaning"
     ),
     description: serpTruncate(
       "Toate serviciile Brio Cleaning: curățare canapele, igienizare saltele, interior auto, mochetă, piele, HoReCa. Rezultate profesionale, programări rapide.",
@@ -183,13 +183,13 @@ export const notFoundMeta: Metadata = {
 };
 
 export const contactPageMeta: Metadata = {
-  title: serpTruncate("Contact Brio Cleaning Timișoara – programări & oferte"),
+  title: serpTruncate("Contact Brio Cleaning Timișoara - programări & oferte"),
   description: serpTruncate(
     "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email. Servicii de curățare profesionale în Timișoara și împrejurimi.",
     160
   ),
   openGraph: generateOG(
-    serpTruncate("Contact Brio Cleaning Timișoara – programări & oferte"),
+    serpTruncate("Contact Brio Cleaning Timișoara - programări & oferte"),
     serpTruncate(
       "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email. Servicii de curățare profesionale în Timișoara și împrejurimi.",
       160
@@ -200,7 +200,7 @@ export const contactPageMeta: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: serpTruncate(
-      "Contact Brio Cleaning Timișoara – programări & oferte"
+      "Contact Brio Cleaning Timișoara - programări & oferte"
     ),
     description: serpTruncate(
       "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email.",

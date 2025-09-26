@@ -15,12 +15,17 @@ import { slugFromHref } from "@/lib/helpers";
 import Breadcrumbs from "@/components/breadcrumbs";
 import PriceDisplay from "@/components/price-display";
 import Mosaic from "@/components/mosaic";
+import { detailPageMeta } from "@/lib/metadatas";
 
 type Args = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export async function generateMetadata({ params: paramsPromise }: Args) {
+  return detailPageMeta({ params: paramsPromise });
+}
 
 export default async function ServicePage({ params: paramsPromise }: Args) {
   const { slug = "" } = await paramsPromise;

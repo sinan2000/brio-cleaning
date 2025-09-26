@@ -1,12 +1,9 @@
 import { contact } from "@/lib/constants";
+import { termsMeta } from "@/lib/metadatas";
 import { todayRo } from "@/lib/todayRo";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Termeni și Condiții | BRIO CLEANING",
-  description:
-    "Termenii și condițiile pentru folosirea site-ului și programările la BRIO CLEANING SRL.",
-};
+export const metadata = termsMeta;
 
 export default function TermsPage() {
   return (
@@ -56,8 +53,7 @@ export default function TermsPage() {
         </p>
         <ul>
           <li>
-            Recomandat: anunț cu cel puțin <strong>24 de ore</strong>{" "}
-            înainte.
+            Recomandat: anunț cu cel puțin <strong>24 de ore</strong> înainte.
           </li>
           <li>
             Pentru absență la programare (<em>no-show</em>) ne rezervăm dreptul
