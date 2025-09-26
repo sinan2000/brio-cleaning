@@ -216,6 +216,7 @@ export const cookiesPolicyMeta: Metadata = {
     "Ce cookie-uri folosim și cum îți poți gestiona preferințele. Consimțământ pentru analitice și modul de dezactivare.",
     160
   ),
+  robots: { index: false, follow: true },
   openGraph: generateOG(
     serpTruncate("Politica de Cookie-uri | Brio Cleaning"),
     serpTruncate(
@@ -250,6 +251,7 @@ export const termsMeta: Metadata = {
     ),
     abs("/termeni")
   ),
+  robots: { index: false, follow: true },
   alternates: { canonical: abs("/termeni") },
   twitter: {
     card: "summary_large_image",
@@ -268,6 +270,7 @@ export const confidentialityMeta: Metadata = {
     "Află cum colectăm, folosim și protejăm datele tale personale. Drepturile tale și datele de contact.",
     160
   ),
+  robots: { index: false, follow: true },
   openGraph: generateOG(
     serpTruncate("Politica de Confidențialitate | Brio Cleaning"),
     serpTruncate(
