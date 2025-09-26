@@ -58,9 +58,9 @@ const MediaSection = () => {
         {currentMedia.about.overview2}
       </p>
 
-      <h4 className="text-lg md:text-xl lg:text-2xl mt-6">
+      <h3 className="text-lg md:text-xl lg:text-2xl mt-6">
         Brio Cleaning - curățenie cu grijă pentru tine și casa ta.
-      </h4>
+      </h3>
 
       {/* Secțiunea 2: Igienizăm, dezinfectăm, protejăm */}
       <div className="mt-8 rounded-2xl border bg-card text-card-foreground shadow-sm">
