@@ -1,54 +1,49 @@
 "use client";
-
-import { useEffect } from "react";
-
-type Props = { gtmId: string };
+import { useEffect, useState } from "react";
+import Script from "next/script";
 
 function getConsent(): "granted" | "denied" | null {
   const m = document.cookie.match(/(?:^|; )brio_consent=(granted|denied)/);
   return (m?.[1] as any) ?? null;
 }
 
-function loadGTM(id: string) {
-  if (document.getElementById("brio-gtm")) return;
+export default function GTMWithConsent({ gtmId }: { gtmId: string }) {
+  const [consent, setConsent] = useState<"granted" | "denied" | null>(null);
 
-  // Init dataLayer
-  (window as any).dataLayer = (window as any).dataLayer || [];
-  (window as any).dataLayer.push({ "brio.consentLoadedAt": Date.now() });
-
-  // Inject GTM <script>
-  const s = document.createElement("script");
-  s.id = "brio-gtm";
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtm.js?id=${id}`;
-  document.head.appendChild(s);
-
-  // (Optional) noscript fallback (rarely needed in SPA)
-  const ns = document.createElement("noscript");
-  ns.id = "brio-gtm-noscript";
-  ns.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${id}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
-  document.body.appendChild(ns);
-}
-
-export default function GTMWithConsent({ gtmId }: Props) {
   useEffect(() => {
-    const c = getConsent();
-    if (c === "granted") loadGTM(gtmId);
-
-    // Listen for future changes from the banner
+    setConsent(getConsent());
     const onChange = (e: Event) => {
       const detail = (e as CustomEvent).detail as {
         status: "granted" | "denied";
       };
-      if (detail?.status === "granted") loadGTM(gtmId);
-      if (detail?.status === "denied") {
-        // If you wish, you could remove GTM nodes here.
-      }
+      if (detail?.status) setConsent(detail.status);
     };
     window.addEventListener("brio-consent-changed", onChange as any);
     return () =>
       window.removeEventListener("brio-consent-changed", onChange as any);
-  }, [gtmId]);
+  }, []);
 
-  return null;
+  if (consent !== "granted") return null;
+
+  return (
+    <>
+      {/* dataLayer init + GTM bootstrap */}
+      <Script id="gtm-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ 'brio.consentLoadedAt': Date.now() });
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');
+        `}
+      </Script>
+
+      {/* Optional <noscript> fallback – fine to omit on SPAs */}
+      {/* Put in <body> if you want it: */}
+      {/* <noscript><iframe src={"https://www.googletagmanager.com/ns.html?id=" + gtmId}
+          height="0" width="0" style={{display:"none",visibility:"hidden"}} /></noscript> */}
+    </>
+  );
 }
