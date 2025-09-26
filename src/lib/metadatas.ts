@@ -277,9 +277,9 @@ export const confidentialityMeta: Metadata = {
       "Află cum colectăm, folosim și protejăm datele tale personale. Drepturile tale și datele de contact.",
       160
     ),
-    abs("/politica-confidentialitate")
+    abs("/politica-de-confidentialitate")
   ),
-  alternates: { canonical: abs("/politica-confidentialitate") },
+  alternates: { canonical: abs("/politica-de-confidentialitate") },
   twitter: {
     card: "summary_large_image",
     title: serpTruncate("Politica de Confidențialitate | Brio Cleaning"),

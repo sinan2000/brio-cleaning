@@ -134,7 +134,7 @@ export default function CookiesPolicyPage() {
         <p>
           Pentru detalii privind prelucrarea datelor personale, te rugăm să
           consulți{" "}
-          <a href="/politica-confidentialitate" className="underline">
+          <a href="/politica-de-confidentialitate" className="underline">
             Politica de confidențialitate
           </a>
           .

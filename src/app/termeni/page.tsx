@@ -119,7 +119,7 @@ export default function TermsPage() {
         <h2>9. Protecția datelor</h2>
         <p>
           Prelucrarea datelor personale se face conform{" "}
-          <a href="/politica-confidentialitate">
+          <a href="/politica-de-confidentialitate">
             Politicii de confidențialitate
           </a>
           .

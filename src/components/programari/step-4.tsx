@@ -60,7 +60,7 @@ export default function StepSummary() {
                 <span className="inline-flex flex-wrap items-center gap-x-1 gap-y-0.5">
                   <span>Sunt de acord cu</span>
                   <Link
-                    href="/termeni-si-conditii"
+                    href="/termeni"
                     className="text-[#1E839C] hover:underline"
                   >
                     Termenii și Condițiile
