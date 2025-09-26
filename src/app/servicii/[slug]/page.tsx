@@ -153,7 +153,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </aside>
-                ) : service.fact ? (
+                ) : service.didYouKnow ? (
                   <aside className="rounded-xl border border-brio-green/30 bg-brio-green/5 p-4 flex gap-3 items-start">
                     {/* existing single-fact icon */}
                     <svg
@@ -174,7 +174,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                     </svg>
                     <p className="text-xs sm:text-sm md:text-base text-foreground">
                       <span className="font-semibold">Știați că? </span>
-                      {service.fact}
+                      {service.didYouKnow}
                     </p>
                   </aside>
                 ) : null}

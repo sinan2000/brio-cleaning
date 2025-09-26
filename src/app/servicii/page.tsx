@@ -90,15 +90,15 @@ export default function ServicesPage() {
                           </h2>
                         </div>
 
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-pretty">
-                          {service.description ?? ""}
+                        <p className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed text-pretty">
+                          {service.short ?? ""}
                         </p>
 
                         <aside className="mt-3 rounded-xl border border-brio-green/30 bg-brio-green/5 p-4 flex gap-3 items-start">
                           <InfoIcon className="w-5 h-5 text-brio-green mt-0.5 shrink-0" />
                           <p className="text-sm md:text-base text-foreground">
                             <span className="font-semibold">Știați că? </span>
-                            {service.fact}
+                            {service.didYouKnow}
                           </p>
                         </aside>
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { slugFromHref } from "@/lib/helpers";
+import { normPhone, slugFromHref } from "@/lib/helpers";
 import { Check } from "lucide-react";
 
 export default function PriceDisplay({ service }: { service: any }) {
@@ -8,24 +8,11 @@ export default function PriceDisplay({ service }: { service: any }) {
   const addons = service.extensie ?? [];
   const hasAnyPrices = prices.length > 0;
 
-  // ADD: centralize how we open WhatsApp
   const getWhatsAppHref = () => {
-    // Prefer explicit phone on the service if you have it, else fall back to env, else a query with service title
-    const phone =
-      service.whatsappPhone ||
-      process.env.NEXT_PUBLIC_WHATSAPP_PHONE || // e.g. "0040740123456"
-      "";
-    const base = phone
-      ? `https://wa.me/${phone.replace(/\D/g, "")}`
-      : `https://wa.me/?text=Salut!%20Aș%20dori%20o%20ofertă%20pentru%20${encodeURIComponent(
-          service.title || "serviciu"
-        )}`;
-    const text =
-      `Salut! Aș dori o ofertă pentru ${service.title || "serviciu"} – ` +
-      `${service.href ? slugFromHref(service.href) : ""}.`;
-    return `${base}${base.includes("?") ? "&" : "?"}text=${encodeURIComponent(
-      text
+    const base = `https://wa.me/${normPhone()}?text=salut!%20aș%20dori%20o%20ofertă%20pentru%20${encodeURIComponent(
+      (service.title || "serviciu").toLowerCase()
     )}`;
+    return base;
   };
 
   const formatPrice = (i: { p: number | string; unit?: string }) =>

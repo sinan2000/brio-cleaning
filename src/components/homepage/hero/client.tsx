@@ -206,9 +206,9 @@ const ScrollExpandMedia = ({
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                priority
-                loading="eager"
-                fetchPriority="high"
+                //priority
+                loading="lazy"
+                //fetchPriority="high"
               />
             </div>
             <div className="absolute inset-0 bg-black/10" />
