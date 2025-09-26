@@ -313,3 +313,43 @@ export const bookingMeta: Metadata = {
     images: ["/logo-og.png"],
   },
 };
+
+export const successMeta: Metadata = {
+  title: serpTruncate("Programare trimisă – îți mulțumim! | Brio Cleaning"),
+  description: serpTruncate(
+    "Cererea ta de programare a fost trimisă. Îți confirmăm telefonic sau pe WhatsApp în cel mai scurt timp.",
+    160
+  ),
+  robots: { index: false, follow: false },
+  alternates: {
+    canonical: "https://www.briocleaning.ro/programari/succes",
+  },
+  openGraph: {
+    siteName: "Brio Cleaning",
+    title: serpTruncate("Programare trimisă – îți mulțumim! | Brio Cleaning"),
+    description: serpTruncate(
+      "Cererea ta de programare a fost trimisă. Îți confirmăm telefonic sau pe WhatsApp în cel mai scurt timp.",
+      160
+    ),
+    url: "https://www.briocleaning.ro/programari/succes",
+    type: "website",
+    locale: "ro_RO",
+    images: [
+      {
+        url: "/logo-og.png", // relative ok if metadataBase is set globally
+        width: 1200,
+        height: 630,
+        alt: "Brio Cleaning",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate("Programare trimisă – îți mulțumim! | Brio Cleaning"),
+    description: serpTruncate(
+      "Cererea ta de programare a fost trimisă. Îți confirmăm telefonic sau pe WhatsApp în cel mai scurt timp.",
+      160
+    ),
+    images: ["/logo-og.png"],
+  },
+};

@@ -110,7 +110,7 @@ async function sendSms(data: any) {
 
   try {
     await vonage.sms.send({
-      to: normPhone(),
+      to: "40732405829", // normPhone(),
       from,
       text: cleanText,
     });

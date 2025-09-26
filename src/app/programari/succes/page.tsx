@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/button";
 import { services } from "@/lib/constants";
 import { normPhone, slugFromHref } from "@/lib/helpers";
 import { WhatsAppIcon } from "@/components/icons";
+import { successMeta } from "@/lib/metadatas";
 
 type PageProps = {
   searchParams: Promise<Record<string, string | undefined>>;
 };
+
+export const metadata = successMeta;
 
 function formatDMY(iso?: string) {
   if (!iso) return "";
@@ -30,7 +33,9 @@ export default async function SuccessPage({ searchParams }: PageProps) {
   const waMsg =
     `Bună! Confirm programarea pentru ${svc?.title ?? "serviciu"} ` +
     `pe ${formatDMY(dateIso)} (${time}).`;
-  const waHref = `https://wa.me/${normPhone()}?text=${encodeURIComponent(waMsg)}`;
+  const waHref = `https://wa.me/${normPhone()}?text=${encodeURIComponent(
+    waMsg
+  )}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-20">
@@ -55,10 +60,17 @@ export default async function SuccessPage({ searchParams }: PageProps) {
           )}
 
           <div className="space-y-3">
-            <Button asChild className="w-full bg-brio-blue-dark/90 hover:bg-brio-blue-dark">
+            <Button
+              asChild
+              className="w-full bg-brio-blue-dark/90 hover:bg-brio-blue-dark"
+            >
               <a href="/">Înapoi la pagina principală</a>
             </Button>
-            <Button variant="outline" asChild className="w-full bg-brio-green/90 hover:bg-brio-green text-white hover:text-white">
+            <Button
+              variant="outline"
+              asChild
+              className="w-full bg-brio-green/90 hover:bg-brio-green text-white hover:text-white"
+            >
               <a href={waHref} target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon />
                 Scrie pe WhatsApp
