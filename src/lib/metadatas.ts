@@ -6,6 +6,7 @@ import { slugFromHref } from "./helpers";
 import { getMetadataImage } from "./meta-images";
 
 const metadataBase = new URL("https://www.briocleaning.ro");
+const abs = (path: string) => new URL(path, metadataBase).href;
 
 function generateOG(
   title: string,
@@ -18,12 +19,12 @@ function generateOG(
     siteName: "Brio Cleaning",
     title,
     description,
-    url: url || "metadataBase",
+    url: url || metadataBase.href,
     locale: "ro_RO",
     type: "website",
     images: [
       {
-        url: photo || "metadataBase/logo-og.png",
+        url: photo || "/logo-og.png",
         alt: alt ? "Photo of " + alt : "Brio Cleaning Poster",
         width: 1200,
         height: 630,
@@ -43,7 +44,7 @@ export const rootMeta: Metadata = {
     "max-video-preview": -1,
     googleBot: "index, follow",
   },
-  authors: [{ name: "Brio Cleaning", url: "metadataBase" }],
+  authors: [{ name: "Brio Cleaning", url: metadataBase.href }],
   creator: "Brio Cleaning",
   publisher: "Brio Cleaning",
   applicationName: "Brio Cleaning",
@@ -72,13 +73,24 @@ export const homePageMeta: Metadata = {
     )
   ),
   alternates: {
-    canonical: "metadataBase",
+    canonical: metadataBase.href,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate(
+      "Curățare canapele & igienizare saltele Timișoara | Brio Cleaning"
+    ),
+    description: serpTruncate(
+      "Curățare canapele, igienizare saltele și interior auto în Timișoara. Abur 150 °C, soluții sigure, preț transparent. Programează online și redescoperă confortul.",
+      160
+    ),
+    images: ["/logo-og.png"],
   },
 };
 
 export const servicesPageMeta: Metadata = {
   title: serpTruncate(
-    "Servicii de curățare în Timișoara – canapele, saltele, auto | Brio Cleaning"
+    "Servicii de curățare în Timișoara - canapele, saltele, auto | Brio Cleaning"
   ),
   description: serpTruncate(
     "Toate serviciile Brio Cleaning: curățare canapele, igienizare saltele, interior auto, mochetă, piele, HoReCa. Rezultate profesionale, programări rapide.",
@@ -86,14 +98,26 @@ export const servicesPageMeta: Metadata = {
   ),
   openGraph: generateOG(
     serpTruncate(
-      "Servicii de curățare în Timișoara – canapele, saltele, auto | Brio Cleaning"
+      "Servicii de curățare în Timișoara - canapele, saltele, auto | Brio Cleaning"
     ),
     serpTruncate(
       "Toate serviciile Brio Cleaning: curățare canapele, igienizare saltele, interior auto, mochetă, piele, HoReCa. Rezultate profesionale, programări rapide.",
       160
     ),
-    "metadataBase/servicii"
+    abs("/servicii")
   ),
+  alternates: { canonical: abs("/servicii") },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate(
+      "Servicii de curățare în Timișoara – canapele, saltele, auto | Brio Cleaning"
+    ),
+    description: serpTruncate(
+      "Toate serviciile Brio Cleaning: curățare canapele, igienizare saltele, interior auto, mochetă, piele, HoReCa. Rezultate profesionale, programări rapide.",
+      160
+    ),
+    images: ["/logo-og.png"],
+  },
 };
 
 export async function detailPageMeta({
@@ -109,26 +133,30 @@ export async function detailPageMeta({
     notFound();
   }
 
+  const title = serviceMetaTitle(serviceData.title, serviceData.seoKicker);
+  const description = serpTruncate(
+    (typeof serviceData.longDescription === "string"
+      ? serviceData.longDescription
+      : serviceData.description) + " Programează-te acum la Brio Cleaning!",
+    160
+  );
   return {
-    title: serviceMetaTitle(serviceData.title, serviceData.seoKicker),
-    description: serpTruncate(
-      (typeof serviceData.longDescription === "string"
-        ? serviceData.longDescription
-        : serviceData.description) + " Programează-te acum la Brio Cleaning!",
-      160
-    ),
+    title,
+    description,
     openGraph: generateOG(
-      serviceMetaTitle(serviceData.title, serviceData.seoKicker),
-      serpTruncate(
-        (typeof serviceData.longDescription === "string"
-          ? serviceData.longDescription
-          : serviceData.description) + " Programează-te acum la Brio Cleaning!",
-        160
-      ),
-      `metadataBase/servicii/${slug}`,
+      title,
+      description,
+      abs(`/servicii/${slug}`),
       getMetadataImage(serviceData.media),
       serviceData.title
     ),
+    alternates: { canonical: abs(`/servicii/${slug}`) },
+    twitter: {
+      card: "summary_large_image",
+      title: serpTruncate(title),
+      description: serpTruncate(description, 160),
+      images: [getMetadataImage(serviceData.media)],
+    },
   };
 }
 
@@ -138,20 +166,150 @@ export const notFoundMeta: Metadata = {
     "Pagina pe care o căutați nu a fost găsită. Vă rugăm să verificați URL-ul și să încercați din nou.",
   openGraph: generateOG(
     "404 - Pagina nu a fost găsită | Brio Cleaning",
-    "Pagina pe care o căutați nu a fost găsită. Vă rugăm să verificați URL-ul și să încercați din nou."
+    "Pagina pe care o căutați nu a fost găsită. Vă rugăm să verificați URL-ul și să încercați din nou.",
+    abs("/404")
   ),
   robots: {
     index: false,
     follow: false,
   },
+  alternates: { canonical: abs("/404") },
+  twitter: {
+    card: "summary_large_image",
+    title: "404 - Pagina nu a fost găsită | Brio Cleaning",
+    description: "Pagina pe care o căutați nu a fost găsită.",
+    images: ["/logo-og.png"],
+  },
 };
 
-export const contactPageMeta: Metadata = {};
+export const contactPageMeta: Metadata = {
+  title: serpTruncate("Contact Brio Cleaning Timișoara – programări & oferte"),
+  description: serpTruncate(
+    "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email. Servicii de curățare profesionale în Timișoara și împrejurimi.",
+    160
+  ),
+  openGraph: generateOG(
+    serpTruncate("Contact Brio Cleaning Timișoara – programări & oferte"),
+    serpTruncate(
+      "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email. Servicii de curățare profesionale în Timișoara și împrejurimi.",
+      160
+    ),
+    abs("/contact")
+  ),
+  alternates: { canonical: abs("/contact") },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate(
+      "Contact Brio Cleaning Timișoara – programări & oferte"
+    ),
+    description: serpTruncate(
+      "Suntem aici pentru întrebări și oferte: telefon, WhatsApp și email.",
+      160
+    ),
+    images: ["/logo-og.png"],
+  },
+};
 
-export const cookiesPolicyMeta: Metadata = {};
+export const cookiesPolicyMeta: Metadata = {
+  title: serpTruncate("Politica de Cookie-uri | Brio Cleaning"),
+  description: serpTruncate(
+    "Ce cookie-uri folosim și cum îți poți gestiona preferințele. Consimțământ pentru analitice și modul de dezactivare.",
+    160
+  ),
+  openGraph: generateOG(
+    serpTruncate("Politica de Cookie-uri | Brio Cleaning"),
+    serpTruncate(
+      "Ce cookie-uri folosim și cum îți poți gestiona preferințele. Consimțământ pentru analitice și modul de dezactivare.",
+      160
+    ),
+    abs("/politica-cookies")
+  ),
+  alternates: { canonical: abs("/politica-cookies") },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate("Politica de Cookie-uri | Brio Cleaning"),
+    description: serpTruncate(
+      "Ce cookie-uri folosim și cum îți poți gestiona preferințele.",
+      160
+    ),
+    images: ["/logo-og.png"],
+  },
+};
 
-export const termsMeta: Metadata = {};
+export const termsMeta: Metadata = {
+  title: serpTruncate("Termeni și condiții | Brio Cleaning"),
+  description: serpTruncate(
+    "Condițiile de utilizare a site-ului și serviciilor Brio Cleaning. Informații despre programări, prețuri și responsabilități.",
+    160
+  ),
+  openGraph: generateOG(
+    serpTruncate("Termeni și condiții | Brio Cleaning"),
+    serpTruncate(
+      "Condițiile de utilizare a site-ului și serviciilor Brio Cleaning. Informații despre programări, prețuri și responsabilități.",
+      160
+    ),
+    abs("/termeni")
+  ),
+  alternates: { canonical: abs("/termeni") },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate("Termeni și condiții | Brio Cleaning"),
+    description: serpTruncate(
+      "Condițiile de utilizare a site-ului și serviciilor Brio Cleaning.",
+      160
+    ),
+    images: ["/logo-og.png"],
+  },
+};
 
-export const confidentialityMeta: Metadata = {};
+export const confidentialityMeta: Metadata = {
+  title: serpTruncate("Politica de Confidențialitate | Brio Cleaning"),
+  description: serpTruncate(
+    "Află cum colectăm, folosim și protejăm datele tale personale. Drepturile tale și datele de contact.",
+    160
+  ),
+  openGraph: generateOG(
+    serpTruncate("Politica de Confidențialitate | Brio Cleaning"),
+    serpTruncate(
+      "Află cum colectăm, folosim și protejăm datele tale personale. Drepturile tale și datele de contact.",
+      160
+    ),
+    abs("/politica-confidentialitate")
+  ),
+  alternates: { canonical: abs("/politica-confidentialitate") },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate("Politica de Confidențialitate | Brio Cleaning"),
+    description: serpTruncate(
+      "Află cum colectăm, folosim și protejăm datele tale personale.",
+      160
+    ),
+    images: ["/logo-og.png"],
+  },
+};
 
-export const bookingMeta: Metadata = {};
+export const bookingMeta: Metadata = {
+  title: serpTruncate("Programări curățare în Timișoara | Brio Cleaning"),
+  description: serpTruncate(
+    "Rezervă online curățare canapele, igienizare saltele, interior auto sau mochetă în Timișoara. Confirmare rapidă și prețuri clare.",
+    160
+  ),
+  openGraph: generateOG(
+    serpTruncate("Programări curățare în Timișoara | Brio Cleaning"),
+    serpTruncate(
+      "Rezervă online curățare canapele, igienizare saltele, interior auto sau mochetă în Timișoara. Confirmare rapidă și prețuri clare.",
+      160
+    ),
+    abs("/programari")
+  ),
+  alternates: { canonical: abs("/programari") },
+  twitter: {
+    card: "summary_large_image",
+    title: serpTruncate("Programări curățare în Timișoara | Brio Cleaning"),
+    description: serpTruncate(
+      "Rezervă online curățare canapele, igienizare saltele, interior auto sau mochetă.",
+      160
+    ),
+    images: ["/logo-og.png"],
+  },
+};
