@@ -51,6 +51,7 @@ export const services = [
     icon: Sofa,
     title: "Curățare și igienizare canapele",
     short: "Curățenie în profunzime, relaxare deplină.",
+    seoKicker: "pete & alergeni eliminați",
     description:
       "Redăm confortul și frumusețea canapelei tale printr-o curățare profesională în profunzime.",
     features: [
@@ -118,6 +119,7 @@ export const services = [
     icon: Bed,
     title: "Curățare și igienizare saltele",
     short: "Pentru un somn sănătos și odihnitor.",
+    seoKicker: "somn sănătos",
     description: "Un somn odihnitor începe cu o saltea curată și sănătoasă.",
     features: [
       "Eliminarea acarienilor și a pielii moarte",
@@ -165,6 +167,7 @@ export const services = [
     icon: Armchair,
     title: "Curățare fotolii și scaune",
     short: "Prospețime pentru fiecare loc de relaxare.",
+    seoKicker: "prospețime & igienă",
     description: "Scaunele și fotoliile capătă din nou prospețime și igienă.",
     features: [
       "Curățare în profunzime a țesăturii",
@@ -209,6 +212,7 @@ export const services = [
     icon: Building2,
     title: "HoReCa - Curățenie profesională",
     short: "Spații sigure, clienți fericiți.",
+    seoKicker: "spații sigure",
     description:
       "La Brio Cleaning, ne ocupăm de igienizarea completă a restaurantelor, cafenelelor, hotelurilor și sălilor de evenimente, astfel încât să oferiți clienților un mediu curat, sigur și plăcut.",
     features: [
@@ -235,8 +239,8 @@ export const services = [
     longDescription: (
       <div className="space-y-6">
         <p>
-          Folosim echipamente profesionale, <b>abur la 150 °C</b> și soluții ecologice,
-          sigure pentru angajați, clienți și mediu.
+          Folosim echipamente profesionale, <b>abur la 150 °C</b> și soluții
+          ecologice, sigure pentru angajați, clienți și mediu.
         </p>
 
         <div>
@@ -304,6 +308,7 @@ export const services = [
     icon: Layers,
     title: "Curățare mochetă",
     short: "Culori vii și curățenie în profunzime.",
+    seoKicker: "culori vii",
     description:
       "Reîmprospătăm țesăturile și culorile, oferind o curățenie profundă.",
     features: [
@@ -343,6 +348,7 @@ export const services = [
     icon: Car,
     title: "Curățare interior auto",
     short: "Confort și igienă la fiecare drum.",
+    seoKicker: "interior impecabil",
     description:
       "O mașină curată înseamnă confort și sănătate la fiecare drum.",
     features: [
@@ -397,6 +403,8 @@ export const services = [
     icon: Droplet,
     title: "Îngrijire și curățare piele",
     short: "Eleganță și finețe, redată cu grijă.",
+    seoBenefitShort: "aspect premium",
+    seoKicker: "",
     description:
       "Menținem aspectul premium al suprafețelor din piele, oferindu-le o nouă viață.",
     features: [
