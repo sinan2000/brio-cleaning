@@ -1,3 +1,4 @@
+import { generateBreadcrumbsSchema } from "@/lib/jsonLd";
 import Link from "next/link";
 
 type Crumb = { label: string; href?: string };
@@ -11,6 +12,14 @@ export default function Breadcrumbs({
 }) {
   return (
     <nav aria-label="Breadcrumb" className={className}>
+      <script
+        id="breadcrumbs-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbsSchema(items)),
+        }}
+      />
+
       <ol className="flex flex-wrap items-center gap-1 text-sm text-muted-foreground">
         {items.map((item, i) => {
           const isLast = i === items.length - 1;

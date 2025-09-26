@@ -8,7 +8,7 @@ import { Reveal } from "@/components/reveal";
 import { getPriceText } from "@/lib/helpers";
 import { servicesPageMeta } from "@/lib/metadatas";
 
-export const metadata = servicesPageMeta
+export const metadata = servicesPageMeta;
 
 export default function ServicesPage() {
   return (

@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/components/breadcrumbs";
 import { contact } from "@/lib/constants";
 import { normPhone } from "@/lib/helpers";
 import { contactPageMeta } from "@/lib/metadatas";
@@ -8,6 +9,10 @@ export const metadata = contactPageMeta;
 export default function ContactPage() {
   return (
     <div className="min-h-[100dvh] flex flex-col items-start justify-center max-w-5xl w-full mx-auto p-10 text-gray-800">
+      <Breadcrumbs
+        items={[{ label: "Acasă", href: "/" }, { label: "Contact" }]}
+        className="sr-only mb-3 flex justify-center md:justify-start"
+      />
       <span className="px-2 py-1 text-xs border border-gray-300 rounded-full">
         Contactează-ne
       </span>

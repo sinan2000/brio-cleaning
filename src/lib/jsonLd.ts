@@ -10,6 +10,27 @@ import {
 } from "schema-dts";
 import { contact, services, socialLinks } from "./constants";
 
+type Crumb = { label: string; href?: string };
+
+const ORIGIN = "https://www.briocleaning.ro";
+
+const abs = (pathOrUrl: string) => {
+  if (!pathOrUrl) return ORIGIN;
+  return pathOrUrl.startsWith("http")
+    ? pathOrUrl
+    : `${ORIGIN}${pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`}`;
+};
+
+// simple slugify that removes diacritics, lowercases, and hyphenates
+const slugify = (label: string) =>
+  label
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // strip diacritics
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 export const webSiteSchema: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -28,7 +49,8 @@ export const businessSchema: WithContext<LocalBusiness> = {
   url: "https://www.briocleaning.ro",
   image: "https://www.briocleaning.ro/logo-jsonld.jpg",
   telephone: contact.phone,
-  priceRange: "$",
+  email: contact.email,
+  priceRange: "lei",
   description:
     "Servicii profesionale de curățare și igienizare textile rezidențial & HoReCa în Timișoara și împrejurimi.",
   currenciesAccepted: "RON",
@@ -63,7 +85,6 @@ export const businessSchema: WithContext<LocalBusiness> = {
     { "@type": "City", name: "Timișoara" },
     { "@type": "AdministrativeArea", name: "Timiș" },
   ],
-  email: contact.email,
   // Optional: add extra semantic hint about niche using productontology
   additionalType: "http://www.productontology.org/id/Carpet_cleaning",
 };
@@ -103,35 +124,73 @@ export const navSchema: WithContext<SiteNavigationElement> = {
 };
 
 export const generateBreadcrumbsSchema = (
-  middle: string,
-  service: any
+  items: any[]
 ): WithContext<BreadcrumbList> => {
-  const schema: WithContext<BreadcrumbList> = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Acasă",
-        item: "https://www.briocleaning.ro",
-      },
+  const list: ListItem[] = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Acasă",
+      item: ORIGIN,
+    },
+  ];
+
+  if (!items || items.length < 2) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: list,
+    };
+  }
+
+  if (items.length === 2) {
+    // Only 2 crumbs -> use the 2nd label; URL = origin + /{slug(label)} (unless href exists)
+    const second = items[1];
+    const name2 = second.label;
+    const path2 = second.href ?? `/${slugify(name2)}`;
+
+    list.push({
+      "@type": "ListItem",
+      position: 2,
+      name: name2,
+      item: abs(path2),
+    });
+  } else {
+    // 3 (or more) crumbs -> use first three
+    const second = items[1];
+    const third = items[2];
+
+    // Position 2: label + provided href or slug fallback
+    const path2 = second.href ?? `/${slugify(second.label)}`;
+
+    // Position 3: try to resolve by service title; else provided href; else slug fallback
+    let path3 = third.href;
+    if (!path3) {
+      const svc = services.find((s) => s.title === third.label);
+      path3 = svc?.href ?? `/${slugify(third.label)}`;
+    }
+
+    list.push(
       {
         "@type": "ListItem",
         position: 2,
-        name: middle,
-        item: "https://www.briocleaning.ro/servicii", // middle but to lowercase
+        name: second.label,
+        item: abs(path2),
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: service.title,
-        item: `https://www.briocleaning.ro${service.href}`,
-      },
-    ] as ListItem[],
-  };
+        name: third.label,
+        item: abs(path3),
+      }
+    );
+  }
 
-  return schema;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: list,
+  };
 };
 
 export const serviceSchema: WithContext<Service> = {
