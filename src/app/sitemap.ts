@@ -31,24 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.5,
     },
-    {
-      url: `${baseUrl}/termeni`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/politica-de-confidentialitate`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/politica-cookies`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
     // NOTE: Intentionally excluding /programari/succes (noindex).
   ];
 

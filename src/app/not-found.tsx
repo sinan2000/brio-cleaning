@@ -53,7 +53,7 @@ export default function NotFound() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-[var(--color-brio-blue)] text-white hover:text-white bg-brio-blue/90 hover:bg-[var(--color-brio-blue)]"
+                  className="border-[var(--color-brio-blue)] text-brio-blue-dark/90 hover:text-brio-blue-dark bg-brio-blue/90 hover:bg-[var(--color-brio-blue)]"
                 >
                   <Link href="/services">Vezi Serviciile</Link>
                 </Button>

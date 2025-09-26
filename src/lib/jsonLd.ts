@@ -100,6 +100,7 @@ export const businessSchema: WithContext<LocalBusiness> = {
   image: "https://www.briocleaning.ro/logo-jsonld.jpg",
   telephone: contact.phone,
   email: contact.email,
+
   priceRange: "lei",
   description:
     "Servicii profesionale de curățare și igienizare textile rezidențial & HoReCa în Timișoara și împrejurimi.",
@@ -253,7 +254,7 @@ export const servicesSchema: WithContext<Service> = {
   url: "https://www.briocleaning.ro/servicii",
   provider: {
     "@type": "LocalBusiness",
-    "@id": "https://www.briocleaning.ro",
+    "@id": "https://www.briocleaning.ro#org",
   },
   hasOfferCatalog: offerCatalogSchema,
 };
@@ -265,15 +266,15 @@ export const generateServiceSchema = (service: any): WithContext<Service> => {
     name: service.title,
     description: service.description,
     url: `https://www.briocleaning.ro${service.href}`,
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": "https://www.briocleaning.ro",
-    },
-    // serviceType: cat.category, what category to put for these service types?
     areaServed: {
       "@type": "Place",
       name: "Timișoara, Romania",
     },
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": "https://www.briocleaning.ro#org",
+    },
+    // serviceType: cat.category, what category to put for these service types?
   };
 
   if (service.prices && service.prices.length) {
@@ -283,9 +284,7 @@ export const generateServiceSchema = (service: any): WithContext<Service> => {
       price: service.prices[0].p,
       availability: "https://schema.org/InStock",
       seller: {
-        "@type": "LocalBusiness",
-        name: "Brio Cleaning",
-        url: "https://www.briocleaning.ro",
+        "@id": "https://www.briocleaning.ro#org",
       },
     };
   }

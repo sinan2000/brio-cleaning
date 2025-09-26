@@ -8,7 +8,9 @@ export default function Mosaic({
   orientation: ("landscape" | "portrait")[];
 }) {
   if (!media.length) return null;
-{/* */}
+  {
+    /* */
+  }
   // CASE 1: Only one image → big hero-like block
   if (media.length === 1) {
     return (
@@ -18,7 +20,7 @@ export default function Mosaic({
           alt="service image"
           fill
           className="object-cover"
-          sizes="100vw"
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
     );
@@ -43,6 +45,7 @@ export default function Mosaic({
                 alt={`img ${i}`}
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           ))}
@@ -59,6 +62,7 @@ export default function Mosaic({
                 alt={`img ${i}`}
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 25vw"
               />
             </div>
           ))}
@@ -74,7 +78,13 @@ export default function Mosaic({
             key={i}
             className="relative h-64 sm:h-72 md:h-80 rounded-lg overflow-hidden"
           >
-            <Image src={m.src} alt={`img ${i}`} fill className="object-cover" />
+            <Image
+              src={m.src}
+              alt={`img ${i}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         ))}
       </div>
@@ -96,7 +106,7 @@ export default function Mosaic({
             alt={`img ${i}`}
             fill
             className="object-cover"
-            sizes="(min-width:1024px) 50vw, 100vw"
+            sizes="(max-width: 1024px) 100vw, 25vw"
           />
         </div>
       ))}
