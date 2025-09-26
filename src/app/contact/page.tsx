@@ -1,4 +1,3 @@
-import { WhatsAppIcon } from "@/components/icons";
 import { contact } from "@/lib/constants";
 import { normPhone } from "@/lib/helpers";
 import React from "react";

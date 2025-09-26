@@ -33,7 +33,7 @@ function generateOG(
 }
 
 export const rootMeta: Metadata = {
-  metadataBase: new URL("metadataBase"),
+  metadataBase,
   keywords: [],
   robots: {
     index: true,
@@ -131,3 +131,27 @@ export async function detailPageMeta({
     ),
   };
 }
+
+export const notFoundMeta: Metadata = {
+  title: "404 - Pagina nu a fost găsită | Brio Cleaning",
+  description:
+    "Pagina pe care o căutați nu a fost găsită. Vă rugăm să verificați URL-ul și să încercați din nou.",
+  openGraph: generateOG(
+    "404 - Pagina nu a fost găsită | Brio Cleaning",
+    "Pagina pe care o căutați nu a fost găsită. Vă rugăm să verificați URL-ul și să încercați din nou."
+  ),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+export const contactPageMeta: Metadata = {};
+
+export const cookiesPolicyMeta: Metadata = {};
+
+export const termsMeta: Metadata = {};
+
+export const confidentialityMeta: Metadata = {};
+
+export const bookingMeta: Metadata = {};
