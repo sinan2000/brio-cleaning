@@ -18,7 +18,6 @@ interface MediaAbout {
 interface MediaData {
   src: string;
   mobileMediaSrc?: string;
-  poster: string;
   background: StaticImageData;
   title: string;
   date: string;
@@ -30,7 +29,6 @@ const sampleMediaContent: MediaData = {
   src: "/hero/desktop.mp4",
   mobileMediaSrc: "/hero/mobile.mp4",
   background,
-  poster: "/hero/poster.avif",
   title: "Curățare Cu Brio",
   date: "Noi ne ocupăm de pete",
   scrollToExpand: "Ca tu să fii liniștit",
@@ -76,8 +74,8 @@ const MediaSection = () => {
               alt="BrioCleaning la lucru"
               className="rounded-xl shadow-lg w-full h-auto order-2 md:order-1"
               placeholder="blur"
-              quality={60}
-              sizes="(min-width:1024px) 50vw, 100vw"
+              quality={55}
+              sizes="(max-width: 767px) 100vw, (max-width: 1279px) 45vw, 36vw"
             />
 
             <div className="order-1 md:order-2">
@@ -158,7 +156,6 @@ export const VideoExpansion = () => {
       <ScrollExpandMedia
         mediaSrc={currentMedia.src}
         mobileMediaSrc={currentMedia.mobileMediaSrc}
-        posterSrc={currentMedia.poster}
         bgImageSrc={currentMedia.background}
         title={currentMedia.title}
         date={currentMedia.date}

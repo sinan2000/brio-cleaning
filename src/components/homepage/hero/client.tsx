@@ -14,7 +14,6 @@ import { motion } from "motion/react";
 interface ScrollExpandMediaProps {
   mediaSrc: string;
   mobileMediaSrc?: string;
-  posterSrc: string;
   bgImageSrc: StaticImageData;
   title?: string;
   date?: string;
@@ -26,7 +25,6 @@ interface ScrollExpandMediaProps {
 const ScrollExpandMedia = ({
   mediaSrc,
   mobileMediaSrc,
-  posterSrc,
   bgImageSrc,
   title,
   date,
@@ -42,6 +40,8 @@ const ScrollExpandMedia = ({
 
   const effectiveMediaSrc =
     isMobileState && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
+
+  const poster = isMobileState ? "/hero/m-poster.avif" : "/hero/d-poster.avif";
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -200,15 +200,13 @@ const ScrollExpandMedia = ({
                 alt="Hero Background"
                 fill
                 placeholder="blur"
-                quality={60}
+                quality={45}
                 sizes="100vw"
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                //priority
                 loading="lazy"
-                //fetchPriority="high"
               />
             </div>
             <div className="absolute inset-0 bg-black/10" />
@@ -261,7 +259,7 @@ const ScrollExpandMedia = ({
                   <div className="relative w-full h-full pointer-events-none">
                     <video
                       src={effectiveMediaSrc}
-                      poster={posterSrc}
+                      poster={poster}
                       autoPlay
                       muted
                       loop
