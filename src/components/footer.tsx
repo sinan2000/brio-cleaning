@@ -4,7 +4,6 @@ import Logo from "./Logo";
 import { menuItems, services, contact, socialLinks } from "@/lib/constants";
 import anpcSal from "@/assets/anpc-sal.png";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
 import { normPhone } from "@/lib/helpers";
 
 export default function Footer() {
@@ -28,18 +27,21 @@ export default function Footer() {
               mediu. Aducem prospețime și strălucire fiecărei suprafețe.
             </p>
             <div className="pt-1 flex gap-3">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.name}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full"
-                >
-                  <Icon icon={s.icon} className="h-5 w-5 text-white" />
-                </a>
-              ))}
+              {socialLinks.map((s) => {
+                const IconCmp = s.icon;
+                return (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.name}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full"
+                  >
+                    <IconCmp className="h-5 w-5 text-white hover:text-brio-blue" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 

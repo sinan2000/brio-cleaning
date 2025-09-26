@@ -4,7 +4,6 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import SNSFooter from "@/components/sns/footer-client";
-import { GoogleTagManager } from "@next/third-parties/google";
 import GTMWithConsent from "@/components/privacy/GTMWithConsent";
 import CookieConsent from "@/components/privacy/CookieConsent";
 import { rootMeta } from "@/lib/metadatas";

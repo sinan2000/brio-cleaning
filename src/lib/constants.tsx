@@ -40,16 +40,7 @@ import s5_b from "@/assets/servicii/auto/img2.jpg";
 import s5_c from "@/assets/servicii/auto/img3.jpg";
 import s5_d from "@/assets/servicii/auto/img4.jpg";
 
-import type { IconifyIcon } from "@iconify/react";
-import tiktokIcon from "@iconify-icons/logos/tiktok-icon";
-import facebookIcon from "@iconify-icons/logos/facebook";
-import instagramIcon from "@iconify-icons/logos/instagram-icon"; // or from skill-icons
-
-export type SocialLink = {
-  name: string;
-  icon: IconifyIcon; // not a string anymore
-  href: string;
-};
+import { SiTiktok, SiFacebook, SiInstagram } from "react-icons/si";
 
 export const menuItems = [
   { name: "Acasă", href: "/" },
@@ -453,22 +444,10 @@ export const TIME_SLOTS = [
   { id: "evening", label: "16:00 - 19:30", value: "16-20" },
 ] as const;
 
-export const socialLinks: SocialLink[] = [
-  {
-    name: "TikTok",
-    icon: tiktokIcon,
-    href: "https://www.tiktok.com/@briocleaningtimisoara",
-  },
-  {
-    name: "Facebook",
-    icon: facebookIcon,
-    href: "https://www.facebook.com/BrioCleaningTm",
-  },
-  {
-    name: "Instagram",
-    icon: instagramIcon,
-    href: "https://www.instagram.com/briocleaningtm/",
-  },
+export const socialLinks = [
+  { name: "TikTok", icon: SiTiktok, href: "..." },
+  { name: "Facebook", icon: SiFacebook, href: "..." },
+  { name: "Instagram", icon: SiInstagram, href: "..." },
 ];
 
 export const contact = {
