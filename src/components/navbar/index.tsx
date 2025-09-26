@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Calendar } from "lucide-react";
 import WhatsAppButton from "../WhatsApp";
 import { menuItems } from "@/lib/constants";
-import MobileOverlay from "./Mobile";
+import dynamic from "next/dynamic";
+
+const MobileOverlay = dynamic(() => import("./Mobile"), { ssr: false });
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

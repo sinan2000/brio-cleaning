@@ -49,7 +49,6 @@ export default function StepService() {
               className="w-full h-40 sm:h-44 object-contain bg-white"
               placeholder="blur"
               sizes="(max-width: 768px) 100vw, 640px"
-              priority={false}
             />
           </motion.div>
         )}
