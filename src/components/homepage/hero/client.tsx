@@ -264,7 +264,7 @@ const ScrollExpandMedia = ({
                       muted
                       loop
                       playsInline
-                      preload="none"
+                      preload={isMobileState ? "none" : "metadata"}
                       className="w-full h-full object-cover rounded-xl"
                       controls={false}
                       disablePictureInPicture
