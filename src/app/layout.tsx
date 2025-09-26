@@ -32,6 +32,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className="scroll-smooth">
+      {/*<head>
+        <link
+          rel="preload"
+          as="image"
+          href="/hero/m-poster.avif"
+          imageSrcSet="/hero/m-poster.avif 1x, /hero/d-poster.avif 2x"
+          imageSizes="100vw"
+        />
+      </head>*/}
       <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
         <script
           id="website-schema"

@@ -200,13 +200,13 @@ const ScrollExpandMedia = ({
                 alt="Hero Background"
                 fill
                 placeholder="blur"
-                quality={45}
+                quality={40}
                 sizes="100vw"
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
-                loading="lazy"
+                // loading="lazy"
               />
             </div>
             <div className="absolute inset-0 bg-black/10" />

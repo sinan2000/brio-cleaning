@@ -445,9 +445,9 @@ export const TIME_SLOTS = [
 ] as const;
 
 export const socialLinks = [
-  { name: "TikTok", icon: SiTiktok, href: "..." },
-  { name: "Facebook", icon: SiFacebook, href: "..." },
-  { name: "Instagram", icon: SiInstagram, href: "..." },
+  { name: "TikTok", icon: SiTiktok, href: "https://www.tiktok.com/@briocleaningtimisoara" },
+  { name: "Facebook", icon: SiFacebook, href: "https://www.facebook.com/BrioCleaningTm" },
+  { name: "Instagram", icon: SiInstagram, href: "https://www.instagram.com/briocleaningtm/" },
 ];
 
 export const contact = {
