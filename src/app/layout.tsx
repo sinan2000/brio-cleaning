@@ -11,7 +11,7 @@ import { rootMeta } from "@/lib/metadatas";
 import { businessSchema, navSchema, webSiteSchema } from "@/lib/jsonLd";
 
 const poppins = Poppins({
-  weight: ["400", "600", "700"],
+  weight: ["600", "700"], // removed 400, 'cause all headings are bolded?
   subsets: ["latin"],
   display: "swap",
   variable: "--font-poppins",
@@ -19,6 +19,7 @@ const poppins = Poppins({
 
 const openSans = Open_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-open-sans",
 });
