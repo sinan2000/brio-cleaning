@@ -75,7 +75,7 @@ const MediaSection = () => {
               className="rounded-xl shadow-lg w-full h-auto order-2 md:order-1"
               placeholder="blur"
               quality={55}
-              sizes="(max-width: 767px) 100vw, (max-width: 1279px) 45vw, 36vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
 
             <div className="order-1 md:order-2">
