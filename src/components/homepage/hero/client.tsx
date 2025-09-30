@@ -224,65 +224,54 @@ const ScrollExpandMedia = ({
                   boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.3)",
                 }}
               >
-                {effectiveMediaSrc.includes("youtube.com") ? (
-                  <div className="relative w-full h-full pointer-events-none">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={
-                        effectiveMediaSrc.includes("embed")
-                          ? effectiveMediaSrc +
-                            (effectiveMediaSrc.includes("?") ? "&" : "?") +
-                            "autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1"
-                          : effectiveMediaSrc.replace("watch?v=", "embed/") +
-                            "?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&playlist=" +
-                            effectiveMediaSrc.split("v=")[1]
-                      }
-                      className="w-full h-full rounded-xl"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                <div className="relative w-full h-full pointer-events-none">
+                  <video
+                    src={effectiveMediaSrc}
+                    poster={poster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload={isMobileState ? "none" : "metadata"}
+                    className="w-full h-full object-cover rounded-xl"
+                    controls={false}
+                    disablePictureInPicture
+                    disableRemotePlayback
+                  />
+                  <div
+                    className="absolute inset-0 z-10"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    {/* Prefer modern codecs first; keep MP4 last for Safari */}
+                    <source
+                      src="/hero/mobile.webm"
+                      type="video/webm"
+                      media="(max-width: 767px)"
                     />
-                    <div
-                      className="absolute inset-0 z-10"
-                      style={{ pointerEvents: "none" }}
-                    ></div>
-
-                    <motion.div
-                      className="absolute inset-0 bg-black/30 rounded-xl"
-                      initial={{ opacity: 0.7 }}
-                      animate={{ opacity: 0.5 - scrollProgress * 0.3 }}
-                      transition={{ duration: 0.2 }}
+                    <source
+                      src="/hero/desktop.webm"
+                      type="video/webm"
+                      media="(min-width: 768px)"
                     />
-                  </div>
-                ) : (
-                  <div className="relative w-full h-full pointer-events-none">
-                    <video
-                      src={effectiveMediaSrc}
-                      poster={poster}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload={isMobileState ? "none" : "metadata"}
-                      className="w-full h-full object-cover rounded-xl"
-                      controls={false}
-                      disablePictureInPicture
-                      disableRemotePlayback
+                    <source
+                      src="/hero/mobile.mp4"
+                      type="video/mp4"
+                      media="(max-width: 767px)"
                     />
-                    <div
-                      className="absolute inset-0 z-10"
-                      style={{ pointerEvents: "none" }}
-                    ></div>
-
-                    <motion.div
-                      className="absolute inset-0 bg-black/30 rounded-xl"
-                      initial={{ opacity: 0.7 }}
-                      animate={{ opacity: 0.5 - scrollProgress * 0.3 }}
-                      transition={{ duration: 0.2 }}
+                    <source
+                      src="/hero/desktop.mp4"
+                      type="video/mp4"
+                      media="(min-width: 768px)"
                     />
                   </div>
-                )}
+
+                  <motion.div
+                    className="absolute inset-0 bg-black/30 rounded-xl"
+                    initial={{ opacity: 0.7 }}
+                    animate={{ opacity: 0.5 - scrollProgress * 0.3 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                </div>
 
                 <div className="flex flex-col items-center text-center relative z-10 mt-4 transition-none">
                   {date && (

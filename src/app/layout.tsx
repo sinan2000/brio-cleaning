@@ -32,15 +32,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className="scroll-smooth">
-      {/*<head>
+      <head>
+        {/* LCP poster: high-priority, both variants */}
+        <link
+          rel="preload"
+          as="image"
+          href="/hero/d-poster.avif"
+          fetchPriority="high"
+          imageSizes="100vw"
+        />
         <link
           rel="preload"
           as="image"
           href="/hero/m-poster.avif"
-          imageSrcSet="/hero/m-poster.avif 1x, /hero/d-poster.avif 2x"
+          fetchPriority="high"
           imageSizes="100vw"
         />
-      </head>*/}
+        {/* If you self-host fonts, preload ONE primary text face here (not needed for next/font/google) */}
+      </head>
       <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
         <script
           id="website-schema"
