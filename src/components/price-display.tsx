@@ -60,7 +60,7 @@ export default function PriceDisplay({ service }: { service: any }) {
 
           <Link href={`/programari?s=${slugFromHref(service.href)}`}>
             <Button
-              variant="outline"
+              //variant="outline"
               className="bg-brio-blue-dark/90 hover:bg-brio-blue-dark text-white hover:text-white"
             >
               Programează-te
