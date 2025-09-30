@@ -226,13 +226,12 @@ const ScrollExpandMedia = ({
               >
                 <div className="relative w-full h-full pointer-events-none">
                   <video
-                    src={effectiveMediaSrc}
                     poster={poster}
                     autoPlay
                     muted
                     loop
                     playsInline
-                    preload={isMobileState ? "none" : "metadata"}
+                    preload="none"
                     className="w-full h-full object-cover rounded-xl"
                     controls={false}
                     disablePictureInPicture
