@@ -194,21 +194,20 @@ const ScrollExpandMedia = ({
             animate={{ opacity: 1 - scrollProgress }}
             transition={{ duration: 0.1 }}
           >
-            <div className="absolute inset-0">
-              <Image
-                src={bgImageSrc}
-                alt="Hero Background"
-                fill
-                placeholder="blur"
-                quality={40}
-                sizes="100vw"
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-                // loading="lazy"
-              />
-            </div>
+            <Image
+              src={bgImageSrc}
+              alt="Hero Background"
+              fill
+              placeholder="blur"
+              quality={60}
+              priority
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+
             <div className="absolute inset-0 bg-black/10" />
           </motion.div>
 
@@ -232,38 +231,17 @@ const ScrollExpandMedia = ({
                     muted
                     loop
                     playsInline
-                    preload={isMobileState ? "none" : "metadata"}
+                    preload="auto"
                     className="w-full h-full object-cover rounded-xl"
                     controls={false}
                     disablePictureInPicture
                     disableRemotePlayback
                   />
+
                   <div
                     className="absolute inset-0 z-10"
                     style={{ pointerEvents: "none" }}
-                  >
-                    {/* Prefer modern codecs first; keep MP4 last for Safari */}
-                    <source
-                      src="/hero/mobile.webm"
-                      type="video/webm"
-                      media="(max-width: 767px)"
-                    />
-                    <source
-                      src="/hero/desktop.webm"
-                      type="video/webm"
-                      media="(min-width: 768px)"
-                    />
-                    <source
-                      src="/hero/mobile.mp4"
-                      type="video/mp4"
-                      media="(max-width: 767px)"
-                    />
-                    <source
-                      src="/hero/desktop.mp4"
-                      type="video/mp4"
-                      media="(min-width: 768px)"
-                    />
-                  </div>
+                  ></div>
 
                   <motion.div
                     className="absolute inset-0 bg-black/30 rounded-xl"
