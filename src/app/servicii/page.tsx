@@ -40,6 +40,9 @@ export default function ServicesPage() {
         <div className="space-y-12 md:space-y-16 lg:space-y-24">
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
+            const facts = Array.isArray(service.didYouKnowList)
+              ? service.didYouKnowList
+              : [service.didYouKnow];
             return (
               <Reveal threshold={0.3} key={index}>
                 <div className="min-h-[480px] md:min-h-[560px] lg:min-h-[600px] flex items-center">
@@ -96,10 +99,14 @@ export default function ServicesPage() {
 
                         <aside className="mt-3 rounded-xl border border-brio-green/30 bg-brio-green/5 p-4 flex gap-3 items-start">
                           <InfoIcon className="w-5 h-5 text-brio-green mt-0.5 shrink-0" />
-                          <p className="text-sm md:text-base text-foreground">
-                            <span className="font-semibold">Știați că? </span>
-                            {service.didYouKnow}
-                          </p>
+                          <div className="text-sm md:text-base text-foreground">
+                            <p className="font-semibold">Știați că?</p>
+                            <ul className="mt-1 space-y-1 list-disc pl-5">
+                              {facts.map((fact, i) => (
+                                <li key={i}>{fact}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </aside>
 
                         <div className="grid grid-cols-2 gap-3 sm:gap-4">
